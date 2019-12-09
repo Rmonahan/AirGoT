@@ -20,6 +20,7 @@ export default class Greeting extends React.Component {
       return (
         <div>
           <Link to="/signup" >Sign Up</Link>
+          <br></br>
           <Link to="/login" >Log In</Link>
         </div>
       )
