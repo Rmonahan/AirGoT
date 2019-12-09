@@ -8,8 +8,8 @@ export default class SessionForm extends React.Component {
       email: "",
       username: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -64,10 +64,10 @@ export default class SessionForm extends React.Component {
                <input onChange={this.handleInput("password")} type="password" value={this.state.password} />
             </label>
             <label> First Name 
-               <input onChange={this.handleInput("firstName")} type="text" value={this.state.firstName} />
+               <input onChange={this.handleInput("first_name")} type="text" value={this.state.first_name} />
             </label>
             <label> Last Name
-               <input onChange={this.handleInput("lastName")} type="text" value={this.state.lastName} />
+               <input onChange={this.handleInput("last_name")} type="text" value={this.state.last_name} />
             </label>
             <button onClick={this.handleSubmit}>{this.props.formType}</button>
           </form>
