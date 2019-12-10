@@ -69,6 +69,7 @@ export default class SessionForm extends React.Component {
           <button className="closeForm" onClick={this.props.closeModal}>×</button>
           <ul>{errorLis}</ul>
           <form className="sessionForm">
+            <div className="formFields">
             <label> 
               <input onChange={this.handleInput("email")} type="email" placeholder="  Email address" value={this.state.email} />
             </label>
@@ -81,6 +82,7 @@ export default class SessionForm extends React.Component {
             <label>
                <input onChange={this.handleInput("password")} type="password" placeholder="  Create a Password" value={this.state.password} />
             </label>
+            </div>
             <label className="birthday"> Birthday </label>
             <p> To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
             <div className="birthdateDiv">
@@ -109,7 +111,15 @@ export default class SessionForm extends React.Component {
             </select>
             </div>
             <button className="sessionFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
-          Already have an AirGoT account?  {this.props.otherForm}
+            <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 
+              You can opt out of receiving these at any time in your <br></br> account settings or directly from the marketing 
+            notification.</p> 
+            <label className="check">
+            <input type="checkbox" />
+               I don’t want to receive marketing messages from Airbnb.
+            </label>
+            
+            <span className="otherForm"> Already have an AirGoT account?  {this.props.otherForm} </span>
           </form>
         </div>
       )

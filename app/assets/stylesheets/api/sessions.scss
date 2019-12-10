@@ -5,7 +5,7 @@
 .sessionFormDiv {
   background: white;
   display: block;
-  height: 800px;
+  height: 715px;
   width: 570px
 }
 
@@ -14,7 +14,7 @@
   padding-top: 20px;
 }
 
-.sessionForm input {
+.sessionForm .formFields input {
   border: 1px solid rgb(235,235,235);
   font-size: 15px;
   display: block;
@@ -30,7 +30,9 @@
 .birthdateDiv {
   position: flex;
   width: 90%;
-  margin: 28.5px;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-bottom: 22px;
 }
 
 .birthdateDiv > select {
@@ -65,7 +67,8 @@
 .sessionFormButton {
   width: 90%;
   height: 45px;
-  margin: 28.5px;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
   border-radius: 5px;
   text-align: center;
   border: 1px solid rgb(235,235,235);
@@ -78,6 +81,7 @@
   margin-left: 28.5px;
   margin-right: 28.5px;
   margin-top: 10px;
+  margin-bottom: 15px;
 
 }
 
@@ -92,4 +96,61 @@
 .birthday {
   font-weight: 500;
   margin-left: 28.5px;
+}
+
+.check {
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(235,235,235);
+}
+
+.check>input {
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.link {
+  color: rgb(20, 133, 127);
+  font-weight: 500;
+}
+
+
+.otherForm {
+  font-size: 16px;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.check input {
+	-webkit-appearance: none;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 0px 0px 0px rgba(0,0,0,0.05);
+	padding: 8px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+.check input:checked {
+  background: rgb(20, 133, 127);
+  border: 1px solid rgb(20, 133, 127);
+}
+
+.check input:checked:after {
+  content: '\2713';
+	font-size: 18px;
+	position: absolute;
+	top: -2px;
+	left: 0px;
+  color: white;
 }

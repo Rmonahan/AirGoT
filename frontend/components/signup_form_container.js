@@ -11,7 +11,7 @@ const msp = (state, ownProps) => ({
 const mdp = (dispatch) => ({
   processForm: (user) => dispatch(signup(user)),
   otherForm: (
-    <button onClick={() => dispatch(openModal('login'))}>
+    <button className="link" onClick={() => dispatch(openModal('login'))}>
       Log in
       </button>
   ),
