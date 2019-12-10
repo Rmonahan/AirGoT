@@ -35,19 +35,25 @@ export default class SessionForm extends React.Component {
     if (this.props.formType === "Log in") {
     return (
       <div className="sessionFormDiv">
-
         <button className="closeForm" onClick={this.props.closeModal}>×</button>
         <ul>{errorLis}</ul>
         <form className="sessionForm">
+          <div className="formFields">
           <label>
           <input onChange={this.handleInput("email")} type="email" placeholder="  Email address" value={this.state.email} />
           </label>
           <label>
           <input onChange={this.handleInput("password")} type="password" placeholder="  Password" value={this.state.password} />
           </label>
+          </div>
+          <label className="check">
+            <input type="checkbox" />
+             Remember me
+          </label>
+          <button>Show password</button>
           <button className="sessionFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
         
-        Don’t have an account? {this.props.otherForm}
+          <span className="otherForm"> Don’t have an account? {this.props.otherForm}</span>
         </form>
       </div>
     )
