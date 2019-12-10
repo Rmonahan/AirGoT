@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -12,16 +10,17 @@ export default class Greeting extends React.Component {
     if (currentUser) {
       return (
         <div>
-          <div>Hello {currentUser.username}</div>
-          <button onClick={this.props.logout}>Log Out</button>
+          <div>Hello {currentUser.email}</div>
+          <button onClick={this.props.logout}>Log out</button>
         </div>
       )
     } else {
       return (
-        <div>
-          <Link to="/signup" >Sign Up</Link>
-          <Link to="/login" >Log In</Link>
-        </div>
+        <nav className="greeting-modal">
+          <button onClick={() => this.props.openModal('login')}>Log in</button>
+          &nbsp;or&nbsp;
+      <button onClick={() => this.props.openModal('signup')}>Sign up</button>
+        </nav>
       )
     }
   }

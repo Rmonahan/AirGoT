@@ -1,3 +1,95 @@
 // Place all the styles related to the API::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sessionFormDiv {
+  background: white;
+  display: block;
+  height: 800px;
+  width: 570px
+}
+
+
+.sessionForm {
+  padding-top: 20px;
+}
+
+.sessionForm input {
+  border: 1px solid rgb(235,235,235);
+  font-size: 15px;
+  display: block;
+  width: 90%;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 45px;
+  border-radius: 5px;
+}
+
+.birthdateDiv {
+  position: flex;
+  width: 90%;
+  margin: 28.5px;
+}
+
+.birthdateDiv > select {
+  border: 1px solid rgb(235,235,235);
+  font-size: 16px;
+  color: rgb(72,72,72);
+  font-weight: lighter;
+  background: rgb(255,255,255);
+}
+.month, .day{
+  height: 45px;
+  margin-right: 18px;
+}
+
+.month {
+  width: 200px;
+  // -moz-appearance:none;
+  //   -webkit-appearance:none;
+  //   appearance:none;
+}
+
+.day {
+  width: 115px;
+}
+
+.year {
+  width: 160px;
+  height: 45px;
+  margin-right: 0px;
+}
+
+.sessionFormButton {
+  width: 90%;
+  height: 45px;
+  margin: 28.5px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid rgb(235,235,235);
+  background: rgb(252, 82, 96);
+  color: white;
+}
+
+.sessionForm > p {
+  font-size: 14px;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-top: 10px;
+
+}
+
+.closeForm {
+  font-size: 42px;
+  color: gray;
+  font-weight: lighter;
+  position: relative;
+  left: 30px;
+  top: 20px;
+}
+.birthday {
+  font-weight: 500;
+  margin-left: 28.5px;
+}

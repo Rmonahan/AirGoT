@@ -1,18 +1,18 @@
 import React from "react";
 import GreetingContainer from "./greeting_container";
-import {Route} from "react-router-dom";
-import LoginFormContainer from "./login_form_container";
-import SignupFormContainer from "./signup_form_container";
+import {Route, Link} from "react-router-dom";
+import Modal from "./modal";
 
 const App = () => (
   <div>
+    <Modal />
     <header>
-      <h1>AirGoT</h1>
+      <Link to="/" className="header-link">
+        <h1>AirGoT</h1>
+      </Link> 
       <GreetingContainer />
     </header>
 
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
 
   </div>
 );
