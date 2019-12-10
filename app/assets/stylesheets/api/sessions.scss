@@ -3,15 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sessionFormDiv {
+  position: fixed;
+  left: -280px;
+  top: -260px;
   background: white;
   display: block;
-  height: 715px;
+  height: auto;
   width: 570px
 }
 
 
 .sessionForm {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .sessionForm .formFields input {
@@ -153,4 +157,13 @@
 	top: -2px;
 	left: 0px;
   color: white;
+}
+
+.showPassword {
+  font-size: 14px;
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: rgb(20, 133, 127);
 }

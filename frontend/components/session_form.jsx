@@ -30,7 +30,7 @@ export default class SessionForm extends React.Component {
 
     const errorLis = this.props.errors.map((error, index) => {
       return <li key={index} > {error} </li>
-    })
+    });
 
     if (this.props.formType === "Log in") {
     return (
@@ -49,25 +49,26 @@ export default class SessionForm extends React.Component {
           <label className="check">
             <input type="checkbox" />
              Remember me
-          </label>
-          <button>Show password</button>
+
+          <button className="showPassword">Show password</button>
           <button className="sessionFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
+          </label>
         
           <span className="otherForm"> Don’t have an account? {this.props.otherForm}</span>
         </form>
       </div>
-    )
+    );
     }
     else {
 
-        const dayOptions = []
+        const dayOptions = [];
         for (let i = 1; i < 32; i++) {
-         dayOptions.push(<option key={i} value={i}>{i}</option>)
+         dayOptions.push(<option key={i} value={i}>{i}</option>);
         }
 
-      const yearOptions = []
+      const yearOptions = [];
         for (let i = 2019; i >= 1899; i--) {
-        yearOptions.push(<option key={i} value={i}>{i}</option>)
+        yearOptions.push(<option key={i} value={i}>{i}</option>);
       }
 
       return (
@@ -128,7 +129,7 @@ export default class SessionForm extends React.Component {
             <span className="otherForm"> Already have an AirGoT account?  {this.props.otherForm} </span>
           </form>
         </div>
-      )
+      );
     }
   }
 }
