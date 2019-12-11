@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!([{username: "JonSnow", first_name: "Jon", last_name: "Snow", email: "Johnsnow@starks.com", password: "gameofthrones"},
-             {username: "NedStark", first_name: "Ned", last_name: "Stark", email: "Nedstark@starks.com", password: "gameofthrones"},
-             {username: "JamieLannister", first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones"}])
+User.create!([{first_name: "Jon", last_name: "Snow", email: "Johnsnow@starks.com", password: "gameofthrones", birth_date: DateTime.new(1990-05-26)},
+             {first_name: "Ned", last_name: "Stark", email: "Nedstark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1965-02-16)},
+             {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12)}])
