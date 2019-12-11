@@ -40,6 +40,10 @@ class User < ApplicationRecord
   end
 
   def old_enough?
+    if self.birth_date.class != Date
+      return self.errors[:base] << "Must enter birthday"
+    end
+
     now = Time.now.utc.to_date
     age = now.year - self.birth_date.year - ((now.month > self.birth_date.month || (now.month == self.birth_date.month && now.day >= self.birth_date.day)) ? 0 : 1)
     if age < 18
