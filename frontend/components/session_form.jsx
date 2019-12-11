@@ -32,42 +32,64 @@ export default class SessionForm extends React.Component {
     const firstNameErrors = [];
     const lastNameErrors = [];
     const passwordErrors = [];
+    const otherErrors = [];
+
+    let firstNameErrorClass = "NoErrorState";
+    let lastNameErrorClass = "NoErrorState";
+    let birthdayErrorClass = "birthdateDiv NoErrorSelectState";
+    let passwordErrorClass = "NoErrorState";
+    let emailErrorClass = "NoErrorState";
+
+
 
     this.props.errors.forEach((error, index) => {
       if (error.includes("First")){
         firstNameErrors.push(<li key={index} > {error} </li>);
+        firstNameErrorClass = "RedErrorClass"
       } 
       else if (error.includes("Last")){
         lastNameErrors.push(<li key={index} > {error} </li>);
+        lastNameErrorClass = "RedErrorClass"
       }
       else if (error.includes("Email")){
         emailErrors.push(<li key={index} > {error} </li>);
+        emailErrorClass = "RedErrorClass"
       }
       else if (error.includes("Password") || error.includes("password")){
         passwordErrors.push(<li key={index} > {error} </li>);
+        passwordErrorClass = "RedErrorClass"
       } 
-      else {
+      else if (error.includes("birth date") || error.includes("18")) {
         birthdayErrors.push(<li key={index} > {error} </li>);
+        birthdayErrorClass = "birthdateDiv RedErrorSelectClass"
+      }
+      else {
+        otherErrors.push(<li key={index} > {error} </li>);
       }
     }
     );
 
+
+
     if (this.props.formType === "Log in") {
     return (
       <div className="sessionFormDiv">
-        <button className="closeForm" onClick={this.props.closeModal}>×</button>
+        <div className="closeForm">
+          <button onClick={this.props.closeModal}>×</button>
+        </div>
+        <ul className="errors">{otherErrors}</ul>
         <form className="sessionForm">
           <div className="formFields">
-          <label>
+            <label className={emailErrorClass}>
           <input onChange={this.handleInput("email")} type="email" placeholder="Email address" value={this.state.email} />
           </label>
           <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
-          <label>
-          <ul>{emailErrors}</ul>
+          <label className={passwordErrorClass}>
+          <ul className="errors">{emailErrors}</ul>
           <input onChange={this.handleInput("password")} type="password" placeholder="Password" value={this.state.password} />
           </label>
             <div className="lockIcon">	<i className="fas fa-lock"></i> </div>
-          <ul>{passwordErrors}</ul>
+          <ul className="errors">{passwordErrors}</ul>
           </div>
           <label className="check">
             <input type="checkbox" />
@@ -94,47 +116,53 @@ export default class SessionForm extends React.Component {
         for (let i = 2019; i >= 1899; i--) {
         yearOptions.push(<option key={i} value={i}>{i}</option>);
       }
-
       return (
         <div className="sessionFormDiv">
-          <button className="closeForm" onClick={this.props.closeModal}>×</button>
+          <div className="closeForm">
+          <button onClick={this.props.closeModal}>×</button>
+          </div>
+          <ul className="errors">{otherErrors}</ul>
           <form className="sessionForm">
             <div className="formFields">
-            <label> 
+            <label className={emailErrorClass}> 
               <input onChange={this.handleInput("email")} type="email" placeholder="Email address" value={this.state.email} />
-            </label>
               <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
-            <label> 
+              <ul className="errors">{emailErrors}</ul>
+            </label>
+            <label className={firstNameErrorClass}> 
                <input onChange={this.handleInput("firstName")} type="text" placeholder="First name" value={this.state.firstName} />
             </label>
               <div className="personIconFirstName">	<i className="far fa-user"></i> </div>
-            <label> 
+              <ul className="errors">{firstNameErrors}</ul>
+            <label className={lastNameErrorClass}> 
                <input onChange={this.handleInput("lastName")} type="text" placeholder="Last name" value={this.state.lastName} />
             </label>
               <div className="personIconLastName">	<i className="far fa-user"></i> </div>
-            <label>
+              <ul className="errors">{lastNameErrors}</ul>
+            <label className={passwordErrorClass}>
                <input onChange={this.handleInput("password")} type="password" placeholder="Create a Password" value={this.state.password} />
             </label>
               <div className="eyeIcon">	<i className="far fa-eye-slash"></i> </div>
+              <ul className="errors">{passwordErrors}</ul>
             </div>
             <label className="birthday"> Birthday </label>
             <p> To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
-            <div className="birthdateDiv">
-            <select className="month" onChange={this.handleInput("month")} defaultValue="Month" name="Month">
+            <div className={birthdayErrorClass}>
+              <select className="month" onChange={this.handleInput("month")} defaultValue="Month" name="Month">
                 <option value="Month" disabled={true}>Month</option>
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
               <div className="monthArrow">⌵</div>
             <select className="day" onChange={this.handleInput("day")} defaultValue="Day" name="Day">
               <option value="Day" disabled={true}>Day</option>
@@ -147,6 +175,7 @@ export default class SessionForm extends React.Component {
             </select>
               <div className="yearArrow">⌵</div>
             </div>
+              <ul className="birthdayErrors">{birthdayErrors}</ul>
             <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
             <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 
               You can opt out of receiving these at any time in your <br></br> account settings or directly from the marketing 

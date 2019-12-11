@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import SessionForm from "./session_form";
 import { openModal, closeModal } from "../actions/modal_actions";
+import { receiveSessionErrors } from "../actions/session";
 import React from 'react';
 
 const msp = (state, ownProps) => ({
@@ -11,11 +12,11 @@ const msp = (state, ownProps) => ({
 const mdp = (dispatch) => ({
   processForm: (user) => dispatch(signup(user)),
   otherForm: (
-    <button className="link" onClick={() => dispatch(openModal('login'))}>
+    <button className="link" onClick={() => { dispatch(openModal('login')); dispatch(receiveSessionErrors([])) }}>
       Log in
-      </button>
+    </button>
   ),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => { dispatch(closeModal()); dispatch(receiveSessionErrors([])) }
 });
 
 export default connect(msp, mdp)(SessionForm);

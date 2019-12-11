@@ -7,8 +7,7 @@ const App = () => (
   <div className="splash">
     <Modal />
     <header>
-      <Link to="/" className="header-link">
-      </Link> 
+      <Link to="/" className="header-link"></Link> 
       <GreetingContainer />
     </header>
     <img id="background" src={window.backgroundImage} />

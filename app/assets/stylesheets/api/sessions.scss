@@ -17,17 +17,17 @@
 .sessionForm {
   padding-top: 20px;
   padding-bottom: 40px;
+  position: relative;
 }
 
 .sessionForm .formFields input {
-  border: 1px solid rgb(235,235,235);
   font-size: 15px;
-  display: block;
+  position: relative;
   width: 90%;
   margin-left: 28.5px;
   margin-right: 28.5px;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   height: 45px;
   border-radius: 5px;
   text-indent: 10px;
@@ -38,7 +38,8 @@
 }
 
 .birthdateDiv {
-  position: flex;
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   margin-left: 28.5px;
   margin-right: 28.5px;
@@ -46,30 +47,42 @@
 }
 
 .birthdateDiv > select {
-  border: 1px solid rgb(235,235,235);
   font-size: 16px;
-  color: rgb(72,72,72);
+  // color: rgb(72,72,72);
   font-weight: lighter;
   background: rgb(255,255,255);
   -moz-appearance:none;
   -webkit-appearance:none;
   appearance:none;
+  text-indent: 10px;
 }
+
+.NoErrorSelectState > select {
+  outline-color: rgb(72,72,72);
+}
+
+
+.birthdateDiv > select:focus {
+  outline-color: rgb(0, 133, 137);
+  outline-style: solid;
+  outline-width: 1px;
+}
+
 .month, .day{
   height: 45px;
-  margin-right: 18px;
+  margin-right: 0px;
 }
 
 .month {
-  width: 200px;
+  min-width: 200px;
 }
 
 .day {
-  width: 115px;
+  min-width: 115px;
 }
 
 .year {
-  width: 160px;
+  min-width: 160px;
   height: 45px;
   margin-right: 0px;
 }
@@ -112,17 +125,22 @@
 }
 
 .closeForm {
-  text-align: center;
-  font-size: 42px;
-  color: gray;
-  font-weight: lighter;
-  position: relative;
-  width: 40px;
-  left: 20px;
-  top: 15px;
+  width: 50px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-.closeForm:active {
+.closeForm button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-weight: 500;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.closeForm button:active {
   border-radius: 100%;
   border:1px solid lightgray;
   background: white;             
@@ -215,45 +233,45 @@
 }
 
 .monthArrow {
-  position: fixed;
-  top: 150px;
-  right: 70px;
+  position: relative;
+  top: 0px;
+  right: 30px;
   font-size: 30px;
   font-weight: 100;
   pointer-events: none;
 }
 
 .dayArrow {
-  position: fixed;
-  top: 150px;
-  left: 55px;
+  position: relative;
+  top: 0px;
+  left: -30px;
   font-size: 30px;
   font-weight: 100;
   pointer-events: none;
 }
 
 .yearArrow {
-  position: fixed;
-  top: 150px;
-  left: 230px;
+  position: relative;
+  top: 0px;
+  left: -30px;
   font-size: 30px;
   font-weight: 100;
   pointer-events: none;
 }
 
 .emailIcon {
-  position: fixed;
-  top: -162px;
-  left: 230px;
+  position: relative;
+  top: -40px;
+  left: 512px;
   font-size: 20px;
   font-weight: 100;
   cursor: default;
 }
 
 .personIconFirstName {
-  position: fixed;
-  top: -100px;
-  left: 230px;
+  position: relative;
+  top: -40px;
+  left: 512px;
   font-size: 20px;
   font-weight: 100;
   cursor: default;
@@ -261,28 +279,71 @@
 }
 
 .personIconLastName {
-  position: fixed;
+  position: relative;
   top: -40px;
-  left: 230px;
+  left: 512px;
   font-size: 20px;
   font-weight: 100;
   cursor: default;
 }
 
 .eyeIcon {
-  position: fixed;
-  top: 22px;
-  left: 230px;
+  position: relative;
+  top: -40px;
+  left: 512px;
   font-size: 15px;
   font-weight: 100;
   cursor: default;
 }
 
 .lockIcon {
-  position: fixed;
-  top: -100px;
-  left: 235px;
+  position: relative;
+  top: -40px;
+  left: 512px;
   font-size: 15px;
   font-weight: 100;
   cursor: default;
+}
+
+
+.errors {
+  margin-left: 28.5px;
+  margin-right: 28.5px;
+  margin-top: -20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.errors li {
+  color:rgb(214,48,4);
+  font-weight: 500;
+}
+
+.birthdayErrors {
+  margin-left: 28.5px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.birthdayErrors li {
+  color:rgb(214,48,4);
+  font-weight: 500;
+}
+
+.RedErrorClass input{
+  border: 1px solid red;
+}
+
+.NoErrorState input {
+border: 1px solid rgb(235,235,235);
+}
+
+.RedErrorSelectClass select{
+  outline-color: red;
+}
+
+.formFields {
+  margin-bottom: 15px;
 }

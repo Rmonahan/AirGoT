@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates :birth_date, :first_name, :last_name, :email, :password_digest, :session_token, presence: true
+  validates_presence_of :first_name, :last_name, :email, :message => "is required."
+  validates :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
   validate :old_enough?
@@ -40,10 +41,14 @@ class User < ApplicationRecord
   end
 
   def old_enough?
+    if self.birth_date.class != Date
+      return self.errors[:base] << "Select your birth date to continue."
+    end
+
     now = Time.now.utc.to_date
     age = now.year - self.birth_date.year - ((now.month > self.birth_date.month || (now.month == self.birth_date.month && now.day >= self.birth_date.day)) ? 0 : 1)
     if age < 18
-       self.errors[:base] << "Must be over 18 to signup."
+       self.errors[:base] << "Sorry you must be over 18 to signup."
     end
   end
 end
