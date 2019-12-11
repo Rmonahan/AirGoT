@@ -16,19 +16,11 @@ export default class Greeting extends React.Component {
       )
     } else {
       return (
-<<<<<<< HEAD
-        <div>
-          <Link to="/signup" >Sign Up</Link>
-          <br></br>
-          <Link to="/login" >Log In</Link>
-        </div>
-=======
         <nav className="greeting-modal">
           <div> Welcome to AirGoT</div>
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
         </nav>
->>>>>>> UserAuth
       )
     }
   }

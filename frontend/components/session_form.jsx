@@ -6,16 +6,11 @@ export default class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-<<<<<<< HEAD
-      first_name: "",
-      last_name: "",
-=======
       firstName: "",
       lastName: "",
       month: "",
       day:"",
       year:""
->>>>>>> UserAuth
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -96,13 +91,6 @@ export default class SessionForm extends React.Component {
             <label> 
                <input onChange={this.handleInput("lastName")} type="text" placeholder="Last name" value={this.state.lastName} />
             </label>
-<<<<<<< HEAD
-            <label> First Name 
-               <input onChange={this.handleInput("first_name")} type="text" value={this.state.first_name} />
-            </label>
-            <label> Last Name
-               <input onChange={this.handleInput("last_name")} type="text" value={this.state.last_name} />
-=======
               <div className="personIconLastName">	<i className="far fa-user"></i> </div>
             <label>
                <input onChange={this.handleInput("password")} type="password" placeholder="Create a Password" value={this.state.password} />
@@ -146,7 +134,6 @@ export default class SessionForm extends React.Component {
             <label className="check">
             <input type="checkbox" />
                I don’t want to receive marketing messages from Airbnb.
->>>>>>> UserAuth
             </label>
             
             <span className="otherForm"> Already have an AirGoT account? {this.props.otherForm} </span>
