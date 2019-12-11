@@ -51,7 +51,8 @@ export default class SessionForm extends React.Component {
              Remember me
 
           <button className="showPassword">Show password</button>
-          <button className="sessionFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
+          <button className="loginFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
+            <button className="forgotPassword">Forgot password?</button>
           </label>
         
           <span className="otherForm"> Don’t have an account? {this.props.otherForm}</span>
@@ -117,7 +118,7 @@ export default class SessionForm extends React.Component {
               {yearOptions}
             </select>
             </div>
-            <button className="sessionFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
+            <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
             <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 
               You can opt out of receiving these at any time in your <br></br> account settings or directly from the marketing 
             notification.</p> 
@@ -126,7 +127,7 @@ export default class SessionForm extends React.Component {
                I don’t want to receive marketing messages from Airbnb.
             </label>
             
-            <span className="otherForm"> Already have an AirGoT account?  {this.props.otherForm} </span>
+            <span className="otherForm"> Already have an AirGoT account? {this.props.otherForm} </span>
           </form>
         </div>
       );
