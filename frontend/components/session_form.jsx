@@ -109,14 +109,17 @@ export default class SessionForm extends React.Component {
               <option value="November">November</option>
               <option value="December">December</option>
             </select>
+              <div className="monthArrow">⌄</div>
             <select className="day" onChange={this.handleInput("day")} defaultValue="Day" name="Day">
               <option value="Day" disabled={true}>Day</option>
               {dayOptions}
             </select>
+              <div className="dayArrow">⌄</div>
             <select className="year" onChange={this.handleInput("year")} defaultValue="Year" name="Year">
               <option value="Year" disabled={true}>Year</option>
               {yearOptions}
             </select>
+              <div className="yearArrow">⌄</div>
             </div>
             <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
             <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 

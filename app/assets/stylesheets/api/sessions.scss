@@ -46,6 +46,9 @@
   color: rgb(72,72,72);
   font-weight: lighter;
   background: rgb(255,255,255);
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
 }
 .month, .day{
   height: 45px;
@@ -54,9 +57,6 @@
 
 .month {
   width: 200px;
-  // -moz-appearance:none;
-  //   -webkit-appearance:none;
-  //   appearance:none;
 }
 
 .day {
@@ -126,13 +126,6 @@
   border-bottom: 1px solid rgb(235,235,235);
 }
 
-.check>input {
-  cursor: pointer;
-  margin-right: 10px;
-  position: relative;
-  top: 5px;
-}
-
 .link {
   color: rgb(20, 133, 127);
   font-weight: 500;
@@ -155,7 +148,11 @@
 	padding: 8px;
 	border-radius: 3px;
 	display: inline-block;
-	position: relative;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
 }
 
 .check input:checked {
@@ -196,4 +193,31 @@
 
 .forgotPassword:hover {
   text-decoration: underline;
+}
+
+.monthArrow {
+  position: fixed;
+  top: 135px;
+  right: 70px;
+  font-size: 50px;
+  font-weight: 100;
+  pointer-events: none;
+}
+
+.dayArrow {
+  position: fixed;
+  top: 135px;
+  left: 55px;
+  font-size: 50px;
+  font-weight: 100;
+  pointer-events: none;
+}
+
+.yearArrow {
+  position: fixed;
+  top: 135px;
+  left: 230px;
+  font-size: 50px;
+  font-weight: 100;
+  pointer-events: none;
 }
