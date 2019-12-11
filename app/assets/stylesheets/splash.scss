@@ -1,0 +1,14 @@
+.splash {
+  // height: 1000px;
+  // width: 1000px;
+  // fix this height and width
+  // background-position: center;
+}
+
+#background {
+  position: fixed;
+  top: -100px;
+  height: 200%;
+  width: 100%;
+  z-index: -1;
+}

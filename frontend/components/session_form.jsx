@@ -40,11 +40,13 @@ export default class SessionForm extends React.Component {
         <form className="sessionForm">
           <div className="formFields">
           <label>
-          <input onChange={this.handleInput("email")} type="email" placeholder="  Email address" value={this.state.email} />
+          <input onChange={this.handleInput("email")} type="email" placeholder="Email address" value={this.state.email} />
           </label>
+          <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
           <label>
-          <input onChange={this.handleInput("password")} type="password" placeholder="  Password" value={this.state.password} />
+          <input onChange={this.handleInput("password")} type="password" placeholder="Password" value={this.state.password} />
           </label>
+            <div className="lockIcon">	<i className="fas fa-lock"></i> </div>
           </div>
           <label className="check">
             <input type="checkbox" />
@@ -79,17 +81,21 @@ export default class SessionForm extends React.Component {
           <form className="sessionForm">
             <div className="formFields">
             <label> 
-              <input onChange={this.handleInput("email")} type="email" placeholder="  Email address" value={this.state.email} />
+              <input onChange={this.handleInput("email")} type="email" placeholder="Email address" value={this.state.email} />
             </label>
+              <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
             <label> 
-               <input onChange={this.handleInput("firstName")} type="text" placeholder="  First name" value={this.state.firstName} />
+               <input onChange={this.handleInput("firstName")} type="text" placeholder="First name" value={this.state.firstName} />
             </label>
+              <div className="personIconFirstName">	<i className="far fa-user"></i> </div>
             <label> 
-               <input onChange={this.handleInput("lastName")} type="text" placeholder="  Last name" value={this.state.lastName} />
+               <input onChange={this.handleInput("lastName")} type="text" placeholder="Last name" value={this.state.lastName} />
             </label>
+              <div className="personIconLastName">	<i className="far fa-user"></i> </div>
             <label>
-               <input onChange={this.handleInput("password")} type="password" placeholder="  Create a Password" value={this.state.password} />
+               <input onChange={this.handleInput("password")} type="password" placeholder="Create a Password" value={this.state.password} />
             </label>
+              <div className="eyeIcon">	<i className="far fa-eye-slash"></i> </div>
             </div>
             <label className="birthday"> Birthday </label>
             <p> To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
@@ -109,17 +115,17 @@ export default class SessionForm extends React.Component {
               <option value="November">November</option>
               <option value="December">December</option>
             </select>
-              <div className="monthArrow">⌄</div>
+              <div className="monthArrow">⌵</div>
             <select className="day" onChange={this.handleInput("day")} defaultValue="Day" name="Day">
               <option value="Day" disabled={true}>Day</option>
               {dayOptions}
             </select>
-              <div className="dayArrow">⌄</div>
+              <div className="dayArrow">⌵</div>
             <select className="year" onChange={this.handleInput("year")} defaultValue="Year" name="Year">
               <option value="Year" disabled={true}>Year</option>
               {yearOptions}
             </select>
-              <div className="yearArrow">⌄</div>
+              <div className="yearArrow">⌵</div>
             </div>
             <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
             <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 

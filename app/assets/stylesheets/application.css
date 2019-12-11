@@ -14,8 +14,6 @@
  *= require_self
  */
 
- @import "base/reset.scss";
-
 
  .modal-background {
   position: fixed;

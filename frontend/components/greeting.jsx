@@ -9,7 +9,7 @@ export default class Greeting extends React.Component {
     const { currentUser } = this.props;
     if (currentUser) {
       return (
-        <div>
+        <div className="loggedIn">
           <div>Hello {currentUser.email}</div>
           <button onClick={this.props.logout}>Log out</button>
         </div>
@@ -17,9 +17,9 @@ export default class Greeting extends React.Component {
     } else {
       return (
         <nav className="greeting-modal">
+          <div> Welcome to AirGoT</div>
+          <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
-          &nbsp;or&nbsp;
-      <button onClick={() => this.props.openModal('signup')}>Sign up</button>
         </nav>
       )
     }

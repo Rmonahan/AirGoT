@@ -30,6 +30,11 @@
   margin-bottom: 15px;
   height: 45px;
   border-radius: 5px;
+  text-indent: 10px;
+}
+
+.sessionForm .formFields input:focus {
+  border: 1px solid rgb(20, 133, 127);
 }
 
 .birthdateDiv {
@@ -75,10 +80,13 @@
   margin-left: 28.5px;
   margin-right: 28.5px;
   border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
   text-align: center;
   border: 1px solid rgb(235,235,235);
   background: rgb(252, 82, 96);
   color: white;
+  margin-bottom: 5px;
 }
 
 .loginFormButton {
@@ -86,6 +94,8 @@
   height: 45px;
   margin-right: 28.5px;
   border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
   text-align: center;
   border: 1px solid rgb(235,235,235);
   background: rgb(252, 82, 96);
@@ -102,13 +112,22 @@
 }
 
 .closeForm {
+  text-align: center;
   font-size: 42px;
   color: gray;
   font-weight: lighter;
   position: relative;
-  left: 30px;
-  top: 20px;
+  width: 40px;
+  left: 20px;
+  top: 15px;
 }
+
+.closeForm:active {
+  border-radius: 100%;
+  border:1px solid lightgray;
+  background: white;             
+}
+
 .birthday {
   font-weight: 500;
   margin-left: 28.5px;
@@ -197,27 +216,73 @@
 
 .monthArrow {
   position: fixed;
-  top: 135px;
+  top: 150px;
   right: 70px;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 100;
   pointer-events: none;
 }
 
 .dayArrow {
   position: fixed;
-  top: 135px;
+  top: 150px;
   left: 55px;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 100;
   pointer-events: none;
 }
 
 .yearArrow {
   position: fixed;
-  top: 135px;
+  top: 150px;
   left: 230px;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 100;
   pointer-events: none;
+}
+
+.emailIcon {
+  position: fixed;
+  top: -162px;
+  left: 230px;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: default;
+}
+
+.personIconFirstName {
+  position: fixed;
+  top: -100px;
+  left: 230px;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: default;
+  color: white;
+}
+
+.personIconLastName {
+  position: fixed;
+  top: -40px;
+  left: 230px;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: default;
+}
+
+.eyeIcon {
+  position: fixed;
+  top: 22px;
+  left: 230px;
+  font-size: 15px;
+  font-weight: 100;
+  cursor: default;
+}
+
+.lockIcon {
+  position: fixed;
+  top: -100px;
+  left: 235px;
+  font-size: 15px;
+  font-weight: 100;
+  cursor: default;
 }

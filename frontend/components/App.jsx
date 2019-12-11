@@ -4,15 +4,14 @@ import {Route, Link} from "react-router-dom";
 import Modal from "./modal";
 
 const App = () => (
-  <div>
+  <div className="splash">
     <Modal />
     <header>
       <Link to="/" className="header-link">
-        <h1>AirGoT</h1>
       </Link> 
       <GreetingContainer />
     </header>
-
+    <img id="background" src={window.backgroundImage} />
 
   </div>
 );

@@ -1,0 +1,43 @@
+.greeting-modal {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  background: transparent;
+}
+
+.greeting-modal button {
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold; 
+  color: white;
+}
+
+.greeting-modal div {
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold; 
+  color: white;
+  text-align: center;
+}
+
+
+.loggedIn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  background: transparent;
+}
+
+.loggedIn div {
+   color: white;
+   font-weight: bold; 
+   margin: 10px;
+}
+
+.loggedIn button {
+  color: white;
+  font-weight: bold; 
+  margin: 10px;
+}
