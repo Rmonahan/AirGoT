@@ -177,12 +177,11 @@ export default class SessionForm extends React.Component {
             </div>
               <ul className="birthdayErrors">{birthdayErrors}</ul>
             <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
-            <p>Airbnb will send you members-only deals, inspiration, promotions and policy updates via email. 
-              You can opt out of receiving these at any time in your <br></br> account settings or directly from the marketing 
-            notification.</p> 
+            <p>AirGoT takes no responsibility for lost swords, armor or gold stolen during stays. Westoros can be a very dangerous place if you don't have the right friends. 
+              Proceed with caution and try to stay within your alliance boundaries. 
             <label className="check">
             <input type="checkbox" />
-               I don’t want to receive marketing messages from Airbnb.
+               I accept all responsibility for any danger I may find myself in while staying in AirGoT places.
             </label>
             
             <span className="otherForm"> Already have an AirGoT account? {this.props.otherForm} </span>
