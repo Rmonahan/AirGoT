@@ -27,16 +27,35 @@ export default class SessionForm extends React.Component {
   }
 
   render() {
+    const birthdayErrors = [];
+    const emailErrors = [];
+    const firstNameErrors = [];
+    const lastNameErrors = [];
+    const passwordErrors = [];
 
-    const errorLis = this.props.errors.map((error, index) => {
-      return <li key={index} > {error} </li>
-    });
+    this.props.errors.forEach((error, index) => {
+      if (error.includes("First")){
+        firstNameErrors.push(<li key={index} > {error} </li>);
+      } 
+      else if (error.includes("Last")){
+        lastNameErrors.push(<li key={index} > {error} </li>);
+      }
+      else if (error.includes("Email")){
+        emailErrors.push(<li key={index} > {error} </li>);
+      }
+      else if (error.includes("Password") || error.includes("password")){
+        passwordErrors.push(<li key={index} > {error} </li>);
+      } 
+      else {
+        birthdayErrors.push(<li key={index} > {error} </li>);
+      }
+    }
+    );
 
     if (this.props.formType === "Log in") {
     return (
       <div className="sessionFormDiv">
         <button className="closeForm" onClick={this.props.closeModal}>×</button>
-        <ul>{errorLis}</ul>
         <form className="sessionForm">
           <div className="formFields">
           <label>
@@ -44,9 +63,11 @@ export default class SessionForm extends React.Component {
           </label>
           <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
           <label>
+          <ul>{emailErrors}</ul>
           <input onChange={this.handleInput("password")} type="password" placeholder="Password" value={this.state.password} />
           </label>
             <div className="lockIcon">	<i className="fas fa-lock"></i> </div>
+          <ul>{passwordErrors}</ul>
           </div>
           <label className="check">
             <input type="checkbox" />
@@ -77,7 +98,6 @@ export default class SessionForm extends React.Component {
       return (
         <div className="sessionFormDiv">
           <button className="closeForm" onClick={this.props.closeModal}>×</button>
-          <ul>{errorLis}</ul>
           <form className="sessionForm">
             <div className="formFields">
             <label> 

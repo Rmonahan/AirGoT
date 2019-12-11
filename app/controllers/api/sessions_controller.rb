@@ -5,7 +5,19 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["invalid username password combo"], status:401
+      errors = []
+      if user_params[:email] == ""
+        errors << ["Email is required."]
+      end
+      if user_params[:password].length < 8
+        errors << ["Your password must be at least 8 characters. Please try again."]
+      end
+
+      if errors.length == 0
+        errors << ["There isn't an account associated with those credentials. Please try again"]
+      end
+      
+      render json: errors, status:401
     end
   end
 
