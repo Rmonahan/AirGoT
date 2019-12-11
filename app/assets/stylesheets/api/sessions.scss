@@ -48,7 +48,7 @@
 
 .birthdateDiv > select {
   font-size: 16px;
-  // color: rgb(72,72,72);
+  color: rgb(72,72,72);
   font-weight: lighter;
   background: rgb(255,255,255);
   -moz-appearance:none;
@@ -57,9 +57,6 @@
   text-indent: 10px;
 }
 
-.NoErrorSelectState > select {
-  outline-color: rgb(72,72,72);
-}
 
 
 .birthdateDiv > select:focus {
@@ -113,6 +110,10 @@
   border: 1px solid rgb(235,235,235);
   background: rgb(252, 82, 96);
   color: white;
+}
+
+.loginFormButton:active {
+
 }
 
 .sessionForm > p {
@@ -337,13 +338,21 @@
 }
 
 .NoErrorState input {
-border: 1px solid rgb(235,235,235);
+ border: 1px solid rgb(235,235,235);
+}
+
+.NoErrorSelectState > select {
+   border: 1px solid rgb(235,235,235);
 }
 
 .RedErrorSelectClass select{
-  outline-color: red;
+  border: 1px solid red;
 }
 
 .formFields {
   margin-bottom: 15px;
+}
+
+#checkText {
+  margin: 28.5px;
 }

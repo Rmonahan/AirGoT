@@ -96,7 +96,7 @@ export default class SessionForm extends React.Component {
              Remember me
 
           <button className="showPassword">Show password</button>
-          <button className="loginFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
+          <button type="submit" className="loginFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
             <button className="forgotPassword">Forgot password?</button>
           </label>
         
@@ -176,12 +176,12 @@ export default class SessionForm extends React.Component {
               <div className="yearArrow">⌵</div>
             </div>
               <ul className="birthdayErrors">{birthdayErrors}</ul>
-            <button className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
+            <button type="submit" className="signupFormButton" onClick={this.handleSubmit} >{this.props.formType}</button>
             <p>AirGoT takes no responsibility for lost swords, armor or gold stolen during stays. Westoros can be a very dangerous place if you don't have the right friends. 
-              Proceed with caution and try to stay within your alliance boundaries. 
+              Proceed with caution and try to stay within your alliance boundaries.</p>
             <label className="check">
             <input type="checkbox" />
-               I accept all responsibility for any danger I may find myself in while staying in AirGoT places.
+               I accept all responsibility for any danger I may find myself in while staying in <span id="checkText"> AirGoT locations. </span>
             </label>
             
             <span className="otherForm"> Already have an AirGoT account? {this.props.otherForm} </span>
