@@ -123,7 +123,6 @@ export default class SessionForm extends React.Component {
           <label className="check">
             <input type="checkbox" />
              Remember me
-
           <button className="showPassword" onClick={this.handlePasswordText}>{this.state.passwordButtonText}</button>
           <button type="submit" className="loginFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
             <button className="forgotPassword">Forgot password?</button>
