@@ -5,7 +5,7 @@ import { receiveSessionErrors } from "../actions/session";
 import React from 'react';
 
 const msp = (state, ownProps) => ({
-  errors: state.errors.session,
+  errors: state.errors.session || [],
   formType: 'Sign up',
 });
 

@@ -5,7 +5,7 @@ import {openModal, closeModal} from "../actions/modal_actions";
 import {receiveSessionErrors} from "../actions/session";
 
 const msp = (state, ownProps) => ({
-  errors: state.errors.session,
+  errors: state.errors.session || [],
   formType: 'Log in',
 });
 
