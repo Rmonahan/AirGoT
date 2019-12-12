@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import NavDropdown  from "./nav_dropdown";
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -10,18 +11,22 @@ export default class Greeting extends React.Component {
     const { currentUser } = this.props;
     if (currentUser) {
       return (
-        <div className="loggedIn">
-          <div>Hello {currentUser.email}</div>
-          <button onClick={this.props.logout}>Log out</button>
-        </div>
+        <nav className="loggedIn">
+          <div className="welcome">
+            <Link to="/">
+              <img id="logoImage" src={window.logoImage} />
+            </Link>
+          </div>
+          <NavDropdown logout={this.props.logout}/>
+        </nav>
       )
     } else {
       return (
         <nav className="greeting-modal">
           <div className="welcome"> 
-           <button onClick={() => <Link to="/" />}>
+            <Link to="/">
               <img id="logoImage" src={window.logoImage} />
-            </button>
+            </Link>
           </div>
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
