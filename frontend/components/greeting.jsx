@@ -17,7 +17,7 @@ export default class Greeting extends React.Component {
     } else {
       return (
         <nav className="greeting-modal">
-          <div> Welcome to AirGoT</div>
+          <div className="welcome"> Welcome to AirGoT</div>
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
         </nav>

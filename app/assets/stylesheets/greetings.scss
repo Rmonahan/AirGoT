@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: flex-end;
   background: transparent;
 }
 
@@ -18,7 +17,8 @@
   margin: 10px;
   font-weight: bold; 
   color: white;
-  text-align: center;
+  text-align: left;
+  margin-right: auto;
 }
 
 
@@ -41,3 +41,4 @@
   font-weight: bold; 
   margin: 10px;
 }
+
