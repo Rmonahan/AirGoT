@@ -99,6 +99,18 @@
   margin-bottom: 5px;
 }
 
+.signupFormButton:active {
+  transition: .3s;
+  box-shadow: 0 0 1px 1px rgb(113,113,113);
+  border: 5px solid white;
+  border-radius: 10px;
+  background:rgb(221, 62, 75);
+  margin-left: 23.5px;
+  margin-top: -5px;
+  margin-bottom: 2.8px;
+  // margin-right: -5px;
+}
+
 .loginFormButton {
   width: 100%;
   height: 45px;
@@ -113,8 +125,17 @@
 }
 
 .loginFormButton:active {
-
+  transition: .3s;
+  box-shadow: 0 0 1px 1px rgb(113,113,113);
+  border: 5px solid white;
+  border-radius: 10px;
+  background:rgb(221, 62, 75);
+  margin-left: -5px;
+  margin-top: -4px;
+  margin-bottom: -3.5px;
+  margin-right: -5px;
 }
+
 
 .sessionForm > p {
   font-size: 14px;
@@ -355,4 +376,26 @@
 
 #checkText {
   margin: 28.5px;
+}
+
+.otherErrors {
+  position: relative;
+  top: 30px;
+}
+
+
+.demoUser {
+  width: 40%;
+  height: 25px;
+  position: absolute;
+  top: 20px;
+  margin-right: 28.5px;
+  margin-left: 180px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid rgb(235,235,235);
+  background: rgb(71, 106, 176);
+  color: white;
 }

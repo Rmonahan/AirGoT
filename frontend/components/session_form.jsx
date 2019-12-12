@@ -10,9 +10,16 @@ export default class SessionForm extends React.Component {
       lastName: "",
       month: "",
       day:"",
-      year:""
+      year:"",
+      passwordButtonText: "Show Password",
+      passwordFormType: "password",
+      signupPasswordIcon: <i className="far fa-eye-slash"></i>,
+      signupPasswordFormType: "password"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePasswordText = this.handlePasswordText.bind(this);
+    this.handleSignupPassword = this.handleSignupPassword.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,6 +31,27 @@ export default class SessionForm extends React.Component {
 
   handleInput(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handlePasswordText(e){
+    if (this.state.passwordFormType === "password") {
+      this.setState({ passwordButtonText: "Hide Password", passwordFormType: "text" });
+    } else { 
+      this.setState({ passwordButtonText: "Show Password", passwordFormType: "password" });
+    }
+  }
+
+  handleSignupPassword(e) {
+    if (this.state.signupPasswordFormType === "password") {
+      this.setState({ signupPasswordIcon: <i className="far fa-eye"></i>, signupPasswordFormType: "text" });
+    } else {
+      this.setState({ signupPasswordIcon: <i className="far fa-eye-slash"></i>, signupPasswordFormType: "password" });
+    }
+  }
+
+  loginDemoUser(e) {
+    const user = { user: { email: "NedStark@starks.com", password: "gameofthrones" }};
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   render() {
@@ -45,23 +73,23 @@ export default class SessionForm extends React.Component {
     this.props.errors.forEach((error, index) => {
       if (error.includes("First")){
         firstNameErrors.push(<li key={index} > {error} </li>);
-        firstNameErrorClass = "RedErrorClass"
+        firstNameErrorClass = "RedErrorClass";
       } 
       else if (error.includes("Last")){
         lastNameErrors.push(<li key={index} > {error} </li>);
-        lastNameErrorClass = "RedErrorClass"
+        lastNameErrorClass = "RedErrorClass";
       }
       else if (error.includes("Email")){
         emailErrors.push(<li key={index} > {error} </li>);
-        emailErrorClass = "RedErrorClass"
+        emailErrorClass = "RedErrorClass";
       }
       else if (error.includes("Password") || error.includes("password")){
         passwordErrors.push(<li key={index} > {error} </li>);
-        passwordErrorClass = "RedErrorClass"
+        passwordErrorClass = "RedErrorClass";
       } 
       else if (error.includes("birth date") || error.includes("18")) {
         birthdayErrors.push(<li key={index} > {error} </li>);
-        birthdayErrorClass = "birthdateDiv RedErrorSelectClass"
+        birthdayErrorClass = "birthdateDiv RedErrorSelectClass";
       }
       else {
         otherErrors.push(<li key={index} > {error} </li>);
@@ -77,7 +105,8 @@ export default class SessionForm extends React.Component {
         <div className="closeForm">
           <button onClick={this.props.closeModal}>×</button>
         </div>
-        <ul className="errors">{otherErrors}</ul>
+        <button className="demoUser" onClick={this.loginDemoUser}>Sign in as demo user!</button>
+        <ul className="errors otherErrors">{otherErrors}</ul>
         <form className="sessionForm">
           <div className="formFields">
             <label className={emailErrorClass}>
@@ -86,7 +115,7 @@ export default class SessionForm extends React.Component {
           <div className="emailIcon">	<i className="far fa-envelope"></i> </div>
           <label className={passwordErrorClass}>
           <ul className="errors">{emailErrors}</ul>
-          <input onChange={this.handleInput("password")} type="password" placeholder="Password" value={this.state.password} />
+          <input onChange={this.handleInput("password")} type={this.state.passwordFormType} placeholder="Password" value={this.state.password} />
           </label>
             <div className="lockIcon">	<i className="fas fa-lock"></i> </div>
           <ul className="errors">{passwordErrors}</ul>
@@ -95,7 +124,7 @@ export default class SessionForm extends React.Component {
             <input type="checkbox" />
              Remember me
 
-          <button className="showPassword">Show password</button>
+          <button className="showPassword" onClick={this.handlePasswordText}>{this.state.passwordButtonText}</button>
           <button type="submit" className="loginFormButton" onClick={this.handleSubmit}>{this.props.formType}</button>
             <button className="forgotPassword">Forgot password?</button>
           </label>
@@ -121,7 +150,7 @@ export default class SessionForm extends React.Component {
           <div className="closeForm">
           <button onClick={this.props.closeModal}>×</button>
           </div>
-          <ul className="errors">{otherErrors}</ul>
+          <ul className="errors otherErrors">{otherErrors}</ul>
           <form className="sessionForm">
             <div className="formFields">
             <label className={emailErrorClass}> 
@@ -140,9 +169,9 @@ export default class SessionForm extends React.Component {
               <div className="personIconLastName">	<i className="far fa-user"></i> </div>
               <ul className="errors">{lastNameErrors}</ul>
             <label className={passwordErrorClass}>
-               <input onChange={this.handleInput("password")} type="password" placeholder="Create a Password" value={this.state.password} />
+               <input onChange={this.handleInput("password")} type={this.state.signupPasswordFormType} placeholder="Create a Password" value={this.state.password} />
             </label>
-              <div className="eyeIcon">	<i className="far fa-eye-slash"></i> </div>
+              <div onClick={this.handleSignupPassword} className="eyeIcon">	{this.state.signupPasswordIcon} </div>
               <ul className="errors">{passwordErrors}</ul>
             </div>
             <label className="birthday"> Birthday </label>
