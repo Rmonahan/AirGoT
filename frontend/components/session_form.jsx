@@ -50,7 +50,9 @@ export default class SessionForm extends React.Component {
   }
 
   loginDemoUser(e) {
-    const user = { user: { email: "NedStark@starks.com", password: "gameofthrones" }};
+    let num = Math.floor(Math.random() * 4)
+    let randomDemoUser = [{ user: { email: "NedStark@starks.com", password: "gameofthrones" } }, { user: { email: "JonSnow@starks.com", password: "gameofthrones" } }, { user: { email: "JamieLannister@lannisters.com", password: "gameofthrones" } }, { user: { email: "SansaStark@starks.com", password: "gameofthrones" } }]
+    const user = randomDemoUser[num];
     this.props.processForm(user).then(this.props.closeModal);
   }
 

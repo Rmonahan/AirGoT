@@ -17,7 +17,7 @@ export default class Greeting extends React.Component {
               <img id="logoImage" src={window.logoImage} />
             </Link>
           </div>
-          <NavDropdown logout={this.props.logout}/>
+          <NavDropdown logout={this.props.logout} currentUser = {currentUser}/>
         </nav>
       )
     } else {

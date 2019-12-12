@@ -77,23 +77,35 @@
   margin-top: 20px;
   flex-direction: column;
   background: white;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 5px;
+  // padding-left: 12px;
+  // padding-right: 12px;
+  // padding-top: 5px;
 }
 
 .navbarDiv ul div {
   height: 35px;
-  border-bottom: 1px solid rgb(242,242,242);
+  // border-bottom: 1px solid rgb(242,242,242);
   color: rgb(118,118,118);
   font-size: 14px;
   font-weight: 500;
-  margin-top: 5px;
+  // margin-top: 3px;
   padding-top: 8px;
+  background: white;
   cursor: pointer;
+  text-indent: 10px;
 }
 
-.navbarDiv ul div:hover {
+.navbarDiv ul span:hover {
   border-color: rgb(118,118,118);
+}
+
+.navbarDiv ul div:active {
+  background: rgb(168, 168, 168);
+}
+
+#borderbot{
+  width: 90%;
+  border-bottom: 1px solid rgb(242,242,242);
+  margin-left: 10px;
 }
 
