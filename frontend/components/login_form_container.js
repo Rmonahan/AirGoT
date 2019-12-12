@@ -2,10 +2,10 @@ import { connect } from "react-redux";
 import SessionForm from "./session_form";
 import React from "react";
 import {openModal, closeModal} from "../actions/modal_actions";
-import {receiveSessionErrors} from "../actions/session";
+import {receiveSessionErrors, login} from "../actions/session";
 
 const msp = (state, ownProps) => ({
-  errors: state.errors.session || [],
+  errors: Object.values(state.errors.session),
   formType: 'Log in',
 });
 

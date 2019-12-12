@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import SessionForm from "./session_form";
 import { openModal, closeModal } from "../actions/modal_actions";
-import { receiveSessionErrors } from "../actions/session";
+import { receiveSessionErrors, signup } from "../actions/session";
 import React from 'react';
 
 const msp = (state, ownProps) => ({
-  errors: state.errors.session || [],
+  errors: Object.values(state.errors.session),
   formType: 'Sign up',
 });
 
@@ -16,7 +16,7 @@ const mdp = (dispatch) => ({
       Log in
     </button>
   ),
-  closeModal: () => { dispatch(closeModal()); dispatch(receiveSessionErrors([])) }
+  closeModal: () => { dispatch(closeModal()); dispatch(receiveSessionErrors([])); }
 });
 
 export default connect(msp, mdp)(SessionForm);
