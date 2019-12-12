@@ -5,7 +5,7 @@ import { receiveSessionErrors, signup } from "../actions/session";
 import React from 'react';
 
 const msp = (state, ownProps) => ({
-  errors: Object.values(state.errors.session),
+  errors: Array.isArray(state.errors.session) ? state.errors.session : [],
   formType: 'Sign up',
 });
 
