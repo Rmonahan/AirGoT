@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
-  validate :old_enough?
+  validate :old_enough?, :valid_email?
   
 
   attr_reader :password
@@ -49,6 +49,15 @@ class User < ApplicationRecord
     age = now.year - self.birth_date.year - ((now.month > self.birth_date.month || (now.month == self.birth_date.month && now.day >= self.birth_date.day)) ? 0 : 1)
     if age < 18
        self.errors[:base] << "Sorry you must be over 18 to signup."
+    end
+  end
+
+  def valid_email?
+    if self.email != ""
+      email_split = self.email.split("@")
+        if email_split.length != 2 || email_split[1].split(".").length != 2
+           self.errors[:base] << "Enter a valid email."
+        end
     end
   end
 end

@@ -8,6 +8,11 @@ class Api::SessionsController < ApplicationController
       errors = []
       if user_params[:email] == ""
         errors << "Email is required."
+      elsif
+        email_split = user_params[:email].split("@")
+          if email_split.length != 2 || email_split[1].split(".").length != 2
+            errors << "Enter a valid email."
+          end
       end
       if user_params[:password] == ""
         errors << "Password is required."

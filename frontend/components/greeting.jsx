@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -17,7 +18,11 @@ export default class Greeting extends React.Component {
     } else {
       return (
         <nav className="greeting-modal">
-          <div className="welcome"> Welcome to AirGoT</div>
+          <div className="welcome"> 
+           <button onClick={() => <Link to="/" />}>
+              <img id="logoImage" src={window.logoImage} />
+            </button>
+          </div>
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
         </nav>

@@ -79,7 +79,7 @@ export default class SessionForm extends React.Component {
         lastNameErrors.push(<li key={index} > {error} </li>);
         lastNameErrorClass = "RedErrorClass";
       }
-      else if (error.includes("Email")){
+      else if (error.includes("Email") || error.includes("email")){
         emailErrors.push(<li key={index} > {error} </li>);
         emailErrorClass = "RedErrorClass";
       }
