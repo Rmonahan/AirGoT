@@ -396,3 +396,14 @@
   background: rgb(55, 106, 175);
   color: white;
 }
+
+.demoUser:active {
+  transition: .3s;
+  box-shadow: 0 0 1px 1px rgb(113,113,113);
+  border: 5px solid white;
+  border-radius: 10px;
+  background:rgb(8, 77, 173);
+  margin-top: -4px;
+  margin-bottom: -3.5px;
+  margin-left: 24.5px;
+}
