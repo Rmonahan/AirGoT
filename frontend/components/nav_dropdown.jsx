@@ -1,5 +1,4 @@
 import React from "react";
-import { endianness } from "os";
 
 export default class NavDropdown extends React.Component {
   constructor (props) {
@@ -43,12 +42,6 @@ export default class NavDropdown extends React.Component {
        <img src={currentUser.profilePhotoUrl} />
             {this.state.open && (
               <ul>
-                <li>Profile
-                <div id="borderbot" />
-                </li>
-                <li> Invite Friends
-                <div id="borderbot" />
-                </li>
                 <li onClick={this.props.logout}>Log Out
                 <div id="borderbot" />
                 </li>

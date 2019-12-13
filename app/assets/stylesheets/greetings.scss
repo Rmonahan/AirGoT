@@ -118,7 +118,45 @@
   border-bottom: 1px solid rgb(242,242,242);
 }
 
-// #borderbot:hover{
-//     border-bottom: 1px solid rgb(168, 168, 168);
-// }
+.loggedinPortfolio {
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  top: 17px;
+  left: -40px;
+}
+
+.loggedinPortfolio:hover {
+  border-bottom: 2px solid white;
+  padding-bottom: 30px;
+  margin-bottom: -22px;
+}
+
+
+.loggedinPortfolioLi {
+  left: -265px !important;
+  top: 25px !important;
+}
+
+.loggedoutPortfolio {
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  top: 16px;
+  left: -20px;
+}
+
+.loggedoutPortfolio:hover {
+  border-bottom: 2px solid white;
+  padding-bottom: 30px;
+  margin-bottom: -22px;
+}
+
+
+.loggedoutPortfolioLi {
+  left: -245px !important;
+  top: 25px !important;
+}
 
