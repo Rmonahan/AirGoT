@@ -11,7 +11,6 @@
 #  zipcode             :integer          not null
 #  title               :string           not null
 #  description         :string           not null
-#  allegience          :string           not null
 #  danger_rating       :float            not null
 #  house_type          :string           not null
 #  max_occupants       :integer          not null
@@ -22,6 +21,7 @@
 #  square_foot         :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  allegiance          :string           not null
 #
 
 require 'test_helper'

@@ -9,7 +9,7 @@ class CreateSpots < ActiveRecord::Migration[5.2]
       t.integer :zipcode, null: false
       t.string :title, null: false
       t.string :description, null: false
-      t.string :allegience, null: false
+      t.string :allegiance, null: false
       t.float :danger_rating, null: false
       t.string :house_type, null:false
       t.integer :max_occupants, null:false
