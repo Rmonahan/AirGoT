@@ -29,7 +29,7 @@
 
 .welcome {
   display: inline-block;
-  margin: 12px; 
+  margin: 15px; 
   margin-left: 15px;
   color: white;
   text-align: left;
@@ -68,6 +68,11 @@
   cursor: pointer;
 }
 
+.navbarDiv img{
+  height: 50px;
+  width: 50px;
+}
+
 .navbarDiv ul{
   display: flex;
   position: relative;
@@ -82,30 +87,36 @@
   // padding-top: 5px;
 }
 
-.navbarDiv ul div {
+.navbarDiv ul li {
   height: 35px;
-  // border-bottom: 1px solid rgb(242,242,242);
   color: rgb(118,118,118);
   font-size: 14px;
   font-weight: 500;
   // margin-top: 3px;
-  padding-top: 8px;
+  padding-top: 14px;
   background: white;
   cursor: pointer;
   text-indent: 10px;
 }
 
-.navbarDiv ul span:hover {
-  border-color: rgb(118,118,118);
+.navbarDiv ul li:hover {
+  #borderbot{
+    border-bottom: 1px solid rgb(168, 168, 168);
+  }
 }
 
-.navbarDiv ul div:active {
+.navbarDiv ul li:active {
   background: rgb(168, 168, 168);
 }
 
 #borderbot{
+  margin-top: 15px;
+  margin-left: 10px;
   width: 90%;
   border-bottom: 1px solid rgb(242,242,242);
-  margin-left: 10px;
 }
+
+// #borderbot:hover{
+//     border-bottom: 1px solid rgb(168, 168, 168);
+// }
 

@@ -37,12 +37,15 @@ export default class NavDropdown extends React.Component {
        <img src={image} />
             {this.state.open && (
               <ul>
-                <div>Profile</div>
-                <span id="borderbot" />
-                <div>Invite Friends</div>
-                <span id="borderbot" />
-                <div onClick={this.props.logout}>Log Out</div>
-                <span id="borderbot" />
+                <li>Profile
+                <div id="borderbot" />
+                </li>
+                <li> Invite Friends
+                <div id="borderbot" />
+                </li>
+                <li onClick={this.props.logout}>Log Out
+                <div id="borderbot" />
+                </li>
               </ul>
             )} 
       </div>
