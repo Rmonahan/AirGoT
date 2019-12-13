@@ -22,6 +22,7 @@ file2 = File.open('app/assets/images/ned-stark.jpg')
 file3 = File.open('app/assets/images/jamie-lannister.jpg')
 file4 = File.open('app/assets/images/sansa-stark.jpg')
 
+
 user1.profile_photo.attach(io:file1, filename: 'jon-snow.jpg')
 user2.profile_photo.attach(io:file2, filename: 'ned-stark.jpg')
 user3.profile_photo.attach(io:file3, filename: 'jamie-lannister.jpg')
