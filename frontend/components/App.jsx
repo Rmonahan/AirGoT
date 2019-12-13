@@ -11,7 +11,6 @@ const App = () => (
       <GreetingContainer />
     </header>
     <img id="background" src={window.backgroundImage} />
-
   </div>
 );
 
