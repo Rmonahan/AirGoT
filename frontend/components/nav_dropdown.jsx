@@ -9,10 +9,17 @@ export default class NavDropdown extends React.Component {
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.toggleDropdownBlur = this.toggleDropdownBlur.bind(this);
   }
 
   toggleDropdown(){
     this.setState({open: !this.state.open });
+  }
+
+  toggleDropdownBlur() {
+   if (this.state.open === true) {
+    this.setState({ open: !this.state.open });
+   }
   }
 
 
@@ -33,7 +40,7 @@ export default class NavDropdown extends React.Component {
     }
 
     return (
-      <div className="navbarDiv" onBlur={this.toggleDropdown} onClick={this.toggleDropdown} tabIndex="0">
+      <div className="navbarDiv" onBlur={this.toggleDropdownBlur} onClick={this.toggleDropdown} tabIndex="0">
        <img src={image} />
             {this.state.open && (
               <ul>
