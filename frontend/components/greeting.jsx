@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import NavDropdown  from "./nav_dropdown";
 import PortfolioDropdown from "./portfolio_dropdown";
+import SearchBar from "./search_bar";
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Greeting extends React.Component {
             <Link to="/">
               <img id="logoImage" src={window.logoImage} />
             </Link>
+            <SearchBar />
           </div>
           <PortfolioDropdown navType="loggedinPortfolio"/>
           <NavDropdown logout={this.props.logout} currentUser = {currentUser}/>
@@ -29,6 +31,7 @@ export default class Greeting extends React.Component {
             <Link to="/">
               <img id="logoImage" src={window.logoImage} />
             </Link>
+            <SearchBar />
           </div>
           <PortfolioDropdown navType="loggedoutPortfolio"/>
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
