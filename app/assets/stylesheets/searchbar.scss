@@ -1,0 +1,23 @@
+
+.searchBar input{
+  font-size: 15px;
+  width: 450px;
+  margin-left: 28.5px;
+  height: 45px;
+  margin-top: -50px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-indent: 40px;
+  border: 1px solid lightgray;
+  background: white;
+}
+
+
+.searchIcon {
+  position: relative;
+  top: -100px;
+  left: 512px;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: default;
+}

@@ -29,6 +29,6 @@ class Spot < ApplicationRecord
  :allegiance, :danger_rating, :house_type, :max_occupants, :price, :number_of_bedrooms,
  :number_of_beds, :number_of_bathrooms, :square_foot, presence: true
 
- has_many_attached :photos
+  has_many_attached :photos
 
 end

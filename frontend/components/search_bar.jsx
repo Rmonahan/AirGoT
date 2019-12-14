@@ -7,8 +7,8 @@ export default class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="SearchBar">
-        <i className="fas fa-search"></i>
+      <div className="searchBar">
+        <div className="searchIcon"><i className="fas fa-search"></i></div>
         <input type="text" placeholder='Try "Winterfell"' />
       </div>
     );

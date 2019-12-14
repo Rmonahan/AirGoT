@@ -8,7 +8,7 @@ User.create!([{first_name: "Jon", last_name: "Snow", email: "JonSnow@starks.com"
              {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12)},
              {first_name: "Sansa", last_name: "Stark", email: "SansaStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26)}])
 
-user1 = User.first;
+user1 = User.all[0];
 user2 = User.all[1];
 user3 = User.all[2];
 user4 = User.all[3];
@@ -19,10 +19,10 @@ file3 = open('https://s3.amazonaws.com/airgot-dev/images/jamie-lannister.jpg')
 file4 = open('https://s3.amazonaws.com/airgot-dev/images/sansa-stark.jpg')
 
 
-user1.profile_photo.attach(io: file1, filename: 'jon-snow.jpg')
-user2.profile_photo.attach(io: file2, filename: 'ned-stark.jpg')
-user3.profile_photo.attach(io: file3, filename: 'jamie-lannister.jpg')
-user4.profile_photo.attach(io: file4, filename: 'sansa-stark.jpg')
+user1.profile_photo.attach(io:file1, filename: 'jon-snow.jpg')
+user2.profile_photo.attach(io:file2, filename: 'ned-stark.jpg')
+user3.profile_photo.attach(io:file3, filename: 'jamie-lannister.jpg')
+user4.profile_photo.attach(io:file4, filename: 'sansa-stark.jpg')
 
 
 
