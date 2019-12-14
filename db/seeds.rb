@@ -38,3 +38,20 @@ Spot.create!([{lat: 40.7829, lng: -73.9654, address: "123 Kingsroad",city: "Wint
               # {lat: 40.755603,lng: -73.984931, address: "10 Godsway",city: "Vaes Dothrak", state: "Essos", zipcode: 10001, title: "Great location right in the heart of Dothraki territory.", description: "This home was stood the test of time. The Dothraki often venture here and even Sir Jorah Mormont has stayed here. We take a lot of pride in this location.", allegiance: "Dothraki", danger_rating: 7, house_type: "colonial", max_occupants: 8, price: 224, number_of_bedrooms: 5, number_of_beds: 8, number_of_bathrooms: 2, square_foot: 5200},
               # {lat: 40.755603,lng: -73.984931, address: "10 Godsway",city: "Vaes Dothrak", state: "Essos", zipcode: 10001, title: "Great location right in the heart of Dothraki territory.", description: "This home was stood the test of time. The Dothraki often venture here and even Sir Jorah Mormont has stayed here. We take a lot of pride in this location.", allegiance: "Dothraki", danger_rating: 7, house_type: "colonial", max_occupants: 8, price: 224, number_of_bedrooms: 5, number_of_beds: 8, number_of_bathrooms: 2, square_foot: 5200},
               # {lat: 40.755603,lng: -73.984931, address: "10 Godsway",city: "Vaes Dothrak", state: "Essos", zipcode: 10001, title: "Great location right in the heart of Dothraki territory.", description: "This home was stood the test of time. The Dothraki often venture here and even Sir Jorah Mormont has stayed here. We take a lot of pride in this location.", allegiance: "Dothraki", danger_rating: 7, house_type: "colonial", max_occupants: 8, price: 224, number_of_bedrooms: 5, number_of_beds: 8, number_of_bathrooms: 2, square_foot: 5200},
+
+
+image1 = open('https://s3.amazonaws.com/airgot-dev/images/house2.jpg')
+image2 = open('https://s3.amazonaws.com/airgot-dev/images/house3.jpg')
+
+
+spot1 = Spot.all[0];
+spot2 = Spot.all[1];
+spot3 = Spot.all[2];
+spot4 = Spot.all[3];
+spot5 = Spot.all[4];
+
+spot1.photos.attach(io:image1, filename: 'house2.jpg')
+spot2.photos.attach(io:image1, filename: 'house2.jpg')
+spot3.photos.attach(io:image2, filename: 'house3.jpg')
+spot4.photos.attach(io:image2, filename: 'house3.jpg')
+spot5.photos.attach(io:image2, filename: 'house3.jpg')

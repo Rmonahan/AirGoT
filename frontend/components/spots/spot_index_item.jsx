@@ -9,6 +9,7 @@ export default class SpotsIndexItem extends React.Component {
 
   render() {
     const {spot} = this.props;
+    debugger;
     return (
       <li>
         {spot.title}
