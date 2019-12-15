@@ -1,0 +1,79 @@
+.spotIndexItem img {
+  width: 300px;
+  height: 200px;
+}
+
+.spotIndexUl > span{
+  font-size: 25px;
+  color: rgb(40,40,40);
+  font-weight: 500;
+  margin-left: 25px;
+}
+
+.spotIndexItem {
+  margin-left: 25px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid rgb(235,235,235);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.spotIndex {
+  margin-top: 30px;
+  border-top: 1px solid rgb(235,235,235);
+}
+
+.spotIndexUl {
+  width: 840px;
+  margin-top: 40px;
+}
+
+.indexSuperhost {
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-weight: 500;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+
+.indexTitle {
+  width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+
+.descriptionItems {
+  margin-left: 25px;
+}
+
+.indexRating {
+  position: relative;
+  top: -72px;
+  left: 470px;
+}
+
+.skull {
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.spotInfo {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.amenities {
+  margin-top: -14px;
+  font-size: 14px;
+}

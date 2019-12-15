@@ -23,7 +23,7 @@ export default class Greeting extends React.Component {
           <PortfolioDropdown navType="loggedinPortfolio"/>
           <NavDropdown logout={this.props.logout} currentUser = {currentUser}/>
         </nav>
-      )
+      );
     } else {
       return (
         <nav className="greeting-modal">
@@ -37,7 +37,7 @@ export default class Greeting extends React.Component {
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
           <button onClick={() => this.props.openModal('login')}>Log in</button>
         </nav>
-      )
+      );
     }
   }
 };

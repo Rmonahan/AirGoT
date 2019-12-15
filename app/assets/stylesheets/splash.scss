@@ -12,3 +12,12 @@
   width: 100%;
   z-index: -1;
 }
+
+#backgroundnonhomepage {
+  position: absolute;
+  top: -100px;
+  height: 3000px;
+  width: 100%;
+  z-index: -1;
+  background: lightgray;
+}

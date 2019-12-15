@@ -3,22 +3,29 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { DateRangePicker } from 'react-dates';
 import GuestsDropDown from "./guests_dropdown";
+import {withRouter} from "react-router-dom";
 
-export default class SearchForm extends React.Component {
+class SearchForm extends React.Component {
       constructor(props){
         super(props);
         this.state = { startDate: null,
                        endDate: null,
                        focusedInput: null
                       };
+        this.handleSubmit = this.handleSubmit.bind(this);
       }
+
+    handleSubmit(e){
+      e.preventDefault();
+      this.props.history.push("/spots");
+    }
 
   
   
   render() {
     return (
     <div className="searchFormDiv">
-      <form className="searchForm">
+      <form onSubmit={this.handleSubmit} className="searchForm">
         <h1>Book unique places to stay and things to do. </h1>
         <label>WHERE
         <input className="anywhere" type="text" placeholder="Anywhere"/>
@@ -47,3 +54,5 @@ export default class SearchForm extends React.Component {
     );
   }
 }
+
+export default withRouter(SearchForm);

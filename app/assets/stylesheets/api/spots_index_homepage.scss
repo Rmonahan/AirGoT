@@ -19,7 +19,7 @@
   margin-left: 80px;
   margin-right: 60px;
   position: relative;
-  top: 330px;
+  top: 270px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -28,7 +28,7 @@
    margin-left: 80px;
   margin-right: 60px;
   position: relative;
-  top: 300px;
+  top: 250px;
   font-size: 24px;
   font-weight: 600;
 }
@@ -65,11 +65,24 @@
 
 .rating {
   position: relative;
-  top: -65px;
+  top: -72px;
   left: 230px;
 }
 
 .skull {
   font-size: 12px;
   padding-right: 5px;
+}
+
+.indexPrice span {
+  font-weight: bold;
+  color: black;
+}
+
+.indexPrice {
+  position: relative;
+  top: 80px;
+  color: black;
+  left: 430px;
+
 }

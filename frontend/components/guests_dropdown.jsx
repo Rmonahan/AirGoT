@@ -4,11 +4,14 @@ export default class GuestsDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      guests: 0
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggleDropdownBlur = this.toggleDropdownBlur.bind(this);
+    this.increaseGuests = this.increaseGuests.bind(this);
+    this.decreaseGuests = this.decreaseGuests.bind(this);
   }
 
   toggleDropdown(e) {
@@ -20,6 +23,18 @@ export default class GuestsDropdown extends React.Component {
       this.setState({ open: !this.state.open });
     }
   }
+
+  increaseGuests(e){
+    debugger;
+    e.preventDefault();
+    this.setState({guests: this.state.guests + 1});
+  }
+
+  decreaseGuests(e) {
+    e.preventDefault();
+    this.setState({ guests: this.state.guests - 1 });
+  }
+
 
 
   render() {
@@ -34,9 +49,9 @@ export default class GuestsDropdown extends React.Component {
         {this.state.open && (
           <ul className="guestsUl" >
             <li> <h1>Adults</h1>
-                <button>-</button>
-                <p> 0+ </p>
-                <button>+</button>
+                <button onClick={this.decreaseGuests}>-</button>
+                <p> {this.state.guests}+ </p>
+                <button onClick={this.increaseGuests}>+</button>
             </li>
           </ul>
         )}

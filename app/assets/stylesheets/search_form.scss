@@ -4,7 +4,8 @@
   background-color: white;
   width: 442px;
   height: 475px;
-  margin-left: 80px;
+  margin-left: 90px;
+  margin-top: 40px;
 }
 
 .searchForm{
@@ -140,6 +141,8 @@
   position: relative;
   top: -3px;
   line-height: 5px;
+  pointer-events: none;
+  
 }
 
 .guestsUl li {
@@ -153,14 +156,11 @@
   margin-top: -17px;
 }
 
-
-
-
 .searchForm > button {
   width: 100px;
   height: 50px;
   margin-left: 280px;
-  margin-top: 5px;
+  // margin-top: 5px;
   margin-right: 28.5px;
   border-radius: 5px;
   font-weight: 500;
@@ -177,8 +177,8 @@
   border: 5px solid white;
   border-radius: 10px;
   background:rgb(221, 62, 75);
-  margin-left: 23.5px;
-  margin-top: -5px;
-  margin-bottom: 2.8px;
-  // margin-right: -5px;
+  margin-left: 276px;
+  margin-top: 1px;
+  // margin-bottom: 2.8px;
+  // margin-right: 40px;
 }
