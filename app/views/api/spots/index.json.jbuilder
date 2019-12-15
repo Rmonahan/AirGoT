@@ -9,6 +9,6 @@ json.array! @spots do |spot|
   json.numberOfBeds spot.number_of_beds
   json.numberOfBathrooms spot.number_of_bathrooms
   json.squareFoot spot.square_foot
-  json.image_url url_for(spot.photos[0])
+  json.mainImageUrl url_for(spot.photos[0])
 
 end

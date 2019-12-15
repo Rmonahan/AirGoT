@@ -1,3 +1,75 @@
 // Place all the styles related to the Api::Spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.spotIndexItemHomepage img{
+  height: 175px;
+  width: 262px;
+  border-radius: 5px;
+}
+
+.spotIndexItemHomepage {
+  height: 270px;
+  width: 275px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.spotIndexHomepage ul{
+  margin-left: 80px;
+  margin-right: 60px;
+  position: relative;
+  top: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.whereToStay {
+   margin-left: 80px;
+  margin-right: 60px;
+  position: relative;
+  top: 780px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.price span {
+  font-weight: bold;
+}
+
+
+.title {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.city {
+  font-size: 13px;
+  color: rgb(122,122,122);
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.superhost {
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+
+.rating {
+  position: relative;
+  top: -65px;
+  left: 230px;
+}
+
+.skull {
+  font-size: 12px;
+  padding-right: 5px;
+}

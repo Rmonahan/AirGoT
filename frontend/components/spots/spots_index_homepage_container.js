@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import SpotsIndex from './spots_index';
+import SpotsIndexHomepage from './spots_index_homepage';
 import { fetchSpots, fetchSpot } from "../../actions/spot_actions";
 
 
@@ -12,4 +12,4 @@ const mdp = (dispatch) => ({
   fetchSpot: (spotId) => dispatch(fetchSpot(spotId))
 });
 
-export default connect(msp, mdp)(SpotsIndex);
+export default connect(msp, mdp)(SpotsIndexHomepage);
