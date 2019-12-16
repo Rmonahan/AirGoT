@@ -23,11 +23,13 @@
 
 .spotIndex {
   border-top: 1px solid rgb(235,235,235);
+  display: flex;
+  width: 100%;
 }
 
 .spotIndexUl {
-  width: 840px;
-  margin-top: 40px;
+  width: 800px;
+  margin-top: 140px;
 }
 
 .indexSuperhost {
@@ -60,7 +62,7 @@
 .indexRating {
   position: relative;
   top: -72px;
-  left: 470px;
+  left: 440px;
 }
 
 .skull {
@@ -76,4 +78,24 @@
 .amenities {
   margin-top: -14px;
   font-size: 14px;
+}
+
+.mapIndexComponent {
+  position: fixed;
+  height: 100%;
+  width: auto;
+  left: 880px;
+  margin-top: 90px;
+}
+
+.indexPrice span {
+  font-weight: bold;
+  color: black;
+}
+
+.indexPrice {
+  position: relative;
+  top: 80px;
+  color: black;
+  left: 380px;
 }

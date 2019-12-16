@@ -74,9 +74,7 @@
   margin-top: 20px;
   flex-direction: column;
   background: white;
-  // padding-left: 12px;
-  // padding-right: 12px;
-  // padding-top: 5px;
+  border: 1px solid rgb(207, 207, 207);
 }
 
 .navbarDiv ul li {
@@ -149,4 +147,69 @@
   left: -245px !important;
   top: 25px !important;
 }
+
+.navnonHomepage {
+  position: fixed;
+  background: white;
+  border-bottom: 1px solid rgb(207, 207, 207);
+  z-index: 5;
+}
+
+.navnonHomepage >  button {
+  color: rgb(90,90,90) !important;
+}
+
+.navnonHomepage > button:hover {
+  border-bottom: 2px solid rgb(90,90,90);
+}
+
+
+.nonHomepagePorfolio > div > span{
+ color: black !important;
+}
+
+.loggedinPortfolioNonHomepage {
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  top: 17px;
+  left: -40px;
+}
+
+.loggedinPortfolioNonHomepage:hover {
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: -22px;
+}
+
+.loggedoutPortfolioNonHomepage {
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  top: 15px;
+  left: -10px
+}
+
+.loggedoutPortfolioNonHomepage:hover {
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: -22px;
+}
+
+.loggedoutPortfolioNonHomepageLi {
+  border: 1px solid rgb(207, 207, 207);
+  position: relative;
+  left: -245px;
+  top: 25px
+}
+
+.loggedinPortfolioNonHomepageLi {
+  border: 1px solid rgb(207, 207, 207);
+  position: relative;
+  left: -245px;
+  top: 25px
+}
+
+
+
 
