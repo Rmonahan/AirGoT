@@ -13,7 +13,6 @@ export default class SpotsIndexHomepage extends React.Component {
 
 
   render() {
-
     const spotLis = this.props.spots.map((spot, i) => <SpotIndexItemHomepage key={i} fetchSpot = {this.props.fetchSpot} spot={spot}/>)
     return ( 
       <div className="spotIndexHomepage">
