@@ -10,5 +10,8 @@ json.array! @spots do |spot|
   json.numberOfBathrooms spot.number_of_bathrooms
   json.squareFoot spot.square_foot
   json.mainImageUrl url_for(spot.photos[0])
+  json.hostImageUrl url_for(spot.host.profile_photo)
+  json.hostName spot.host.first_name
+  json.photoUrls spot.photos.map {|photo| url_for(photo)}
 
 end

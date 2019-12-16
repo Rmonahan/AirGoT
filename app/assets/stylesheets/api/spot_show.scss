@@ -1,0 +1,181 @@
+.image1 {
+  min-width: 935px;
+  min-height: 700px;
+}
+
+.image2 {
+  width: 300px;
+  height: 300px
+}
+.image3 {
+  width: 300px;
+  height: 300px
+}
+.image4 {
+  width: 300px;
+  height: 300px
+}
+.image5 {
+  width: 300px;
+  height: 300px
+}
+
+.imageDiv {
+  display: flex
+}
+
+.spotShow {
+  height: auto;
+  width: 100%;
+  display: flex;
+}
+
+.spotShowDetails {
+  display: flex;
+  width: 600px;
+  margin-left: auto;
+  margin-right: 500px;
+  align-items: center;
+  flex-direction: column;
+  height: 2000px;
+  padding-top: 20px;
+
+}
+
+.spotTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(72,72,72);
+  width: 400px;
+
+}
+
+.hostImage {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50%;
+  position: relative;
+  display: inline;
+  left: 420px;
+  top: -60px;
+}
+
+.hostName {
+  position: relative;
+  top: -60px;
+  right: -245px;
+  
+}
+
+.bookingForm {
+  position: -webkit-sticky;
+  position: sticky; 
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgb(113,113,113);
+  right: 380px;
+  top: 110px;
+  margin-top: 35px;
+  padding-right: 20px;
+}
+
+
+.bookingFormDiv {
+  border-radius: 5px;
+  background-color: white;
+  width: 360px;
+  height: 360px;
+}
+
+
+.bookingSubmit {
+  position: relative;
+  left: -280px;
+  width: 300px !important;
+}
+
+.bookingArrow {
+  font-size: 16px;
+  color: rgb(72,72,72);
+  font-weight: 100;
+  position: relative;
+  right: -275px;
+  top: -30px;
+  pointer-events: none;
+}
+
+.bookingformPrice {
+  font-weight: bold;
+  color: rgb(72,72,72);
+  font-size: 20px;
+}
+
+.perNight {
+  font-size: 12px;
+  font-weight: 400;
+  color: black;
+  margin-left: 4px;
+}
+
+.bookingDateRange {
+  width: 300px;
+}
+
+.bookingDateRange input{
+  border: 1px solid rgb(235,235,235);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#datepicker_start_search_form{
+  border-right: none;
+}
+
+.bookingRating {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(235,235,235);
+  width: 100%;
+}
+
+.descriptionItems{
+  position: relative;
+  top: -65px;
+  left: -50px;
+}
+
+.descriptionItems > div {
+  margin-bottom: 15px;
+}
+
+.bulletPoints {
+  position: relative;
+  top: -50px;
+  left: 30px;
+  border-bottom: 1px solid rgb(235,235,235);
+  border-top: 1px solid rgb(235,235,235);
+  padding: 20px;
+  width: 100%;
+}
+
+.bulletPoints > p > span {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.spotDescription {
+  margin-left: 40px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgb(235,235,235);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.availability{
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}

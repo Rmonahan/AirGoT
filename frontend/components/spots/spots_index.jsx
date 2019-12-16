@@ -11,16 +11,16 @@ export default class SpotsIndex extends React.Component {
     super(props);
     this.state = {showMap: true};
     this.toggleShowMap = this.toggleShowMap.bind(this);
-  }
+  } 
 
 
   toggleShowMap(){
       this.setState({showMap: !this.state.showMap});
   }
 
-
   render() {
     const spotLis = this.props.spots.map((spot, i) => <SpotIndexItem key={i} fetchSpot={this.props.fetchSpot} spot={spot} />);
+    const count = this.props.spots.length;
     if (this.state.showMap){
       return (
         <div>
@@ -31,7 +31,7 @@ export default class SpotsIndex extends React.Component {
         </header>
         <div className="spotIndex">
           <ul className="spotIndexUl">
-            <span className="placesToStay">5+ places to stay</span>
+            <span className="placesToStay">{count} places to stay</span>
             {spotLis}
           </ul>
           <div className="mapIndexComponent">

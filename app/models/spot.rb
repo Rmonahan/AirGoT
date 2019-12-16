@@ -27,10 +27,14 @@
 class Spot < ApplicationRecord
   validates :lat, :lng, :address, :city, :state, :zipcode, :title, :description,
  :allegiance, :danger_rating, :house_type, :max_occupants, :price, :number_of_bedrooms,
- :number_of_beds, :number_of_bathrooms, :square_foot, presence: true
+ :number_of_beds, :number_of_bathrooms, :square_foot, :host_id, presence: true
 
   has_many_attached :photos
-
+  
+  belongs_to :host,
+   class_name: :User,
+   primary_key: :id,
+   foreign_key: :host_id
 
   def self.in_bounds(bounds)
    self.where("lat < ?", bounds[:northEast][:lat])

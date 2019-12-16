@@ -31,9 +31,22 @@ export default class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      spotId: spot.id
+      spotId: spot.id,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 18,
+        fillColor: "white",
+        fillOpacity: .8,
+        strokeWeight: 0.4
+      },
+      label: {
+      text: `$${spot.price}`,
+      fontWeight: "bold"
+      }
+        
     });
     marker.addListener('click', () => this.handleClick(spot));
+
     this.markers[marker.spotId] = marker;
   }
 

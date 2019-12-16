@@ -46,7 +46,7 @@ class SearchForm extends React.Component {
           />
           </label>
           <label className="guests">GUESTS
-            <GuestsDropDown />
+            <GuestsDropDown arrowType="guestsArrow"/>
           </label>
         <button type="submit">Search</button>
       </form>

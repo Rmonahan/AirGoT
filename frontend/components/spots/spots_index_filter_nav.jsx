@@ -25,7 +25,6 @@ export default class SpotsIndexFilterNav extends React.Component {
           <div className="showMapButton">Show Map
           <div className="toggleMap" onClick={this.toggleMap}>{icon}</div>
           </div>
-
         </nav>
       )
   }
