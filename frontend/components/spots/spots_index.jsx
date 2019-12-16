@@ -1,14 +1,15 @@
 import React from "react";
 import SpotIndexItem from "./spots_index_item";
+import SpotsMap from "./spots_map";
 
 export default class SpotsIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchSpots();
-  }
+  // componentDidMount() {
+  //   this.props.fetchSpots();
+  // }
 
 
 
@@ -17,11 +18,11 @@ export default class SpotsIndex extends React.Component {
     return (
       <div className="spotIndex">
         <div id="backgroundnonhomepage"/>
-        {/* <span className="placesToStay">5+ places to stay</span> */}
         <ul className="spotIndexUl">
           <span className="placesToStay">5+ places to stay</span>
           {spotLis}
         </ul>
+        <SpotsMap spots={this.props.spots} updateFilter={this.props.updateFilter}/>
       </div>
     );
   }
