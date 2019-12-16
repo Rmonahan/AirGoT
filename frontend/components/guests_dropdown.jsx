@@ -44,7 +44,7 @@ export default class GuestsDropdown extends React.Component {
     }
     return (
       <div className="guestsnavbarDiv" onBlur={this.toggleDropdownBlur} onFocus={this.toggleDropdown} tabIndex="0">
-        <button className="guestsSelect">Guests</button>
+        <button className="guestsSelect" onClick={(e) => e.preventDefault()}>Guests</button>
         <div className="guestsArrow">{icon}</div>
         {this.state.open && (
           <ul className="guestsUl" >

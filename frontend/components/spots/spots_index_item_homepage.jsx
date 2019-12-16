@@ -1,16 +1,21 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-export default class SpotsIndexItemHomepage extends React.Component {
+class SpotsIndexItemHomepage extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick(){
+    this.props.history.push(`/spots/${this.props.spot.id}`);
+  }
 
 
   render() {
     const {spot} = this.props;
     return (
-      <li className="spotIndexItemHomepage">
+      <li onClick={this.handleClick} className="spotIndexItemHomepage">
         <img src={spot.mainImageUrl} />
         <div className="city"><span className="superhost">SUPERHOST</span>{spot.city}</div>
         <div className="title">{spot.title}</div>
@@ -20,3 +25,5 @@ export default class SpotsIndexItemHomepage extends React.Component {
     );
   }
 }
+
+export default withRouter(SpotsIndexItemHomepage);

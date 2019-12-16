@@ -19,12 +19,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .spotIndex {
   border-top: 1px solid rgb(235,235,235);
   display: flex;
-  width: 100%;
+  width: auto;
+  overflow: scroll;
 }
 
 .spotIndexUl {
@@ -62,7 +64,7 @@
 .indexRating {
   position: relative;
   top: -72px;
-  left: 440px;
+  left: 420px;
 }
 
 .skull {
@@ -80,14 +82,6 @@
   font-size: 14px;
 }
 
-.mapIndexComponent {
-  position: fixed;
-  height: 100%;
-  width: auto;
-  left: 880px;
-  margin-top: 90px;
-}
-
 .indexPrice span {
   font-weight: bold;
   color: black;
@@ -98,4 +92,20 @@
   top: 80px;
   color: black;
   left: 380px;
+}
+
+#map-container {
+  // min-width: 200px;
+  height: 90%;
+  width: 94%;
+}
+
+.mapIndexComponent {
+  position: fixed;
+  height: 100%;
+  width: -webkit-calc(100% - 800px);
+  width: -moz-calc(100% - 800px);
+  width: calc(100% - 800px);
+  margin-top: 90px;
+  margin-left: 860px;
 }
