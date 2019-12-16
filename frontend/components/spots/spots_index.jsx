@@ -15,13 +15,13 @@ export default class SpotsIndex extends React.Component {
 
 
   toggleShowMap(){
-      this.setState({toggleShowMap: !this.state.toggleShowMap});
+      this.setState({showMap: !this.state.showMap});
   }
 
 
   render() {
     const spotLis = this.props.spots.map((spot, i) => <SpotIndexItem key={i} fetchSpot={this.props.fetchSpot} spot={spot} />);
-    if (this.state.toggleShowMap){
+    if (this.state.showMap){
       return (
         <div>
         <header>
