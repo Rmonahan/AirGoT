@@ -7,6 +7,9 @@
   padding-top: 91px;
 }
 
+.imageDiv:hover img{
+ filter: brightness(60%);
+}
 
 .otherImages {
   display: flex;
@@ -37,8 +40,7 @@
 
 .otherImages div img:hover {
   transform: scale(1.07);
-  filter: blur(0);
-  -webkit-filter: blur(0);
+  filter: brightness(100%) !important;
 }
 
 .mainImage {
@@ -53,41 +55,13 @@
   width: 100%;
   min-width: 885px;
   height: 580px;
-  transition: transform .5s ease;
+  transition: all .5s ease;
   cursor: pointer;
 }
 
 .image1:hover {
   transform: scale(1.07);
-}
-
-// .otherImagesDiv:hover ~ .otherImagesDiv > img{
-//   filter: brightness(70%);
-// }
-
-.otherImages:hover ~ .mainImage > img {
-  filter: brightness(70%);
-}
-
-.mainImage:hover ~ .otherImages > div > img {
-  filter: brightness(70%);
-}
-
-.image2 {
-  width: 300px;
-  height: 300px
-}
-.image3 {
-  width: 300px;
-  height: 300px
-}
-.image4 {
-  width: 300px;
-  height: 300px
-}
-.image5 {
-  width: 300px;
-  height: 300px
+  filter: brightness(100%) !important;
 }
 
 .spotShow {

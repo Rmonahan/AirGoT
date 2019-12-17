@@ -14,13 +14,19 @@ class SpotsIndexItem extends React.Component {
 
   render() {
     const { spot } = this.props;
+
+    const guestPlural = spot.maxOccupants > 1 ? "guests" : "guest";
+    const bedroomPlural = spot.numberOfBedrooms > 1 ? "bedrooms" : "bedroom";
+    const bedPlural = spot.numberOfBeds > 1 ? "beds" : "bed";
+    const bathPlural = spot.numberOfBathrooms > 1 ? "baths" : "bath";
+
     return (
       <li className="spotIndexItem" onClick={this.handleClick}>
         <img src={spot.mainImageUrl} />
         <div className ="descriptionItems">
           <div className="indexHouseType"><span className="indexSuperhost">SUPERHOST</span>{spot.houseType}</div>
           <div className="indexTitle">{spot.title}</div>
-          <div className="spotInfo">{spot.maxOccupants} guests - {spot.numberOfBedrooms} bedrooms - {spot.numberOfBeds} beds - {spot.numberOfBathrooms} baths</div>
+          <div className="spotInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
           <div className="indexRating"><span className="skull"><i className="fas fa-skull"></i></span>{spot.dangerRating}</div>
           <div className="amenities">Wifi - Heating - Air conditioning</div>
           <div className="indexPrice"><span>${spot.price}</span> / night</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import SpotsMap from "./spots_map";
 import GreetingContainerNonHomepage from "../greetings_container_non_homepage";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, NavLink } from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import BookingForm from "./booking_form";
 import 'react-dates/initialize';
@@ -28,6 +28,10 @@ class SpotShow extends React.Component {
   render() {
     const {spot, spots} = this.props;
     if (spot){
+          const guestPlural = spot.maxOccupants > 1 ? "guests" : "guest";
+          const bedroomPlural = spot.numberOfBedrooms > 1 ? "bedrooms" : "bedroom";
+          const bedPlural = spot.numberOfBeds > 1 ? "beds" : "bed";
+          const bathPlural = spot.numberOfBathrooms > 1 ? "baths" : "bath";
       return (
         <div>
           <header>
@@ -51,10 +55,10 @@ class SpotShow extends React.Component {
                 <span className="hostName">{spot.hostName}</span>
                 <div className="descriptionItemsShow">
                   <div className="spotCity">{spot.city}</div>
-                  <div className="spotdetailsInfo">{spot.maxOccupants} guests - {spot.numberOfBedrooms} bedrooms - {spot.numberOfBeds} beds - {spot.numberOfBathrooms} baths</div>
+                <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
                 </div>
                 <div className="bulletPoints">
-                  <p>
+                  <p> 
                   <span>Entire home</span><br></br>
                         You’ll have the apartment to yourself.<br></br>
                         <br></br>
