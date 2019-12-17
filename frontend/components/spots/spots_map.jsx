@@ -10,7 +10,7 @@ class SpotsMap extends React.Component {
   componentDidMount() {
     const mapOptions = {
       center: { lat: 40.7829, lng: -73.9654 },
-      zoom: 10
+      zoom: 12
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);

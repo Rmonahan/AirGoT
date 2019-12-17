@@ -26,7 +26,7 @@ class SpotShow extends React.Component {
   }
 
   render() {
-    const {spot} = this.props;
+    const {spot, spots} = this.props;
     if (spot){
       return (
         <div>
@@ -39,10 +39,10 @@ class SpotShow extends React.Component {
               <img className="image1" src={spot.photoUrls[0]} />
             </div>
             <div className="otherImages">  
-              <div className="otherImagesDiv otherImagesDiv1"><img className="image2" src={spot.photoUrls[1]} /></div>
-              <div className="otherImagesDiv otherImagesDiv2"><img className="image3" src={spot.photoUrls[2]} /></div>
-              <div className="otherImagesDiv otherImagesDiv3"><img className="image4" src={spot.photoUrls[3]} /></div>
-              <div className="otherImagesDiv otherImagesDiv4"><img className="image5" src={spot.photoUrls[4]} /></div>
+              <div className="otherImagesDiv otherImagesDiv1"><img className="image2" src={spots[0].photoUrls[1]} /></div>
+              <div className="otherImagesDiv otherImagesDiv2"><img className="image3" src={spots[0].photoUrls[2]} /></div>
+              <div className="otherImagesDiv otherImagesDiv3"><img className="image4" src={spots[0].photoUrls[3]} /></div>
+              <div className="otherImagesDiv otherImagesDiv4"><img className="image5" src={spots[0].photoUrls[4]} /></div>
             </div>
           </div>
           <div className="spotShow">

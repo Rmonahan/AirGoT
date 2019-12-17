@@ -5,7 +5,8 @@ import { fetchSpots, fetchSpot } from "../../actions/spot_actions";
 
 const msp = (state, OwnProps) => {
   return {
-  spot: state.entities.spots[OwnProps.match.params.spotId]
+  spot: state.entities.spots[OwnProps.match.params.spotId],
+  spots: Object.values(state.entities.spots)
 };
 };
 

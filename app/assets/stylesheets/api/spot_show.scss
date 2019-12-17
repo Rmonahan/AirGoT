@@ -57,9 +57,9 @@
   transform: scale(1.07);
 }
 
-.otherImagesDiv:hover ~ .otherImagesDiv > img{
-  filter: brightness(70%);
-}
+// .otherImagesDiv:hover ~ .otherImagesDiv > img{
+//   filter: brightness(70%);
+// }
 
 .otherImages:hover ~ .mainImage > img {
   filter: brightness(70%);
