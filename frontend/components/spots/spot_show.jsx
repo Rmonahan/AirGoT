@@ -51,12 +51,13 @@ class SpotShow extends React.Component {
           </div>
           <div className="spotShow">
             <div className="spotShowDetails">
-              <div className="spotTitle">{spot.title} <img className="hostImage" src={spot.hostImageUrl} /></div>
-                <span className="hostName">{spot.hostName}</span>
-                <div className="descriptionItemsShow">
+              <div className="spotTitle">{spot.title} </div>
+              <img className="hostImage" src={spot.hostImageUrl} />
+              <span className="hostName">{spot.hostName}</span>
+              <div className="descriptionItemsShow">
                   <div className="spotCity">{spot.city}</div>
-                <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
-                </div>
+                  <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
+              </div>
                 <div className="bulletPoints">
                   <p> 
                   <span>Entire home</span><br></br>
