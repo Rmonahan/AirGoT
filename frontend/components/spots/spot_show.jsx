@@ -51,7 +51,7 @@ class SpotShow extends React.Component {
                 <span className="hostName">{spot.hostName}</span>
                 <div className="descriptionItemsShow">
                   <div className="spotCity">{spot.city}</div>
-                  <div className="spotdetailsInfo">{spot.maxOccupants} guests - {spot.numberOfBedrooms} bedroom(s) - {spot.numberOfBeds} bed(s)- {spot.numberOfBathrooms} bath(s)</div>
+                  <div className="spotdetailsInfo">{spot.maxOccupants} guests - {spot.numberOfBedrooms} bedrooms - {spot.numberOfBeds} beds - {spot.numberOfBathrooms} baths</div>
                 </div>
                 <div className="bulletPoints">
                   <p>
@@ -68,7 +68,7 @@ class SpotShow extends React.Component {
                         90% of recent guests gave the check-in process a 5-star rating. <br></br>
                   </p>
                 </div>
-                <div className="spotDescription">{spot.description}</div>
+              <div className="spotDescription"><h1 className="descriptText">Description:</h1> <br></br>{spot.description}</div>
                   <p className="availability">Availability</p>
                   <div className="dayPicker">
                     <DayPickerRangeController
@@ -79,6 +79,7 @@ class SpotShow extends React.Component {
                       onFocusChange={focusedInput => this.setState({ focusedInput })} 
                       initialVisibleMonth={() => moment().add(2, "months")}
                       numberOfMonths={2}
+                      noBorder={true}
                     />
                 </div>
              </div>

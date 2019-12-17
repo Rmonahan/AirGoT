@@ -32,10 +32,13 @@
   width: 100%;
   min-width: 350px;
   transition: transform .5s ease;
+  cursor: pointer;
 }
 
 .otherImages div img:hover {
   transform: scale(1.07);
+  filter: blur(0);
+  -webkit-filter: blur(0);
 }
 
 .mainImage {
@@ -51,6 +54,7 @@
   min-width: 885px;
   height: 580px;
   transition: transform .5s ease;
+  cursor: pointer;
 }
 
 .image1:hover {
@@ -96,19 +100,21 @@
   display: flex;
   width: 600px;
   margin-left: auto;
-  margin-right: 500px;
+  margin-right: 485px;
   align-items: center;
   flex-direction: column;
   height: 2000px;
   padding-top: 20px;
-
+  box-sizing: border-box;
 }
 
 .spotTitle {
   font-size: 32px;
   font-weight: 600;
   color: rgb(72,72,72);
-  width: 400px;
+  width: 500px;
+  margin-left: -60px;
+  line-height: 100%;
 
 }
 
@@ -118,14 +124,14 @@
   border-radius: 50%;
   position: relative;
   display: inline;
-  left: 420px;
-  top: -60px;
+  left: 380px;
+  top: -30px;
 }
 
 .hostName {
   position: relative;
-  top: -60px;
-  right: -245px;
+  top: -30px;
+  right: -280px;
   
 }
 
@@ -134,10 +140,10 @@
   position: sticky; 
   width: 360px;
   height: 360px;
-  border: 1px solid rgb(113,113,113);
-  right: 380px;
-  top: 110px;
-  margin-top: 35px;
+  border: 1px solid rgb(226,226,226);
+  right: 420px;
+  top: 100px;
+  margin-top: 20px;
   padding-right: 20px;
 }
 
@@ -203,8 +209,7 @@
 
 .descriptionItemsShow{
   position: relative;
-  top: -65px;
-  left: -50px;
+  left: -130px;
 }
 
 .descriptionItems > div {
@@ -212,13 +217,12 @@
 }
 
 .bulletPoints {
-  position: relative;
-  top: -50px;
-  left: 30px;
   border-bottom: 1px solid rgb(235,235,235);
   border-top: 1px solid rgb(235,235,235);
   padding: 20px;
+  margin-top: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .bulletPoints > p > span {
@@ -228,18 +232,23 @@
 }
 
 .spotDescription {
-  margin-left: 40px;
-  margin-top: -20px;
+  margin-top: 20px;
   margin-bottom: 30px;
   border-bottom: 1px solid rgb(235,235,235);
   padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .availability{
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
 }
 
 .badSpot {
@@ -255,4 +264,13 @@
   width: 700px;
   // position: relative;
   text-align: center;
+}
+
+
+.spotdetailsInfo {
+    margin-top: 15px;
+}
+
+.descriptText {
+  font-weight: bold;
 }
