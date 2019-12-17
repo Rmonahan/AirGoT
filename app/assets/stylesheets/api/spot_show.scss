@@ -1,6 +1,72 @@
+.imageDiv {
+  display: flex;
+  width: 100%;
+  min-width: 1075px;
+  // height: 66%;
+  max-height: 580px;
+  padding-top: 91px;
+}
+
+
+.otherImages {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  height: 100%;
+  max-height: 580px;
+  overflow: hidden;
+}
+
+
+.otherImages div{
+  border: 1px solid rgb(72,72,72);
+  height: 290px;
+  width: 50%;
+  min-width: 350px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.otherImages div img{
+  height: 290px;
+  width: 100%;
+  min-width: 350px;
+  transition: transform .5s ease;
+}
+
+.otherImages div img:hover {
+  transform: scale(1.07);
+}
+
+.mainImage {
+  width: 50%;
+  height: 580px;
+  overflow: hidden;
+  border: 1px solid rgb(72,72,72);
+  box-sizing: border-box;
+}
+
 .image1 {
-  min-width: 935px;
-  min-height: 700px;
+  width: 100%;
+  min-width: 885px;
+  height: 580px;
+  transition: transform .5s ease;
+}
+
+.image1:hover {
+  transform: scale(1.07);
+}
+
+.otherImagesDiv:hover ~ .otherImagesDiv > img{
+  filter: brightness(70%);
+}
+
+.otherImages:hover ~ .mainImage > img {
+  filter: brightness(70%);
+}
+
+.mainImage:hover ~ .otherImages > div > img {
+  filter: brightness(70%);
 }
 
 .image2 {
@@ -18,10 +84,6 @@
 .image5 {
   width: 300px;
   height: 300px
-}
-
-.imageDiv {
-  display: flex
 }
 
 .spotShow {
@@ -139,7 +201,7 @@
   width: 100%;
 }
 
-.descriptionItems{
+.descriptionItemsShow{
   position: relative;
   top: -65px;
   left: -50px;
@@ -178,4 +240,19 @@
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.badSpot {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.logoName {
+  height: 500px;
+  width: 700px;
+  // position: relative;
+  text-align: center;
 }

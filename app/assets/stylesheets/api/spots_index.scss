@@ -26,7 +26,6 @@
   border-top: 1px solid rgb(235,235,235);
   display: flex;
   width: auto;
-  overflow: scroll;
 }
 
 .spotIndexUl {
@@ -63,7 +62,7 @@
 
 .indexRating {
   position: relative;
-  top: -72px;
+  top: -100px;
   left: 420px;
 }
 
@@ -89,7 +88,7 @@
 
 .indexPrice {
   position: relative;
-  top: 80px;
+  top: 35px;
   color: black;
   left: 380px;
 }
@@ -97,7 +96,7 @@
 #map-container {
   // min-width: 200px;
   height: 90%;
-  width: 94%;
+  width: 95%;
 }
 
 .mapIndexComponent {
@@ -108,4 +107,9 @@
   width: calc(100% - 800px);
   margin-top: 120px;
   margin-left: 860px;
+}
+
+.placesToStay {
+  display: block;
+  margin-top: 50px;
 }

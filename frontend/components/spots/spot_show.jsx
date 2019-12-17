@@ -27,7 +27,6 @@ class SpotShow extends React.Component {
 
   render() {
     const {spot} = this.props;
-    debugger;
     if (spot){
       return (
         <div>
@@ -36,17 +35,21 @@ class SpotShow extends React.Component {
             <GreetingContainerNonHomepage />
           </header>
           <div className="imageDiv">
-            <img className="image1" src={spot.photoUrls[0]} />
-            <img className="image2" src={spot.photoUrls[1]} />
-            <img className="image3" src={spot.photoUrls[2]} />
-            <img className="image4" src={spot.photoUrls[3]} />
-            <img className="image5" src={spot.photoUrls[4]} />
+            <div className="mainImage">
+              <img className="image1" src={spot.photoUrls[0]} />
+            </div>
+            <div className="otherImages">  
+              <div className="otherImagesDiv otherImagesDiv1"><img className="image2" src={spot.photoUrls[1]} /></div>
+              <div className="otherImagesDiv otherImagesDiv2"><img className="image3" src={spot.photoUrls[2]} /></div>
+              <div className="otherImagesDiv otherImagesDiv3"><img className="image4" src={spot.photoUrls[3]} /></div>
+              <div className="otherImagesDiv otherImagesDiv4"><img className="image5" src={spot.photoUrls[4]} /></div>
+            </div>
           </div>
           <div className="spotShow">
             <div className="spotShowDetails">
               <div className="spotTitle">{spot.title} <img className="hostImage" src={spot.hostImageUrl} /></div>
                 <span className="hostName">{spot.hostName}</span>
-                <div className="descriptionItems">
+                <div className="descriptionItemsShow">
                   <div className="spotCity">{spot.city}</div>
                   <div className="spotdetailsInfo">{spot.maxOccupants} guests - {spot.numberOfBedrooms} bedroom(s) - {spot.numberOfBeds} bed(s)- {spot.numberOfBathrooms} bath(s)</div>
                 </div>
@@ -86,7 +89,15 @@ class SpotShow extends React.Component {
          </div>
       );
     } else{
-      return <div></div>
+      return <div>
+        <header>
+          <Link to="/" className="header-link"></Link>
+          <GreetingContainerNonHomepage />
+        </header>
+        {/* <h1 className="badSpot"> Unfortunately this spot didn't make it through the journey to Westeros. <br></br>
+            They left a message for you though: Winter is coming!</h1>
+        <img className="logoName" src={window.logoName} /> */}
+      </div>
     }
     }
 }
