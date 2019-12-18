@@ -4,11 +4,11 @@ require 'open-uri'
 User.destroy_all
 Spot.destroy_all
 
-User.create!([{first_name: "Jon", last_name: "Snow", email: "JonSnow@starks.com", password: "gameofthrones", birth_date: DateTime.new(1990-05-26)},
-             {first_name: "Ned", last_name: "Stark", email: "NedStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1965-02-16)},
-             {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12)},
-             {first_name: "Sansa", last_name: "Stark", email: "SansaStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26)},
-             {first_name: "Cersei", last_name: "Lannister", email: "CerseiLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26)}
+User.create!([{first_name: "Jon", last_name: "Snow", email: "JonSnow@starks.com", password: "gameofthrones", birth_date: DateTime.new(1990-05-26), city: "Castle Black", description: "Jon may have been born a bastard but he was truly born to be a leader. Everywhere he goes people want to follow us lead. You won't be disappointed staying in any of his spots and might even end up joining forces with him before the stay is over."},
+             {first_name: "Ned", last_name: "Stark", email: "NedStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1965-02-16), city: "Winterfell", description: "Ned has led the starks for a long time. He is highly trusted and always well intentioned. Don't take advantage of his kindness though. When he needs to he will assert himself. His spots are known for being well kept and great places for calm getaways."},
+             {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12)}, city: "King's Landing", description: "The kings slayer has been around royalty since he was a young boy. He has a lavish lifestyle but is not afraid to get down and dirty and fight for his rights. His spots are usually in luxorious locations but you may find them less flashy than expected."},
+             {first_name: "Sansa", last_name: "Stark", email: "SansaStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26)}, city: "Winterfell", description: "Daughter of Ned Stark who is also a host on here. She always dreamed of being a princess and was raised to be one. Her independence and bravery should not be discounted though. Her stay spots are known to be in great locations with beautiful surrounds that you can get lost in."},
+             {first_name: "Cersei", last_name: "Lannister", email: "CerseiLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26)}, city: "King's Landing", description: "Cersei was always meant to be a ruler but had to be creative in order to obtain the power she sought. Very hardened on the outside and the inside. Her soft spot is with her family. You will find her spots to be very ritzy and high end locations. Her spots are ones that you will never forget."},
              ])
 
 user1 = User.all[0];
