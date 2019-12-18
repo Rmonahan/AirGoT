@@ -11,6 +11,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  birth_date      :date             not null
+#  city            :string           not null
+#  description     :string           not null
 #
 
 require 'test_helper'

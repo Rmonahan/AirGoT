@@ -4,11 +4,11 @@ require 'open-uri'
 User.destroy_all
 Spot.destroy_all
 
-User.create!([{first_name: "Jon", last_name: "Snow", email: "JonSnow@starks.com", password: "gameofthrones", birth_date: DateTime.new(1990-05-26), city: "Castle Black", description: "Jon may have been born a bastard but he was truly born to be a leader. Everywhere he goes people want to follow us lead. You won't be disappointed staying in any of his spots and might even end up joining forces with him before the stay is over."},
-             {first_name: "Ned", last_name: "Stark", email: "NedStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1965-02-16), city: "Winterfell", description: "Ned has led the starks for a long time. He is highly trusted and always well intentioned. Don't take advantage of his kindness though. When he needs to he will assert himself. His spots are known for being well kept and great places for calm getaways."},
-             {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12), city: "King's Landing", description: "The kings slayer has been around royalty since he was a young boy. He has a lavish lifestyle but is not afraid to get down and dirty and fight for his rights. His spots are usually in luxorious locations but you may find them less flashy than expected."},
-             {first_name: "Sansa", last_name: "Stark", email: "SansaStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26), city: "Winterfell", description: "Daughter of Ned Stark who is also a host on here. She always dreamed of being a princess and was raised to be one. Her independence and bravery should not be discounted though. Her stay spots are known to be in great locations with beautiful surrounds that you can get lost in."},
-             {first_name: "Cersei", last_name: "Lannister", email: "CerseiLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26), city: "King's Landing", description: "Cersei was always meant to be a ruler but had to be creative in order to obtain the power she sought. Very hardened on the outside and the inside. Her soft spot is with her family. You will find her spots to be very ritzy and high end locations. Her spots are ones that you will never forget."},
+User.create!([{first_name: "Jon", last_name: "Snow", email: "JonSnow@starks.com", password: "gameofthrones", birth_date: DateTime.new(1990-05-26), city: "Castle Black", description: "Jon may have been born a bastard but he was truly born to be a leader. Everywhere he goes people want to follow us lead. You won't be disappointed staying in any of his spots and might even end up joining forces with him before the stay is over.", profile_photo_url: "https://s3.amazonaws.com/airgot-dev/images/jon-snow.jpg"},
+             {first_name: "Ned", last_name: "Stark", email: "NedStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1965-02-16), city: "Winterfell", description: "Ned has led the starks for a long time. He is highly trusted and always well intentioned. Don't take advantage of his kindness though. When he needs to he will assert himself. His spots are known for being well kept and great places for calm getaways.", profile_photo_url: "https://s3.amazonaws.com/airgot-dev/images/ned-stark.jpg"},
+             {first_name: "Jamie", last_name: "Lannister", email: "JamieLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1980-06-12), city: "King's Landing", description: "The kings slayer has been around royalty since he was a young boy. He has a lavish lifestyle but is not afraid to get down and dirty and fight for his rights. His spots are usually in luxorious locations but you may find them less flashy than expected.", profile_photo_url: "https://s3.amazonaws.com/airgot-dev/images/jamie-lannister.jpg"},
+             {first_name: "Sansa", last_name: "Stark", email: "SansaStark@starks.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26), city: "Winterfell", description: "Daughter of Ned Stark who is also a host on here. She always dreamed of being a princess and was raised to be one. Her independence and bravery should not be discounted though. Her stay spots are known to be in great locations with beautiful surrounds that you can get lost in.", profile_photo_url: "https://s3.amazonaws.com/airgot-dev/images/sansa-stark.jpg"},
+             {first_name: "Cersei", last_name: "Lannister", email: "CerseiLannister@lannisters.com", password: "gameofthrones", birth_date: DateTime.new(1992-5-26), city: "King's Landing", description: "Cersei was always meant to be a ruler but had to be creative in order to obtain the power she sought. Very hardened on the outside and the inside. Her soft spot is with her family. You will find her spots to be very ritzy and high end locations. Her spots are ones that you will never forget.",  profile_photo_url: "https://s3.amazonaws.com/airgot-dev/images/cersei-lannister.jpg"}
              ])
 
 user1 = User.all[0];
@@ -17,21 +17,9 @@ user3 = User.all[2];
 user4 = User.all[3];
 user5 = User.all[4];
 
-file1 = open('https://s3.amazonaws.com/airgot-dev/images/jon-snow.jpg')
-file2 = open('https://s3.amazonaws.com/airgot-dev/images/ned-stark.jpg')
-file3 = open('https://s3.amazonaws.com/airgot-dev/images/jamie-lannister.jpg')
-file4 = open('https://s3.amazonaws.com/airgot-dev/images/sansa-stark.jpg')
-file5 = open('https://s3.amazonaws.com/airgot-dev/images/cersei-lannister.jpg')
 
-
-user1.profile_photo.attach(io:file1, filename: 'jon-snow.jpg')
-user2.profile_photo.attach(io:file2, filename: 'ned-stark.jpg')
-user3.profile_photo.attach(io:file3, filename: 'jamie-lannister.jpg')
-user4.profile_photo.attach(io:file4, filename: 'sansa-stark.jpg')
-user5.profile_photo.attach(io:file5, filename: 'cersei-lannister.jpg')
-
-
-
+Amenity.create!([{name: "Horses Welcome", icon: "fas fa-horse"}, {name:"Dragon Sightings", icon: "fas fa-dragon"}, {name: "Guards on Duty", icon: "fas fa-shield-alt"}, {name: "Starbucks Nearby", icon: "fas fa-coffee"}, {name: "Low Danger Rating!", icon: "fas fa-skull"}, {name: "Warm Location", icon: "fas fa-sun"},
+                {name: "Raven Mail Delivery", icon: "fas fa-crow"}, {name: "Cold Location", icon:"fas fa-snowflake"}])
 
 Spot.create!([{lat: 40.829026, lng: -73.912115, address: "123 Kingsroad",city: "Winterfell", state: "Westeros", zipcode: 10001, title: "Beatiful home on the outskirts of Winterfell.", description: "This home was built by the early Targarians when the MadKing was still ruling. Our family has resided here for 100's of years. Located right on Kingsroad where you are sure to meet some interesting characters.", allegiance: "Starks", danger_rating: 4.67, house_type: "Colonial", max_occupants: 5, price: 139, number_of_bedrooms: 3, number_of_beds: 4, number_of_bathrooms: 2, square_foot: 4000, host_id: user2.id},
               {lat: 40.7689688, lng: -73.918427, address: "10 Godsway",city: "Vaes Dothrak", state: "Essos", zipcode: 10001, title: "Great location right in the heart of Dothraki territory.", description: "This home has stood the test of time. The Dothraki often venture here and even Sir Jorah Mormont has stayed here. We take a lot of pride in this location.", allegiance: "Dothraki", danger_rating: 7.32, house_type: "Colonial", max_occupants: 8, price: 224, number_of_bedrooms: 5, number_of_beds: 8, number_of_bathrooms: 2, square_foot: 5200, host_id: user1.id},
@@ -44,10 +32,7 @@ Spot.create!([{lat: 40.829026, lng: -73.912115, address: "123 Kingsroad",city: "
               {lat: 40.773094,lng: -73.945919, address: "10 Goldroad",city: "King's Landing", state: "Westeros", zipcode: 10001, title: "Small location located inside of King's Landing.", description: "Located in the lower end area of King's landing but still a lot of great stuff to see. King's Landing is a place that needs to be seen to believe.", allegiance: "Lannisters", danger_rating: 2.54, house_type: "Apartment", max_occupants: 1, price: 104, number_of_bedrooms: 1, number_of_beds: 1, number_of_bathrooms: 1, square_foot: 1000, host_id: user3.id},
               {lat: 40.844052,lng: -73.904828, address: "300 Kingsroad",city: "Castle Black", state: "Westors", zipcode: 10001, title: "If you are looking for an adventure look no further than here.", description: "This location is right next to Castle Black where the Night's Watch is located. This place can be very dangerous but also very adventurous.", allegiance: "None", danger_rating: 9.52, house_type: "colonial", max_occupants: 4, price: 244, number_of_bedrooms: 3, number_of_beds: 4, number_of_bathrooms: 2, square_foot: 2200, host_id: user1.id}
               ])
-
-
-              
-              
+         
 spot1 = Spot.all[0];
 spot2 = Spot.all[1];
 spot3 = Spot.all[2];
@@ -59,32 +44,42 @@ spot8 = Spot.all[7];
 spot9 = Spot.all[8];
 spot10 = Spot.all[9];
 
-image1 = open('https://s3.amazonaws.com/airgot-dev/images/house1-1.jpg')
-image2 = open('https://s3.amazonaws.com/airgot-dev/images/house1-2.jpg')
-image3 = open('https://s3.amazonaws.com/airgot-dev/images/house1-3.jpg')
-image4 = open('https://s3.amazonaws.com/airgot-dev/images/house1-4.jpg')
-image5 = open('https://s3.amazonaws.com/airgot-dev/images/house1-5.jpg')
-image6 = open('https://s3.amazonaws.com/airgot-dev/images/house2.jpg')
-image11 = open('https://s3.amazonaws.com/airgot-dev/images/house3.jpg')
-image16 = open('https://s3.amazonaws.com/airgot-dev/images/house4.jpg')
-image21 = open('https://s3.amazonaws.com/airgot-dev/images/house5.jpg')
-image26= open('https://s3.amazonaws.com/airgot-dev/images/house6.jpg')
-image31 = open('https://s3.amazonaws.com/airgot-dev/images/house7.jpg')
-image36= open('https://s3.amazonaws.com/airgot-dev/images/house8.jpg')
-image41 = open('https://s3.amazonaws.com/airgot-dev/images/house9.jpg')
-image46 = open('https://s3.amazonaws.com/airgot-dev/images/house10.jpg')
+image1 = 'https://s3.amazonaws.com/airgot-dev/images/house1-1.jpg'
+image2 = 'https://s3.amazonaws.com/airgot-dev/images/house1-2.jpg'
+image3 = 'https://s3.amazonaws.com/airgot-dev/images/house1-3.jpg'
+image4 = 'https://s3.amazonaws.com/airgot-dev/images/house1-4.jpg'
+image5 = 'https://s3.amazonaws.com/airgot-dev/images/house1-5.jpg'
+image6 = 'https://s3.amazonaws.com/airgot-dev/images/house2.jpg'
+image11 ='https://s3.amazonaws.com/airgot-dev/images/house3.jpg'
+image16 ='https://s3.amazonaws.com/airgot-dev/images/house4.jpg'
+image21 ='https://s3.amazonaws.com/airgot-dev/images/house5.jpg'
+image26= 'https://s3.amazonaws.com/airgot-dev/images/house6.jpg'
+image31 ='https://s3.amazonaws.com/airgot-dev/images/house7.jpg'
+image36= 'https://s3.amazonaws.com/airgot-dev/images/house8.jpg'
+image41 ='https://s3.amazonaws.com/airgot-dev/images/house9.jpg'
+image46 ='https://s3.amazonaws.com/airgot-dev/images/house10.jpg'
 
-spot1.photos.attach(io:image1, filename: 'house1-1.jpeg')
-spot1.photos.attach(io:image2, filename: 'house1-2.jpg')
-spot1.photos.attach(io:image3, filename: 'house1-3.jpg')
-spot1.photos.attach(io:image4, filename: 'house1-4.jpg')
-spot1.photos.attach(io:image5, filename: 'house1-5.jpg')
-spot2.photos.attach(io:image6, filename: 'house2.jpg')
-spot3.photos.attach(io:image11, filename: 'house3.jpg')
-spot4.photos.attach(io:image16, filename: 'house4.jpeg')
-spot5.photos.attach(io:image21, filename: 'house5.jpeg')
-spot6.photos.attach(io:image26, filename: 'house6.jpeg')
-spot7.photos.attach(io:image31, filename: 'house7.jpeg')
-spot8.photos.attach(io:image36, filename: 'house8.jpeg')
-spot9.photos.attach(io:image41, filename: 'house9.jpeg')
-spot10.photos.attach(io:image46, filename: 'house10.jpeg')
+Photo.create!([{spot_id: spot1.id, image_url: image1}, {spot_id: spot1.id, image_url: image2}, {spot_id: spot1.id, image_url: image3}, {spot_id: spot1.id, image_url: image4}, {spot_id: spot1.id, image_url: image5}, {spot_id: spot2.id, image_url: image6}, {spot_id: spot3.id, image_url: image11}, {spot_id: spot4.id, image_url: image16},
+                {spot_id: spot5.id, image_url: image21},{spot_id: spot6.id, image_url: image26},{spot_id: spot7.id, image_url: image31},{spot_id: spot8.id, image_url: image36},{spot_id: spot9.id, image_url: image41}, {spot_id: spot10.id, image_url: image46}])
+
+amen1 = Amenity.all[0];
+amen2 = Amenity.all[1];
+amen3 = Amenity.all[2];
+amen4 = Amenity.all[3];
+amen5 = Amenity.all[4];
+amen6 = Amenity.all[5];
+amen7 = Amenity.all[6];
+amen8 = Amenity.all[7];
+
+
+Assignment.create!([{spot_id: spot1.id, amenities_id: amen1.id}, {spot_id: spot1.id, amenities_id: amen3.id}, {spot_id: spot1.id, amenities_id: amen7.id}, {spot_id: spot1.id, amenities_id: amen8.id},
+                   {spot_id: spot2.id, amenities_id: amen2.id}, {spot_id: spot2.id, amenities_id: amen1.id}, {spot_id: spot2.id, amenities_id: amen4.id}, {spot_id: spot2.id, amenities_id: amen6.id},
+                   {spot_id: spot3.id, amenities_id: amen5.id}, {spot_id: spot3.id, amenities_id: amen6.id}, {spot_id: spot3.id, amenities_id: amen2.id}, {spot_id: spot3.id, amenities_id: amen3.id},
+                   {spot_id: spot4.id, amenities_id: amen3.id}, {spot_id: spot4.id, amenities_id: amen1.id}, {spot_id: spot4.id, amenities_id: amen8.id}, {spot_id: spot4.id, amenities_id: amen7.id},
+                   {spot_id: spot5.id, amenities_id: amen2.id}, {spot_id: spot5.id, amenities_id: amen3.id}, {spot_id: spot5.id, amenities_id: amen7.id}, {spot_id: spot5.id, amenities_id: amen5.id},
+                   {spot_id: spot6.id, amenities_id: amen6.id}, {spot_id: spot6.id, amenities_id: amen3.id}, {spot_id: spot6.id, amenities_id: amen2.id}, {spot_id: spot6.id, amenities_id: amen4.id},
+                   {spot_id: spot7.id, amenities_id: amen1.id}, {spot_id: spot7.id, amenities_id: amen3.id}, {spot_id: spot7.id, amenities_id: amen7.id}, {spot_id: spot7.id, amenities_id: amen5.id},
+                   {spot_id: spot8.id, amenities_id: amen5.id}, {spot_id: spot8.id, amenities_id: amen7.id}, {spot_id: spot8.id, amenities_id: amen1.id}, {spot_id: spot8.id, amenities_id: amen3.id},
+                   {spot_id: spot9.id, amenities_id: amen2.id}, {spot_id: spot9.id, amenities_id: amen5.id}, {spot_id: spot9.id, amenities_id: amen3.id}, {spot_id: spot9.id, amenities_id: amen6.id},
+                   {spot_id: spot10.id, amenities_id: amen8.id}, {spot_id: spot10.id, amenities_id: amen3.id}, {spot_id: spot10.id, amenities_id: amen7.id}, {spot_id: spot10.id, amenities_id: amen1.id}
+                   ])

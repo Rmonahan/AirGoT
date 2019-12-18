@@ -11,6 +11,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  birth_date      :date             not null
+#  city            :string           not null
+#  description     :string           not null
 #
 
 class User < ApplicationRecord
@@ -23,8 +25,6 @@ class User < ApplicationRecord
 
   attr_reader :password
   after_initialize :ensure_session_token
-
-  has_one_attached :profile_photo
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

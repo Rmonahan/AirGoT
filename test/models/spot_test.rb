@@ -22,6 +22,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  allegiance          :string           not null
+#  host_id             :integer          not null
 #
 
 require 'test_helper'

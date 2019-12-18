@@ -1,8 +1,11 @@
+
+
+
 .imageDiv {
   display: flex;
   width: 100%;
-  min-width: 1075px;
-  // height: 66%;
+  min-width: 500px;
+  height: 66%;
   max-height: 580px;
   padding-top: 91px;
 }
@@ -20,20 +23,19 @@
   overflow: hidden;
 }
 
-
 .otherImages div{
   border: 1px solid rgb(72,72,72);
-  height: 290px;
+  height: 50%;
   width: 50%;
-  min-width: 350px;
+  min-width: 220px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .otherImages div img{
-  height: 290px;
+  height: 288px;
   width: 100%;
-  min-width: 350px;
+  min-width: 250px;
   transition: transform .5s ease;
   cursor: pointer;
 }
@@ -45,7 +47,7 @@
 
 .mainImage {
   width: 50%;
-  height: 580px;
+  height: 100%;
   overflow: hidden;
   border: 1px solid rgb(72,72,72);
   box-sizing: border-box;
@@ -54,9 +56,98 @@
 .image1 {
   width: 100%;
   min-width: 885px;
-  height: 580px;
+  height: 578px;
   transition: all .5s ease;
   cursor: pointer;
+}
+
+.bookingFormFooter {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) 
+  {
+    .bookingForm {
+    display: none;
+  }
+
+  .otherImages div img{ 
+      width: 430px;
+  }
+
+  .otherImages div {
+    width: 430px;
+  }
+
+  .mainImage img {
+    width: 500px;
+    min-width: 500px !important;
+  }
+
+  .bookingFormFooter {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    bottom: 1px;
+    margin-bottom: auto;
+    z-index: 5;
+    background: white;
+    justify-content: center;
+    border-top: 1px solid rgb(235,235,235);
+  }
+}
+
+  .bookingFormFooterPrice {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  .bookingFormFooterPriceFull {
+    width: 100%;
+    height: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+
+  .bookingFooterDanger {
+    border-bottom: none !important;
+    height: 10px;
+    position: relative;
+    top: 40px;
+    margin-left: -220px;
+   }
+
+  .BookingFooterFormButton {
+  width: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 45px;
+  margin-right: 15%;
+  margin-top: 17px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid rgb(235,235,235);
+  background: rgb(252, 82, 96);
+  color: white;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.BookingFooterFormButton:active {
+  transition: .3s;
+  box-shadow: 0 0 1px 1px rgb(113,113,113);
+  border: 5px solid white;
+  border-radius: 10px;
+  background:rgb(221, 62, 75);
+  margin-left: 23.5px;
+  // margin-right: -5px;
 }
 
 .image1:hover {
@@ -65,7 +156,6 @@
 }
 
 .spotShow {
-  height: auto;
   width: 100%;
   display: flex;
 }
@@ -114,7 +204,7 @@
   width: 360px;
   height: 360px;
   border: 1px solid rgb(226,226,226);
-  right: 420px;
+  right: 15%;
   top: 100px;
   margin-top: 20px;
   padding-right: 20px;
@@ -181,8 +271,12 @@
 }
 
 .descriptionItemsShow{
-  position: relative;
-  left: -130px;
+  // position: relative;
+  // left: -130px;
+  // bottom: 100px;
+  text-align: left;
+  margin-left: -260px;
+  margin-top: -60px;
 }
 
 .descriptionItems > div {
@@ -213,6 +307,18 @@
   padding-left: 20px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.spotAmenities {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgb(235,235,235);
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .availability{
@@ -246,4 +352,64 @@
 
 .descriptText {
   font-weight: bold;
+}
+
+
+.showFirstIcon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.showSecondIcon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.showThirdIcon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.showFourthIcon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.amenitiesText {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: -10px;
+  margin-right: auto;
+  padding-left: 25px;
+}
+
+.hostDetails {
+   border-top: 1px solid rgb(235,235,235);
+   border-bottom: 1px solid rgb(235,235,235);
+   margin-top: 30px;
+   padding-bottom: 100px;
+}
+
+.hostedBy {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.hostLocation {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.hostDescription {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.hostDetailsImage {
+  position: relative;
+  margin-left: 200px;
+  margin-top: -90px;
+  border-bottom: none !important;
 }

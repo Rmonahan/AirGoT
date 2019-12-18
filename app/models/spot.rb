@@ -22,6 +22,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  allegiance          :string           not null
+#  host_id             :integer          not null
 #
 
 class Spot < ApplicationRecord
@@ -29,7 +30,12 @@ class Spot < ApplicationRecord
  :allegiance, :danger_rating, :house_type, :max_occupants, :price, :number_of_bedrooms,
  :number_of_beds, :number_of_bathrooms, :square_foot, :host_id, presence: true
 
-  has_many_attached :photos
+  has_many :assignments
+
+  has_many :amenities,
+   through: :assignments
+
+  has_many :photos
   
   belongs_to :host,
    class_name: :User,

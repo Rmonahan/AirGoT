@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_014210) do
+ActiveRecord::Schema.define(version: 2019_12_18_160930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,30 @@ ActiveRecord::Schema.define(version: 2019_12_18_014210) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "icon", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "spot_id"
+    t.bigint "amenities_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amenities_id"], name: "index_assignments_on_amenities_id"
+    t.index ["spot_id"], name: "index_assignments_on_spot_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "spot_id"
+    t.string "image_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_photos_on_spot_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -69,11 +93,14 @@ ActiveRecord::Schema.define(version: 2019_12_18_014210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birth_date", null: false
-    t.string "city", null: false
-    t.string "description", null: false
+    t.string "city"
+    t.string "description"
+    t.string "profile_photo_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "assignments", "amenities", column: "amenities_id"
+  add_foreign_key "assignments", "spots"
 end

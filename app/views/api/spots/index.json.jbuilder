@@ -10,10 +10,12 @@
   json.numberOfBeds spot.number_of_beds
   json.numberOfBathrooms spot.number_of_bathrooms
   json.squareFoot spot.square_foot
-  json.mainImageUrl url_for(spot.photos[0])
-  json.hostImageUrl url_for(spot.host.profile_photo)
+  json.mainImageUrl spot.photos[0].image_url
+  json.hostImageUrl spot.host.profile_photo_url
   json.hostName spot.host.first_name
-  json.photoUrls spot.photos.map {|photo| url_for(photo)}
+  json.host spot.host
+  json.photoUrls spot.photos.map {|photo| photo.image_url}
+  json.amenities spot.amenities
  end
 
 end

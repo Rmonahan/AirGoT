@@ -8,6 +8,8 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { DayPickerRangeController } from 'react-dates';
 import moment from 'moment';
+import BookingFormFooter from './booking_form_footer';
+import SpotShowMap from './spot_show_map';
 
 
 class SpotShow extends React.Component {
@@ -33,7 +35,7 @@ class SpotShow extends React.Component {
           const bedPlural = spot.numberOfBeds > 1 ? "beds" : "bed";
           const bathPlural = spot.numberOfBathrooms > 1 ? "baths" : "bath";
       return (
-        <div>
+        <div className="spotShowMainDiv">
           <header>
             <Link to="/" className="header-link"></Link>
             <GreetingContainerNonHomepage />
@@ -73,7 +75,12 @@ class SpotShow extends React.Component {
                         90% of recent guests gave the check-in process a 5-star rating. <br></br>
                   </p>
                 </div>
-              <div className="spotDescription"><h1 className="descriptText">Description:</h1> <br></br>{spot.description}</div>
+                  <div className="spotDescription"><h1 className="descriptText">Description</h1> <br></br>{spot.description}</div>
+                <h1 className="amenitiesText">Amenities</h1>
+                  <div className="spotAmenities">
+                      <div className="showFirstIcon"><i className={spot.amenities[0].icon}></i></div>{spot.amenities[0].name} <div className="showSecondIcon"><i className={spot.amenities[1].icon}></i></div>{spot.amenities[1].name} 
+                      <div className="showThirdIcon"><i className={spot.amenities[2].icon}></i></div>{spot.amenities[2].name}<div className="showThirdIcon"><i className={spot.amenities[3].icon}></i></div>{spot.amenities[3].name}
+                  </div>
                   <p className="availability">Availability</p>
                   <div className="dayPicker">
                     <DayPickerRangeController
@@ -86,12 +93,20 @@ class SpotShow extends React.Component {
                       numberOfMonths={2}
                       noBorder={true}
                     />
+                <div className="hostDetails">
+                  <h1 className="hostedBy">Hosted by {spot.host.first_name}</h1>
+                        <p className="hostLocation">{spot.city},{" "}{spot.state} - Joined in December 2019</p>
+                        <p className="hostDescription">{spot.host.description}</p>
+                      <img className="hostImage hostDetailsImage" src={spot.hostImageUrl} />
                 </div>
-             </div>
-            <div className="bookingForm">
-             <BookingForm spot={spot} />
-            </div>
+                </div>
+                <SpotShowMap spot={spot}/>
+              </div>
+               <div className="bookingForm">
+                 <BookingForm spot={spot} />
+              </div>
          </div>
+            <BookingFormFooter spot={spot}/>
          </div>
       );
     } else{
