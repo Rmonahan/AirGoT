@@ -72,15 +72,15 @@
   }
 
   .otherImages div img{ 
-      width: 430px;
+      width: 600px;
   }
 
   .otherImages div {
-    width: 430px;
+    width: 600px;
   }
 
   .mainImage img {
-    width: 500px;
+    width: 600px;
     min-width: 500px !important;
   }
 
@@ -95,6 +95,29 @@
     background: white;
     justify-content: center;
     border-top: 1px solid rgb(235,235,235);
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .otherImages div img{ 
+      height: 250px;
+  }
+
+  .otherImages div {
+    height: 250px;
+  }
+
+  .otherImages {
+    height: 500px;
+  }
+
+  .mainImage img {
+    height: 500px;
+    min-width: 250px !important;
+  }
+
+  .mainImage {
+    height: 500px;
   }
 }
 
