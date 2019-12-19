@@ -3,7 +3,7 @@ import SpotsMap from "./spots_map";
 import GreetingContainerNonHomepage from "../greetings_container_non_homepage";
 import { Route, Link, NavLink } from "react-router-dom";
 import {withRouter} from "react-router-dom";
-import BookingForm from "./booking_form";
+import BookingFormContainer from "./booking_form_container";
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { DayPickerRangeController } from 'react-dates';
@@ -56,11 +56,11 @@ class SpotShow extends React.Component {
               <div className="spotTitle">{spot.title} </div>
               <img className="hostImage" src={spot.hostImageUrl} />
               <span className="hostName">{spot.hostName}</span>
-              <div className="descriptionItemsShow">
+            <div className="descriptionItemsShow">
                   <div className="spotCity">{spot.city}</div>
                   <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
-              </div>
-                <div className="bulletPoints">
+            </div>
+            <div className="bulletPoints">
                   <p> 
                   <span>Entire home</span><br></br>
                         You’ll have the apartment to yourself.<br></br>
@@ -103,10 +103,10 @@ class SpotShow extends React.Component {
                 <SpotShowMap spot={spot}/>
               </div>
                <div className="bookingForm">
-                 <BookingForm spot={spot} />
+                 <BookingFormContainer spot={spot} />
               </div>
          </div>
-            <BookingFormFooter spot={spot}/>
+            <BookingFormFooter spot={spot} openModal={this.props.openModal}/>
          </div>
       );
     } else{

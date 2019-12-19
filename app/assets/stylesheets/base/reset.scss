@@ -21,10 +21,11 @@ span, article, footer, time, small {
 ul {
   list-style: none;
 }
-
+html, body {
+  // box-sizing: border-box;
+}
 body {
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 img {

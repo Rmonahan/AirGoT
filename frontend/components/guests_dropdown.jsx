@@ -15,24 +15,29 @@ export default class GuestsDropdown extends React.Component {
   }
 
   toggleDropdown(e) {
-    this.setState({ open: !this.state.open });
+    // debugger;
+    // if (e.target.className != "guestChange"){
+      this.setState({ open: !this.state.open });
   }
 
   toggleDropdownBlur(e) {
     if (this.state.open === true) {
-      this.setState({ open: !this.state.open });
+      if (e.relatedTarget === null || (e.relatedTarget.className != "guestsnavbarDiv" && e.relatedTarget.className != "guestChange")){
+        this.setState({ open: !this.state.open });
+      }
     }
   }
 
   increaseGuests(e){
-    debugger;
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({guests: this.state.guests + 1});
   }
 
   decreaseGuests(e) {
-    e.preventDefault();
-    this.setState({ guests: this.state.guests - 1 });
+    // e.preventDefault();
+    if (this.state.guests > 0){
+       this.setState({ guests: this.state.guests - 1 });
+    }
   }
 
 
@@ -42,16 +47,20 @@ export default class GuestsDropdown extends React.Component {
     if (this.state.open){
       icon = <i className="fas fa-chevron-up"></i>;
     }
+    let minusDisabled = "minusDisabled";
+    if (this.state.guests > 0){
+      minusDisabled = "minusAbled";
+    }
     return (
-      <div className="guestsnavbarDiv" onBlur={this.toggleDropdownBlur} onFocus={this.toggleDropdown} tabIndex="0">
+      <div className="guestsnavbarDiv" onBlur={this.toggleDropdownBlur} onClick={this.toggleDropdown} tabIndex="0">
         <button className="guestsSelect" onClick={(e) => e.preventDefault()}>Guests</button>
         <div className={this.props.arrowType}>{icon}</div>
         {this.state.open && (
           <ul className="guestsUl" >
             <li> <h1>Adults</h1>
-                <button onClick={this.decreaseGuests}>-</button>
+                <button className="guestChange" id={minusDisabled} onClick={this.decreaseGuests}>-</button>
                 <p> {this.state.guests}+ </p>
-                <button onClick={this.increaseGuests}>+</button>
+                <button className="guestChange" onClick={this.increaseGuests}>+</button>
             </li>
           </ul>
         )}

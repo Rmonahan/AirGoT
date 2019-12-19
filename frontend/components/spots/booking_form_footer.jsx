@@ -12,8 +12,7 @@ class BookingFormFooter extends React.Component {
     return (
       <div className="bookingFormFooter">
         <div className="bookingFormFooterPriceFull"><div className="bookingFormFooterPrice">${spot.price} </div> per night</div>
-        <div className="bookingRating bookingFooterDanger"><span className="skull"><i className="fas fa-skull"></i></span>{this.props.spot.dangerRating}</div>
-        <button className="BookingFooterFormButton">Reserve</button>
+        <button className="BookingFooterFormButton" onClick={ () => this.props.openModal("booking")}>Reserve</button>
       </div>
     );
   }

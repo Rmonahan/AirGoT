@@ -28,7 +28,9 @@ class SpotsIndexItem extends React.Component {
           <div className="indexTitle">{spot.title}</div>
           <div className="spotInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
           <div className="indexRating"><span className="skull"><i className="fas fa-skull"></i></span>{spot.dangerRating}</div>
-          <div className="amenities">Wifi - Heating - Air conditioning</div>
+          <div className="amenitiesIndex">
+            {spot.amenities[1].name} - {" "} {spot.amenities[0].name} - {" "} {spot.amenities[2].name}
+          </div>
           <div className="indexPrice"><span>${spot.price}</span> / night</div>
         </div>
       </li>

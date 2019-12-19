@@ -22,16 +22,24 @@
   border: 1px solid rgb(235,235,235);
   margin-top: 10px;
   margin-bottom: 20px;
-  // width: 205px;
+  width: 300px;
   font-size: 16px;
 }
 
 #datepicker_start_search_form{
-  width: 150px;
+  width: 154px !important;
+  border: 1px solid rgb(235,235,235);
+  margin-right: 20px !important;
+  box-sizing: border-box;
+}
+
+#datepicker_start_search_form:focus {
+  border: 1px solid rgb(20, 133, 127);
 }
 
 #datepicker_end_search_form{
-  width: 150px;
+  // width: 200px;
+  width: auto;
 }
 
 
@@ -76,7 +84,15 @@
 }
 
 
+#minusDisabled {
+  pointer-events: none;
+   opacity: 0.5;
+}
 
+.guestChange:active {
+  transition: .3s;
+  box-shadow: 0 0 2px 2px rgb(113,113,113);
+}
 
 
 .guestsSelect:focus {
@@ -84,7 +100,6 @@
   outline-style: solid;
   outline-width: 1px;
 }
-
 
 .guestsSelect {
   width: 100%;
@@ -141,7 +156,6 @@
   position: relative;
   top: -3px;
   line-height: 5px;
-  pointer-events: none;
   
 }
 
