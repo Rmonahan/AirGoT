@@ -4,6 +4,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import { DateRangePicker } from 'react-dates';
 import GuestsDropDown from "../guests_dropdown";
 import { withRouter } from "react-router-dom";
+import moment from "moment/moment";
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -14,14 +15,41 @@ class BookingForm extends React.Component {
       focusedInput: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.isOutsideRange = this.isOutsideRange.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push("/booking");
+    this.props.createBooking({ booking: { user_id: this.props.userId, spot_id: this.props.spot.id, start_date: this.state.startDate.format('YYYY-MM-DD'), end_date: this.state.endDate.format('YYYY-MM-DD')}})
+      .then((booking) => { this.props.history.push(`/users/${booking.booking.userId}/bookings/${booking.booking.id}`); }).then(this.props.closeModal);
   }
 
+  isOutsideRange(day){
+    if (moment().diff(day) > 0) {
+      return true;
+    }
 
+    let disabled = false;
+
+    const disabledDates = [];
+       this.props.spot.bookings.forEach((booking) => {
+          let currentDate = moment(booking.start_date);
+          let endDate = moment(booking.end_date);
+
+          while (currentDate <= endDate){
+            disabledDates.push(moment(currentDate.format('YYYY-MM-DD')));
+            currentDate = moment(currentDate).add(1,'days');
+          }
+      });
+
+      disabledDates.forEach((date) => {
+        if (date.isSame(day, 'date')){
+          disabled = true;
+        }
+      });
+      return disabled;
+  }
+   
 
   render() {
     return (
@@ -34,7 +62,6 @@ class BookingForm extends React.Component {
             <DateRangePicker
               startDatePlaceholderText="Check-in"
               endDatePlaceholderText="Checkout"
-              block={true}
               startDate={this.state.startDate}
               startDateId="datepicker_start_search_form"
               endDate={this.state.endDate}
@@ -43,6 +70,7 @@ class BookingForm extends React.Component {
               onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
+              isOutsideRange = {this.isOutsideRange}
             />
           </label>
           <label className="guests BookingFormGuest">Guests

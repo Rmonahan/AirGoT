@@ -16,6 +16,7 @@
   json.host spot.host
   json.photoUrls spot.photos.map {|photo| photo.image_url}
   json.amenities spot.amenities
+  json.bookings spot.bookings
  end
 
 end
