@@ -9,11 +9,11 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    if booking_params[:user_id]
-       @bookings = User.find(booking_params[:user_id]).bookings
-    else
+    # if booking_params[:user_id]
+    #    @bookings = User.find(booking_params[:user_id]).bookings
+    # else
       @bookings = Booking.all
-    end
+    # end
     render :index
   end
 

@@ -1,3 +1,26 @@
-// Place all the styles related to the api::Bookings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.bookingShow {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bookingConfirm {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+.bookingPhoto {
+  height: 400px;
+  width: 500px;
+  margin-left: 400px;
+}
+
+.descriptionItemsBooking{
+  margin-left: 450px;
+  margin-top: 30px;
+  width: 100%;
+}
