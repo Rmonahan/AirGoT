@@ -43,7 +43,7 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 
 <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+11.00.42+AM.png">
 
-2. Initialization of the google map and the event listeners to update the bounds filter when map is moved.
+2. Initialization of the google map and the event listener to update the bounds filter when map is moved.
 
 <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.56.03+AM.png">
 
