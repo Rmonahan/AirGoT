@@ -3,7 +3,7 @@
 AirGoT was created to bring luxurious housing rentals to the game of thrones world.
 
 
-<a href="www.airgot.herokuapp.com/">Live site</a>
+<a href="https://airgot.herokuapp.com/">Live site</a>
 
 
 
