@@ -28,7 +28,7 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
   
   
 ### Spots can be filtered using Google Maps
-  On the spots index page there is a map that can be toggled on or off. When the map is toggled on the spots that are shown are   based on the spots that are in view on the map. When the map is moved the spots list is filtered to be the spots that are     only visible on the map. This was done through Google Maps Api and marker mangement. Whenever the map is moved a thunk         action called updateBounds is dispatched. The action takes in the current bounds of the map and sends that to a fetchSpots     request. The fetchSpots request will then give those bounds to the backend controller and that controller will go through     the database and only return spots that are within those bounds. Those returned spots are then saved into the spots state     and that state is used to display the spots on the page.
+  On the spots index page there is a map that can be toggled on or off. When the map is toggled on the spots that are shown are  based on the spots that are in view on the map. When the map is moved the spots list is filtered to be the spots that are  only visible on the map. This was done through Google Maps Api and marker mangement. Whenever the map is moved a thunk  action called updateFilter is dispatched. The action takes in the new bounds of the map and sends that to a fetchSpots     request. The fetchSpots request will then give those bounds to the backend controller and that controller will go through    the database and only return spots that are within those bounds. Those returned spots are then saved into the spots state    and that state is used to display the spots on the page.
   
  <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.40.13+AM.png">
 
@@ -38,3 +38,15 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
   
   <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.47.37+AM.png">
   
+## Code Snipets
+
+
+1. Function to give to calander in order to disable the dates that have already been booked. Also the handleSubmit code for when a booking is made.
+
+<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+11.00.42+AM.png">
+
+2. Initialization of the google map and the event listeners to update the bounds filter when map is moved.
+
+<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.56.03+AM.png">
+
+ 
