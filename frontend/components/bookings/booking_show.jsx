@@ -34,8 +34,8 @@ class BookingShow extends React.Component {
         <div className="descriptionItemsBooking">
           <div className="indexHouseType"><span className="indexSuperhost">SUPERHOST</span>{spot.allegiance}</div>
           <div className="indexTitle">{spot.title}</div>
-          <div className="indexRating"><span className="skull"><i className="fas fa-skull"></i></span>{spot.danger_rating}</div>
-          <div className="indexPrice"><span>${spot.price}</span> / night</div>
+          <div className="bookingRating"><span className="skull"><i className="fas fa-skull"></i></span>{spot.danger_rating}</div>
+          <div className="bookingPrice"><span>${spot.price}</span> / night</div>
         </div>
       </div>
       </div>

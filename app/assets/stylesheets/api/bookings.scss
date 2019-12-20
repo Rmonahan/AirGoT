@@ -14,13 +14,28 @@
 }
 
 .bookingPhoto {
-  height: 400px;
-  width: 500px;
-  margin-left: 400px;
+  height: 300px;
+  width: 600px;
+  margin-left: 350px;
 }
 
 .descriptionItemsBooking{
   margin-left: 450px;
   margin-top: 30px;
   width: 100%;
+}
+
+.bookingRating {
+  border-bottom: none !important;
+}
+
+.bookingPrice {
+  position: relative;
+  left: 200px;
+  bottom: 95px;
+}
+
+.bookingPrice span {
+  font-weight: bold;
+  font-size: 18px;
 }
