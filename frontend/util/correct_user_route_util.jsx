@@ -8,7 +8,7 @@ const CorrectUser = ({ component: Component, path, correctUser, exact }) => (
     path={path}
     exact={exact}
     render={props =>
-      !correctUser ? <Component {...props} /> : <Redirect to="/" />
+      correctUser ? <Component {...props} /> : <Redirect to="/" />
     }
   />
 );
@@ -16,7 +16,6 @@ const CorrectUser = ({ component: Component, path, correctUser, exact }) => (
 const mapStateToProps = (state, ownProps) => {
   const locationArray = ownProps.location.pathname.split("/");
   const bookingUserId = parseInt(locationArray[locationArray.length - 2]);
-  debugger;
   return {
     correctUser: (state.session.id === bookingUserId)
   };
