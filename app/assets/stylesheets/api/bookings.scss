@@ -16,11 +16,11 @@
 .bookingPhoto {
   height: 300px;
   width: 600px;
-  margin-left: 350px;
+  margin-left: 300px;
 }
 
 .descriptionItemsBooking{
-  margin-left: 450px;
+  margin-left: 400px;
   margin-top: 30px;
   width: 100%;
 }
@@ -38,4 +38,12 @@
 .bookingPrice span {
   font-weight: bold;
   font-size: 18px;
+}
+
+.bookingShowDates {
+  position: relative;
+  bottom: 15px;
+  left: 460px;
+  font-size: 20px;
+  font-weight: 500;
 }

@@ -30,6 +30,7 @@ class BookingShow extends React.Component {
       </header>
       <div className="bookingShow">
         <h1 className="bookingConfirm">Your booking has been confirmed!</h1>
+          <div className="bookingShowDates"> From {booking.startDate} to {booking.endDate}</div>
         <img className="bookingPhoto" src={booking.bookingPhotos[0].image_url} />
         <div className="descriptionItemsBooking">
           <div className="indexHouseType"><span className="indexSuperhost">SUPERHOST</span>{spot.allegiance}</div>

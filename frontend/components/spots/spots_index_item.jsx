@@ -24,7 +24,7 @@ class SpotsIndexItem extends React.Component {
       <li className="spotIndexItem" onClick={this.handleClick}>
         <img src={spot.mainImageUrl} />
         <div className ="descriptionItems">
-          <div className="indexHouseType"><span className="indexSuperhost">SUPERHOST</span>Allegiance: {spot.allegiance}</div>
+          <div className="indexHouseType"><span className="indexSuperhost">SUPERHOST</span>{spot.allegiance}</div>
           <div className="indexTitle">{spot.title}</div>
           <div className="spotInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
           <div className="indexRating"><span className="skull"><i className="fas fa-skull"></i></span>{spot.dangerRating}</div>

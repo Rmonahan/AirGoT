@@ -37,12 +37,12 @@ class NavDropdown extends React.Component {
        <img src={currentUser.profilePhotoUrl} />
             {this.state.open && (
               <ul>
-                <li onClick={this.props.logout}>Log Out
-                <div id="borderbot" />
-                </li>
                 <li onClick={this.sendToBookings}>Bookings
-                <div id="borderbot" />
-            </li>
+                  <div id="borderbot" />
+                </li>
+                <li onClick={this.props.logout}>Log Out
+                 <div id="borderbot" />
+               </li>
               </ul>
             )} 
       </div>

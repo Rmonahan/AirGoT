@@ -5,20 +5,29 @@
   margin-top: 100px;
 }
 
-// .bookingIndexUl {
+.bookingIndexUl {
 //   display: flex;
-//   margin-top: 200px;
+margin-top: 200px;
 //   flex-direction: column;
-// }
+}
 
 .bookingIndexItem {
-  border: 1px solid rgb(133,133,133)
+  border: 1px solid rgb(133,133,133);
+  cursor: pointer;
 }
 
 // .bookingIndexHeading {
 //   position: fixed;
 //   bottom: 200
 // }
+
+.bookingDates {
+  position: relative;
+  top: 80px;
+  left: 460px;
+  font-size: 20px;
+  font-weight: 500;
+}
 
 .noBookings {
   font-size: 60px;
@@ -30,6 +39,7 @@
 .listBookings {
   font-size: 50px;
   position: relative;
-  top: 100px;
+  top: 130px;
   left: 20px;
+  // margin-top: 20px;
 }
