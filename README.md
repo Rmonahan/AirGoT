@@ -11,11 +11,11 @@ AirGot was created using Rails and React.
 
 
 ## Technologies Used:
-  *React/Redux
-  *Ruby on Rails
-  *Javascript
-  *PostgresSQL
-
+  * Google Maps API
+  * React/Redux
+  * Ruby on Rails
+  * Javascript
+  * PostgresSQL
 
 
 
