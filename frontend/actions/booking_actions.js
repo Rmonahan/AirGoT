@@ -29,3 +29,7 @@ export const createBooking = (booking) => dispatch => {
 export const deleteBooking = (bookingId) => dispatch => {
   return APIUtil.deleteBooking(bookingId).then((booking) => dispatch(receiveBooking(booking)));
 };
+
+export const fetchUserBookings = (userId) => dispatch => {
+  return APIUtil.fetchUserBookings(userId).then((bookings) => dispatch(receiveAllBookings(bookings)));
+};

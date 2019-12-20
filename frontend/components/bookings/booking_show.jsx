@@ -14,7 +14,7 @@ class BookingShow extends React.Component {
   }
 
   handleClick() {
-    this.props.history.push(`users/${booking.userId}/bookings/`);
+    this.props.history.push(`users/${this.props.booking.userId}/bookings/`);
   }
 
 
@@ -47,4 +47,4 @@ class BookingShow extends React.Component {
 }
 
 
-export default withRouter(BookingShow)
+export default withRouter(BookingShow);

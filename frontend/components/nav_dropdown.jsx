@@ -1,6 +1,7 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
 
-export default class NavDropdown extends React.Component {
+class NavDropdown extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -9,6 +10,7 @@ export default class NavDropdown extends React.Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggleDropdownBlur = this.toggleDropdownBlur.bind(this);
+    this.sendToBookings = this.sendToBookings.bind(this);
   }
 
   toggleDropdown(){
@@ -21,22 +23,15 @@ export default class NavDropdown extends React.Component {
    }
   }
 
+  sendToBookings(e){
+    e.preventDefault();
+    this.props.history.push(`/users/${this.props.currentUser.id}/bookings`);
+  }
+
 
   render(){
-    // let image = window.mapImage;
     const { currentUser } = this.props;
-    // if(currentUser.firstName === "Ned"){
-    //   image = window.nedImage;
-    // }
-    // else if(currentUser.firstName === "Jon"){
-    //   image = window.jonImage;
-    // } 
-    // else if (currentUser.firstName === "Jamie") {
-    //   image = window.jamieImage;
-    // }
-    // else if (currentUser.firstName === "Sansa") {
-    //   image = "https://airgot-dev.s3.amazonaws.com/GbfLNQ1J8ADuYXbZzsA3ZuMc";
-    // }
+
     return (
       <div className="navbarDiv" onBlur={this.toggleDropdownBlur} onClick={this.toggleDropdown} tabIndex="0">
        <img src={currentUser.profilePhotoUrl} />
@@ -45,9 +40,14 @@ export default class NavDropdown extends React.Component {
                 <li onClick={this.props.logout}>Log Out
                 <div id="borderbot" />
                 </li>
+                <li onClick={this.sendToBookings}>Bookings
+                <div id="borderbot" />
+            </li>
               </ul>
             )} 
       </div>
     )
   }
 }
+
+export default withRouter(NavDropdown);

@@ -5,6 +5,7 @@ import SpotIndexContainer from "./spots/spots_index_container";
 import Homepage from "./homepage";
 import SpotShowContainer from "./spots/spot_show_container";
 import BookingShowContainer from "./bookings/booking_show_container";
+import BookingIndexContainer from "./bookings/booking_index_container";
 
 const App = () => (
   <div className="splash">
@@ -12,6 +13,7 @@ const App = () => (
     <Route exact path="/" component={Homepage} />
     <Route exact path="/spots/:spotId" component={SpotShowContainer} />
     <Route exact path="/spots" component={SpotIndexContainer} />
+    <Route exact path="/users/:userId/bookings" component={BookingIndexContainer} />
     <Route exact path="/users/:userId/bookings/:bookingId" component={BookingShowContainer} />
   </div>
 );
