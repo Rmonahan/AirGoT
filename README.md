@@ -41,11 +41,79 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 
 1. Function to give to calander in order to disable the dates that have already been booked. Also the handleSubmit code for when a booking is made.
 
-<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+11.00.42+AM.png">
+```
+componentDidMount() {
+    const mapOptions = {
+      center: { lat: 40.7829, lng: -73.9654 },
+      zoom: 12
+    };
+
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    this.MarkerManager.updateMarkers(this.props.spots);
+
+    this.map.addListener("idle", () => {
+      const latlngbounds = this.map.getBounds();
+      const northEast = {
+        lat: latlngbounds.getNorthEast().lat(),
+        lng: latlngbounds.getNorthEast().lng()
+      };
+      const southWest = {
+        lat: latlngbounds.getSouthWest().lat(),
+        lng: latlngbounds.getSouthWest().lng()
+      };
+
+      const bounds = {
+        northEast, southWest
+      };
+
+      this.props.updateFilter("bounds", bounds);
+    });
+  }
+```
 
 2. Initialization of the google map and the event listener to update the bounds filter when map is moved.
 
-<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.56.03+AM.png">
+```
+handleSubmit(e) {
+    e.preventDefault();
+    this.props.createBooking({ 
+      booking: 
+      { user_id: this.props.userId, 
+        spot_id: this.props.spot.id, 
+        start_date: this.state.startDate.format('YYYY-MM-DD'), 
+        end_date: this.state.endDate.format('YYYY-MM-DD')
+      }
+    })
+      .then((booking) => { this.props.history.push(`/users/${booking.booking.userId}/bookings/${booking.booking.id}`); })
+      .then(this.props.closeModal);
+  }
 
+  isOutsideRange(day){
+    if (moment().diff(day) > 0) {
+      return true;
+    }
+
+    let disabled = false;
+
+    const disabledDates = [];
+       this.props.spot.bookings.forEach((booking) => {
+          let currentDate = moment(booking.start_date);
+          let endDate = moment(booking.end_date);
+
+          while (currentDate <= endDate){
+            disabledDates.push(moment(currentDate.format('YYYY-MM-DD')));
+            currentDate = moment(currentDate).add(1,'days');
+          }
+      });
+
+      disabledDates.forEach((date) => {
+        if (date.isSame(day, 'date')){
+          disabled = true;
+        }
+      });
+      return disabled;
+  }
+```
  
 <p align="center"><a href="https://airgot.herokuapp.com/"> <img src="https://airgot-dev.s3.amazonaws.com/images/logo.png"> </a></p>
