@@ -39,7 +39,7 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 ## Code Snipets
 
 
-1. Function to give to calander in order to disable the dates that have already been booked. Also the handleSubmit code for when a booking is made.
+1. Initialization of the google map and the event listener to update the bounds filter when map is moved.
 
 ```
 componentDidMount() {
@@ -72,7 +72,8 @@ componentDidMount() {
   }
 ```
 
-2. Initialization of the google map and the event listener to update the bounds filter when map is moved.
+2. Function to give to calander in order to disable the dates that have already been booked. Also the handleSubmit code for when a booking is made.
+
 
 ```
 handleSubmit(e) {
