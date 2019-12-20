@@ -41,7 +41,7 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 
 1. Initialization of the google map and the event listener to update the bounds filter when map is moved.
 
-```
+```Ruby
 componentDidMount() {
     const mapOptions = {
       center: { lat: 40.7829, lng: -73.9654 },
@@ -75,7 +75,7 @@ componentDidMount() {
 2. Function to give to calander in order to disable the dates that have already been booked. Also the handleSubmit code for when a booking is made.
 
 
-```
+```Ruby
 handleSubmit(e) {
     e.preventDefault();
     this.props.createBooking({ 
