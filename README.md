@@ -5,8 +5,6 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 
 ### <a href="https://airgot.herokuapp.com/"><p font-size='30px'>Live site</p></a>
 
-<p align="center"><a href="https://airgot.herokuapp.com/"> <img src="https://airgot-dev.s3.amazonaws.com/images/logo.png"> </a></p>
-
 <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.38.57+AM.png">
 
 
@@ -50,3 +48,4 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 <img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.56.03+AM.png">
 
  
+<p align="center"><a href="https://airgot.herokuapp.com/"> <img src="https://airgot-dev.s3.amazonaws.com/images/logo.png"> </a></p>
