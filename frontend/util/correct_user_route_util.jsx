@@ -15,9 +15,10 @@ const CorrectUser = ({ component: Component, path, correctUser, exact }) => (
 
 const mapStateToProps = (state, ownProps) => {
   const locationArray = ownProps.location.pathname.split("/");
-  const bookingUserId = locationArray[locationArray.length - 2];
+  const bookingUserId = parseInt(locationArray[locationArray.length - 2]);
+  debugger;
   return {
-    correctUser: Boolean(state.session.id === bookingUserId)
+    correctUser: (state.session.id === bookingUserId)
   };
 };
 
