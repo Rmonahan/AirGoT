@@ -23,6 +23,8 @@ class User < ApplicationRecord
   validate :old_enough?, :valid_email?
   
 
+  has_many :bookings
+
   attr_reader :password
   after_initialize :ensure_session_token
 

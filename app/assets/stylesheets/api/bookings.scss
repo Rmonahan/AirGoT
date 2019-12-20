@@ -1,0 +1,41 @@
+.bookingShow {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bookingConfirm {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+.bookingPhoto {
+  height: 300px;
+  width: 600px;
+  margin-left: 350px;
+}
+
+.descriptionItemsBooking{
+  margin-left: 450px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.bookingRating {
+  border-bottom: none !important;
+}
+
+.bookingPrice {
+  position: relative;
+  left: 200px;
+  bottom: 95px;
+}
+
+.bookingPrice span {
+  font-weight: bold;
+  font-size: 18px;
+}

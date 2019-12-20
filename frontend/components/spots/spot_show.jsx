@@ -18,13 +18,39 @@ class SpotShow extends React.Component {
     this.state = {
       startDate: null,
       endDate: null,
-      focusedInput: null
+      focusedInput: ["startDate"]
     };
-    
+    this.isOutsideRange = this.isOutsideRange.bind(this);
   }
 
   componentWillMount(){
     this.props.fetchSpots();
+  }
+
+  isOutsideRange(day) {
+    if (moment().diff(day) > 0) {
+      return true;
+    }
+
+    let disabled = false;
+
+    const disabledDates = [];
+    this.props.spot.bookings.forEach((booking) => {
+      let currentDate = moment(booking.start_date);
+      let endDate = moment(booking.end_date);
+
+      while (currentDate <= endDate) {
+        disabledDates.push(moment(currentDate.format('YYYY-MM-DD')));
+        currentDate = moment(currentDate).add(1, 'days');
+      }
+    });
+
+    disabledDates.forEach((date) => {
+      if (date.isSame(day, 'date')) {
+        disabled = true;
+      }
+    });
+    return disabled;
   }
 
   render() {
@@ -89,10 +115,11 @@ class SpotShow extends React.Component {
                       onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                       focusedInput={this.state.focusedInput}
                       onFocusChange={focusedInput => this.setState({ focusedInput })} 
-                      initialVisibleMonth={() => moment().add(2, "months")}
+                      initialVisibleMonth={() => moment()}
                       numberOfMonths={2}
                       noBorder={true}
-                    />
+                      isOutsideRange={this.isOutsideRange}
+              />
                 <div className="hostDetails">
                   <h1 className="hostedBy">Hosted by {spot.host.first_name}</h1>
                         <p className="hostLocation">{spot.city},{" "}{spot.state} - Joined in December 2019</p>

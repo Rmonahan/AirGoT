@@ -36,11 +36,15 @@ class Spot < ApplicationRecord
    through: :assignments
 
   has_many :photos
+
+  has_many :bookings
   
   belongs_to :host,
    class_name: :User,
    primary_key: :id,
    foreign_key: :host_id
+
+
 
   def self.in_bounds(bounds)
    self.where("lat < ?", bounds[:northEast][:lat])
