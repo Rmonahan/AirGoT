@@ -15,7 +15,7 @@ const App = () => (
     <Route exact path="/spots/:spotId" component={SpotShowContainer} />
     <Route exact path="/spots" component={SpotIndexContainer} />
     <CorrectUserRoute exact path="/users/:userId/bookings" component={BookingIndexContainer} />
-    <Route exact path="/users/:userId/bookings/:bookingId" component={BookingShowContainer} />
+    <CorrectUserRoute exact path="/users/:userId/bookings/:bookingId" component={BookingShowContainer} />
   </div>
 );
 
