@@ -51,9 +51,17 @@ export default class GuestsDropdown extends React.Component {
     if (this.state.guests > 0){
       minusDisabled = "minusAbled";
     }
+
+    let guestsText = "Guests";
+    if (this.state.guests === 1){
+      guestsText = "1 guest";
+    }
+    else if (this.state.guests > 1){
+      guestsText = `${this.state.guests} guests`
+    }
     return (
       <div className="guestsnavbarDiv" onBlur={this.toggleDropdownBlur} onClick={this.toggleDropdown} tabIndex="0">
-        <button className="guestsSelect" onClick={(e) => e.preventDefault()}>Guests</button>
+        <button className="guestsSelect" onClick={(e) => e.preventDefault()}>{guestsText}</button>
         <div className={this.props.arrowType}>{icon}</div>
         {this.state.open && (
           <ul className="guestsUl" >
