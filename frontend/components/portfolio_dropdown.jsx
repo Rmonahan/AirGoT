@@ -21,6 +21,9 @@ export default class PortfolioDropdown extends React.Component {
     }
   }
 
+  openNewTab(url){
+    window.open(url, '_blank');
+  }
 
   render() {
     const liClass = `${this.props.navType}Li`
@@ -29,12 +32,18 @@ export default class PortfolioDropdown extends React.Component {
         <span className={this.props.navType}>Portfolio</span>
         {this.state.open && (
           <ul className={liClass} >
-            <li> Github
+            <li onClick={() => this.openNewTab("https://github.com/Rmonahan")}> Github
                 <div id="borderbot" />
             </li>
-            <li> Personal Site
-                 <div id="borderbot" />
-            </li>    
+            <li onClick={() => this.openNewTab("https://www.linkedin.com/in/ryan-monahan-99323b184")}> LinkedIn
+                <div id="borderbot" />
+            </li>
+            <li onClick={() => this.openNewTab("https://angel.co/ryan-monahan-2")}> AngelList
+                <div id="borderbot" />
+            </li>
+            <li onClick={() => this.openNewTab("https://rmonahan.github.io/")}> Personal Site
+                <div id="borderbot" />
+            </li>
           </ul>
         )}
       </div>
