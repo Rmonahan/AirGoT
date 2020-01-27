@@ -42,6 +42,29 @@
   width: auto;
 }
 
+.suggestionsForm {
+  position: absolute;
+  background: white;
+  width: 383px;
+  z-index: 100;
+  margin-top: -15px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.suggestionsForm li {
+  position: relative;
+  width: 373px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  height: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.suggestionsForm li:hover {
+  background: rgb(247,247,247);
+}
 
 
 .anywhere {

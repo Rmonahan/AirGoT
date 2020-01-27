@@ -18,7 +18,7 @@ export default class GreetingNonHomepage extends React.Component {
             <Link to="/">
               <img id="logoImage" src={window.logoImage} />
             </Link>
-            <SearchBar updateFilter={updateFilter}/>
+            <SearchBar updateFilter={updateFilter} />
           </div>
           <PortfolioDropdown navType="loggedinPortfolioNonHomepage" />
           <NavDropdown logout={this.props.logout} currentUser={currentUser} />
@@ -31,7 +31,7 @@ export default class GreetingNonHomepage extends React.Component {
             <Link to="/">
               <img id="logoImage" src={window.logoImage} />
             </Link>
-            <SearchBar />
+            <SearchBar updateFilter={updateFilter} />
           </div>
           <PortfolioDropdown navType="loggedoutPortfolioNonHomepage" />
           <button onClick={() => this.props.openModal('signup')}>Sign up</button>

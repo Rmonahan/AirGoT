@@ -31,7 +31,6 @@ class NavDropdown extends React.Component {
 
   render(){
     const { currentUser } = this.props;
-
     return (
       <div className="navbarDiv" onBlur={this.toggleDropdownBlur} onClick={this.toggleDropdown} tabIndex="0">
        <img src={currentUser.profilePhotoUrl} />

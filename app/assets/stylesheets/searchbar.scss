@@ -18,6 +18,31 @@
 
 }
 
+.suggestions {
+  position: absolute;
+  margin-left: 30px;
+  background: white;
+  padding-top: 10px;
+  width: 450px;
+  z-index: 100;
+  border: 1px solid rgb(235,235,235);
+}
+
+.suggestions li {
+  position: relative;
+  width: 420px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 30px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: rgb(247,247,247);
+}
+
 
 .searchIcon {
   position: relative;

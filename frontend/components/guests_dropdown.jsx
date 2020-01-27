@@ -31,12 +31,14 @@ export default class GuestsDropdown extends React.Component {
   increaseGuests(e){
     // e.preventDefault();
     this.setState({guests: this.state.guests + 1});
+    this.props.numGuests(this.state.guests + 1);
   }
 
   decreaseGuests(e) {
     // e.preventDefault();
     if (this.state.guests > 0){
        this.setState({ guests: this.state.guests - 1 });
+       this.props.numGuests(this.state.guests - 1);
     }
   }
 

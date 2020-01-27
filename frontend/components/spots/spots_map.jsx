@@ -31,8 +31,9 @@ class SpotsMap extends React.Component {
       const bounds = {
         northEast, southWest
       };
-
-      this.props.updateFilter("bounds", bounds);
+      if (bounds.northEast.lat - bounds.southWest.lat !== 0){
+         this.props.updateFilter("bounds", bounds);
+      }
     });
   }
  

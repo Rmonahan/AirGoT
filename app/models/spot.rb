@@ -46,11 +46,20 @@ class Spot < ApplicationRecord
 
 
 
-  def self.in_bounds(bounds)
-   self.where("lat < ?", bounds[:northEast][:lat])
-      .where("lat > ?", bounds[:southWest][:lat])
-      .where("lng > ?", bounds[:southWest][:lng])
-      .where("lng < ?", bounds[:northEast][:lng])
+  def self.in_bounds(params)
+   bounds = params[:bounds];
+   if (params[:city] && params[:city] != "")
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
+        .where(city: params[:city])
+   else
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
+   end
   end
 
 end

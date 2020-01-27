@@ -18,6 +18,12 @@ export default class SpotsIndex extends React.Component {
       this.setState({showMap: !this.state.showMap});
   }
 
+  // componentDidMount(){
+  //   if (this.state.showMap === false){
+  //     this.props.updateFilter("bounds", "none");
+  //   }
+  // }
+
   render() {
     const spotLis = this.props.spots.map((spot, i) => <SpotIndexItem key={i} fetchSpot={this.props.fetchSpot} spot={spot} />);
     const count = this.props.spots.length;
@@ -35,7 +41,7 @@ export default class SpotsIndex extends React.Component {
             {spotLis}
           </ul>
           <div className="mapIndexComponent">
-          <SpotsMap spots={this.props.spots} updateFilter={this.props.updateFilter}/>
+          <SpotsMap spots={this.props.spots} updateFilter={this.props.updateFilter} showMap={this.state.showMap}/>
           </div>
         </div>
         </div>

@@ -2,19 +2,20 @@ class Api::SpotsController < ApplicationController
 
   def index
     if (params[:bounds] && params[:bounds] != "none")
-      @spots = Spot.in_bounds(params[:bounds])
+      @spots = Spot.in_bounds(params)
+    elsif (params[:city] && params[:city] != "")
+      if (params[:guests])
+          if (params[:bookingRange])
+            @spots = Spot.where(city: params[:city]).where("max_occupants > ?", params[:guests])
+            #  figure out how to filter for bookings
+          else
+            @spots = Spot.where(city: params[:city]).where("max_occupants > ?", params[:guests])
+          end
+      elsif (params[:bookingRange])
+        @spots = Spot.where(city: params[:city])
+      end
     else
       @spots = Spot.all 
-    end
-
-    if (params[:city] && params[:city] != "")
-      filtered_spots = []
-      @spots.each do |spot|
-        if spot.city == params[:city]
-          filtered_spots.push(spot);
-        end
-      end 
-      @spots = filtered_spots;
     end
       render :index
   end

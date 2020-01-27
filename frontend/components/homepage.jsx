@@ -1,8 +1,8 @@
 import React from "react";
 import SpotIndexHomepageContainer from "./spots/spots_index_homepage_container";
-import SearchForm from "./search_form";
 import GreetingContainer from "./greeting_container";
 import { Route, Link } from "react-router-dom";
+import SearchFormContainer from "./search_form_container";
 
 
 export default class Homepage extends React.Component {
@@ -17,7 +17,7 @@ export default class Homepage extends React.Component {
           <Link to="/" className="header-link"></Link>
           <GreetingContainer />
         </header>
-        <SearchForm />
+        <SearchFormContainer />
         <img id="background" src={window.backgroundImage} />
         <SpotIndexHomepageContainer />
       </div>
