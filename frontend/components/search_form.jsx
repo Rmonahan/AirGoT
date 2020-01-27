@@ -23,7 +23,6 @@ class SearchForm extends React.Component {
       }
 
   handleSubmit(e){
-    debugger;
     e.preventDefault();
     if (this.state.city !== "") this.props.updateFilter("city", this.state.city);
     if (this.state.guests > 0) this.props.updateFilter("guests", this.state.guests);

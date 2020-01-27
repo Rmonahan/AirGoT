@@ -15,8 +15,6 @@ export default class GuestsDropdown extends React.Component {
   }
 
   toggleDropdown(e) {
-    // debugger;
-    // if (e.target.className != "guestChange"){
       this.setState({ open: !this.state.open });
   }
 
