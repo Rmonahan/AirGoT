@@ -9,6 +9,10 @@ export default class Greeting extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.clearFilters();
+  }
+
   render() {
     const { currentUser } = this.props;
     if (currentUser) {

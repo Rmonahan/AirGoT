@@ -7,7 +7,7 @@ export default class SpotsIndexHomepage extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchSpots();
+    this.props.updateFilter("bounds", "none");
   }
 
 

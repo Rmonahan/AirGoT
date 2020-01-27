@@ -10,7 +10,7 @@ export default class GreetingNonHomepage extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, updateFilter } = this.props;
     if (currentUser) {
       return (
         <nav className="loggedIn navnonHomepage">
@@ -18,7 +18,7 @@ export default class GreetingNonHomepage extends React.Component {
             <Link to="/">
               <img id="logoImage" src={window.logoImage} />
             </Link>
-            <SearchBar />
+            <SearchBar updateFilter={updateFilter}/>
           </div>
           <PortfolioDropdown navType="loggedinPortfolioNonHomepage" />
           <NavDropdown logout={this.props.logout} currentUser={currentUser} />

@@ -1,10 +1,20 @@
 class Api::SpotsController < ApplicationController
 
   def index
-    if params[:bounds]
+    if (params[:bounds] && params[:bounds] != "none")
       @spots = Spot.in_bounds(params[:bounds])
     else
       @spots = Spot.all 
+    end
+
+    if (params[:city] && params[:city] != "")
+      filtered_spots = []
+      @spots.each do |spot|
+        if spot.city == params[:city]
+          filtered_spots.push(spot);
+        end
+      end 
+      @spots = filtered_spots;
     end
       render :index
   end
