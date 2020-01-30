@@ -5,17 +5,32 @@ class Api::SpotsController < ApplicationController
       @spots = Spot.in_bounds(params)
     elsif (params[:city] && params[:city] != "")
       if (params[:guests])
-          if (params[:bookingRange])
-            @spots = Spot.where(city: params[:city]).where("max_occupants > ?", params[:guests])
-            #  figure out how to filter for bookings
-          else
-            @spots = Spot.where(city: params[:city]).where("max_occupants > ?", params[:guests])
-          end
-      elsif (params[:bookingRange])
+        @spots = Spot.where(city: params[:city]).where("max_occupants >= ?", params[:guests])
+      else
         @spots = Spot.where(city: params[:city])
       end
+    elsif (params[:guests])
+        @spots = Spot.where("max_occupants >= ?", params[:guests])
     else
-      @spots = Spot.all 
+        @spots = Spot.all 
+    end
+
+    puts params
+    if params[:bookingRange]
+    booked = {}
+    bookedSpots = Booking.select("spot_id").where("start_date >= ? AND start_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
+    bookedSpots += Booking.select("spot_id").where("end_date >= ? AND end_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
+    bookedSpots += Booking.select("spot_id").where("start_date <= ? AND end_date >= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
+    bookedSpots.each do |booking| 
+      booked[booking.spot_id] = true
+    end
+    openSpots = []
+    @spots.each do |spot|
+      unless booked[spot.id]
+        openSpots.push(spot) 
+      end
+    end
+    @spots = openSpots
     end
       render :index
   end

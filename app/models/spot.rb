@@ -48,18 +48,33 @@ class Spot < ApplicationRecord
 
   def self.in_bounds(params)
    bounds = params[:bounds];
-   if (params[:city] && params[:city] != "")
-    self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
-        .where(city: params[:city])
-   else
-    self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
-   end
+    if (params[:city] && params[:city] != "")
+      if (params[:guests])
+        self.where("lat < ?", bounds[:northEast][:lat])
+            .where("lat > ?", bounds[:southWest][:lat])
+            .where("lng > ?", bounds[:southWest][:lng])
+            .where("lng < ?", bounds[:northEast][:lng])
+            .where(city: params[:city])
+            .where("max_occupants >= ?", params[:guests])
+      else
+        self.where("lat < ?", bounds[:northEast][:lat])
+            .where("lat > ?", bounds[:southWest][:lat])
+            .where("lng > ?", bounds[:southWest][:lng])
+            .where("lng < ?", bounds[:northEast][:lng])
+            .where(city: params[:city])
+      end
+    elsif (params[:guests])
+      self.where("lat < ?", bounds[:northEast][:lat])
+          .where("lat > ?", bounds[:southWest][:lat])
+          .where("lng > ?", bounds[:southWest][:lng])
+          .where("lng < ?", bounds[:northEast][:lng])
+          .where("max_occupants >= ?", params[:guests])
+    else
+      self.where("lat < ?", bounds[:northEast][:lat])
+          .where("lat > ?", bounds[:southWest][:lat])
+          .where("lng > ?", bounds[:southWest][:lng])
+          .where("lng < ?", bounds[:northEast][:lng])
+    end
   end
 
 end
