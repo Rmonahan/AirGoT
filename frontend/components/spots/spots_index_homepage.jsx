@@ -14,9 +14,14 @@ export default class SpotsIndexHomepage extends React.Component {
 
   render() {
     const spotLis = this.props.spots.map((spot, i) => <SpotIndexItemHomepage key={i} fetchSpot = {this.props.fetchSpot} spot={spot}/>)
+    let count = spotLis.length
+    let title = "Where to stay"
+    if (this.props.location.pathname === "/spots"){
+      title = `${count} places to stay`
+    }
     return ( 
       <div className="spotIndexHomepage">
-           <span className="whereToStay">Where to stay</span>
+        <span className="whereToStay">{title}</span>
          <ul> 
            {spotLis} 
          </ul>

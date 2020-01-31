@@ -9,7 +9,7 @@ const filtersReducer = (state = {bounds:{}}, action) => {
     case UPDATE_FILTER:
       return Object.assign({}, state, { [action.filter]: action.value });
     case REMOVE_FILTERS:
-      return { bounds: {}, minGuests: 1, maxGuests: 10 }
+      return { bounds: {}}
     default:
       return state;
   }

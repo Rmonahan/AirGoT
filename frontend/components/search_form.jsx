@@ -36,10 +36,14 @@ class SearchForm extends React.Component {
 
   updateField(e,field) {
    if (field === "city"){
-    const options = ["Winterfell", "Dragonstone", "King's Landing", "Dorne", "Castle Black", "Vaes Dothrak", "Casterly Rock", "Riverrun", "Lannister"]
+     const options = ["Casterly Rock", "Castle Black", "Dorne", "Dragonstone", "King's Landing", "Lannisport", "Riverrun", "Vaes Dothrak","Winterfell"]
     this.setState({ city: e.target.value });
     let filtered = options.filter((option) => option.toLowerCase().startsWith(e.target.value.toLowerCase()));
-    this.setState({ filteredOptions: filtered })
+    if (filtered.length > 0){
+      this.setState({ filteredOptions: filtered })
+    } else {
+      this.setState({filteredOptions: options})
+    }
     if (e.target.value != "") {
       this.setState({ showOptions: true });
     } else
@@ -65,7 +69,7 @@ class SearchForm extends React.Component {
     return (
     <div className="searchFormDiv">
       <form onSubmit={this.handleSubmit} className="searchForm">
-        <h1>Book unique places to stay and things to do. </h1>
+          <h1>Discover luxory rental spots all over Westeros. </h1>
         <label>WHERE
         <input className="anywhere" onChange={(e) => this.updateField(e,"city")} type="text" placeholder="Anywhere" value={this.state.city}/>
         </label>

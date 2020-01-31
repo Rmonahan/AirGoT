@@ -19,7 +19,11 @@ class SearchBar extends React.Component {
     const options = ["Winterfell", "Dragonstone", "King's Landing", "Dorne", "Castle Black", "Vaes Dothrak", "Casterly Rock", "Riverrun", "Lannister"]
     this.setState({city: e.target.value});
     let filtered = options.filter((option) => option.toLowerCase().startsWith(e.target.value.toLowerCase()));
-    this.setState({filteredOptions: filtered})
+    if (filtered.length > 0) {
+      this.setState({ filteredOptions: filtered })
+    } else {
+      this.setState({ filteredOptions: options })
+    }
     if (e.target.value != ""){
       this.setState({showOptions: true});
     } else 
