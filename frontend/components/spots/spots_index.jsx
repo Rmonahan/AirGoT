@@ -33,7 +33,7 @@ export default class SpotsIndex extends React.Component {
         <header>
           <Link to="/" className="header-link"></Link>
           <GreetingContainerNonHomepage />
-          <SpotsIndexFilterNav  toggleShowMap={this.toggleShowMap}/>
+          <SpotsIndexFilterNav  toggleShowMap={this.toggleShowMap} clearFilters={this.props.clearFilters} updateFilter={this.props.updateFilter} filters={this.props.filters}/>
         </header>
         <div className="spotIndex">
           <ul className="spotIndexUl">
@@ -53,7 +53,7 @@ export default class SpotsIndex extends React.Component {
           <header>
             <Link to="/" className="header-link"></Link>
             <GreetingContainerNonHomepage />
-            <SpotsIndexFilterNav toggleShowMap={this.toggleShowMap} />
+            <SpotsIndexFilterNav toggleShowMap={this.toggleShowMap} clearFilters={this.props.clearFilters} updateFilter={this.props.updateFilter} filters={this.props.filters}/>
           </header>
           <SpotsIndexHomepageContainer />   
         </div>

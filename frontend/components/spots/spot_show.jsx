@@ -21,9 +21,6 @@ class SpotShow extends React.Component {
       focusedInput: ["startDate"]
     };
     this.isOutsideRange = this.isOutsideRange.bind(this);
-  }
-
-  componentWillMount(){
     this.props.fetchSpots();
   }
 

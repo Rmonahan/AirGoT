@@ -7,10 +7,6 @@ import GreetingContainerNonHomepage from "../greetings_container_non_homepage";
 class BookingIndex extends React.Component {
   constructor(props) {
     super(props);
-
-  }
-
-  componentWillMount() {
     this.props.fetchUserBookings(this.props.userId);
   }
 

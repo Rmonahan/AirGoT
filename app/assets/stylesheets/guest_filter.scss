@@ -1,0 +1,62 @@
+
+.guestsFilterButton {
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 207, 207);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.allegianceButton {
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 207, 207);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.allegianceButton ul {
+  border: 1px solid rgb(117,117,117);
+  position: absolute;
+  top: 55px;
+  left: 130px;
+  width: 200px;
+}
+
+.allegianceButton ul li {
+  height: 35px;
+  color: rgb(118,118,118);
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  background: white;
+  cursor: pointer;
+  text-indent: 10px;
+}
+
+.allegianceButton ul li:hover {
+  #borderbot{
+    border-bottom: 1px solid rgb(168, 168, 168);
+  }
+}
+
+.allegianceButton ul li:active {
+  background: rgb(168, 168, 168);
+}
+.guestsFilterUl {
+  border: 1px solid rgb(117, 117, 117) !important;
+  border-radius: 10px;
+  position: absolute;
+  top: 72px;
+  left: 40px;
+}

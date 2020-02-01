@@ -15,7 +15,7 @@ export const receiveAllSpots = (spots) => ({
 });
 
 export const fetchSpots = () => dispatch => {
-  APIUtil.fetchSpots().then((spots) => dispatch(receiveAllSpots(spots)));
+  APIUtil.fetchSpots(getState().ui.filters).then((spots) => dispatch(receiveAllSpots(spots)));
 };
 
 export const fetchSpot = (spotId) => dispatch => {
