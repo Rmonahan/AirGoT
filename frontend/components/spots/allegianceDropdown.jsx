@@ -6,7 +6,7 @@ export default class AllegianceDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allegiance: "Allegience",
+      allegiance: "Allegiance",
       open: false
     };
 
