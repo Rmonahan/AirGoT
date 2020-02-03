@@ -69,7 +69,7 @@ class SearchForm extends React.Component {
     return (
     <div className="searchFormDiv">
       <form onSubmit={this.handleSubmit} className="searchForm">
-          <h1>Discover luxory rental spots all over Westeros. </h1>
+          <h1>Book high end rental spots all over Westeros. </h1>
         <label>WHERE
         <input className="anywhere" onChange={(e) => this.updateField(e,"city")} type="text" placeholder="Anywhere" value={this.state.city}/>
         </label>
