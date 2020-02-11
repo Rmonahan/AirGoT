@@ -5,7 +5,7 @@ AirGoT which is inspired by AirBnB was created to bring luxurious housing rental
 
 ### <a href="https://airgot.herokuapp.com/"><p font-size='30px'>Live site</p></a>
 
-<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2019-12-20+at+10.38.57+AM.png">
+<img src="https://airgot-dev.s3.amazonaws.com/screenSnaps/Screen+Shot+2020-02-03+at+4.59.41+PM.png">
 
 
 ## Technologies Used:
