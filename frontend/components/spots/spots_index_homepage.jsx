@@ -25,7 +25,7 @@ export default class SpotsIndexHomepage extends React.Component {
            <span className="whereToStay">{title}</span>
            {spotLis} 
          </ul>
-      </div>
+        </div>
     );
   }
 }

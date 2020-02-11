@@ -1,19 +1,32 @@
 .bookingIndexPhoto {
   width: 600px;
   height: 300px;
-  margin-left: 330px;
-  margin-top: 100px;
+}
+
+.bookingIndexShow {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bookingIndexUl {
-//   display: flex;
-margin-top: 200px;
-//   flex-direction: column;
+  display: flex;
+  margin-top: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .bookingIndexItem {
-  border: 1px solid rgb(133,133,133);
+  border-top: 1px solid rgb(133,133,133);
+  border-bottom: 1px solid rgb(133,133,133);
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 // .bookingIndexHeading {
@@ -22,11 +35,10 @@ margin-top: 200px;
 // }
 
 .bookingDates {
-  position: relative;
-  top: 80px;
-  left: 460px;
   font-size: 20px;
   font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .noBookings {
