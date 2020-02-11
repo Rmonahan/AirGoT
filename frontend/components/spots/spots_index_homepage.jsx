@@ -24,6 +24,10 @@ export default class SpotsIndexHomepage extends React.Component {
          <ul> 
            <span className="whereToStay">{title}</span>
            {spotLis} 
+          <li className="dummy"></li>
+          <li className="dummy"></li>
+          <li className="dummy"></li>
+          <li className="dummy"></li>
          </ul>
         </div>
     );
