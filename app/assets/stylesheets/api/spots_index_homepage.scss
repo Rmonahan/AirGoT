@@ -10,27 +10,37 @@
 
 .spotIndexItemHomepage {
   height: 270px;
-  width: 275px;
+  width: 262px;
+  margin-left: 7px;
+  margin-right: 7px;
   color: black;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.spotIndexHomepage ul{
-  margin-left: 80px;
+.spotIndexHomepage {
+  display: inline-flex;
+  justify-content: center;
   margin-top: 260px;
-  margin-right: 60px;
-  display: flex;
+  width: 100%;
+}
+
+.spotIndexHomepage ul{
+  display: inline-flex;
+  margin-left: 70px;
+  margin-right: 70px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .whereToStay {
-  margin-left: 80px;
-  margin-right: 60px;
-  position: relative;
-  top: 250px;
+  margin-bottom: 10px;
   font-size: 24px;
   font-weight: 600;
+  display: block;
+  width: 100%;
+  margin-left: 7px;
+  text-align: center;
 }
 
 .price span {

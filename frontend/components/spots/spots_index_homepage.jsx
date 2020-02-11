@@ -21,8 +21,8 @@ export default class SpotsIndexHomepage extends React.Component {
     }
     return ( 
       <div className="spotIndexHomepage">
-        <span className="whereToStay">{title}</span>
          <ul> 
+           <span className="whereToStay">{title}</span>
            {spotLis} 
          </ul>
       </div>
