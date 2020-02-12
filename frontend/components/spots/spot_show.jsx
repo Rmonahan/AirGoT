@@ -77,13 +77,11 @@ class SpotShow extends React.Component {
           <div className="spotShow">
             <div className="spotShowDetails">
               <div className="spotTitle">{spot.title} </div>
+              <div className="spotCity">{spot.city}</div>
+              <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
               <img className="hostImage" src={spot.hostImageUrl} />
               <span className="hostName">{spot.hostName}</span>
-            <div className="descriptionItemsShow">
-                  <div className="spotCity">{spot.city}</div>
-                  <div className="spotdetailsInfo">{spot.maxOccupants}{" "}{guestPlural} - {spot.numberOfBedrooms}{" "}{bedroomPlural} - {spot.numberOfBeds}{" "}{bedPlural} - {spot.numberOfBathrooms}{" "}{bathPlural}</div>
-            </div>
-            <div className="bulletPoints">
+              <div className="bulletPoints">
                   <p> 
                   <span>Entire home</span><br></br>
                         You’ll have the apartment to yourself.<br></br>
@@ -97,31 +95,31 @@ class SpotShow extends React.Component {
                   <span>Great check-in experience </span><br></br>
                         90% of recent guests gave the check-in process a 5-star rating. <br></br>
                   </p>
-                </div>
-                  <div className="spotDescription"><h1 className="descriptText">Description</h1> <br></br>{spot.description}</div>
-                <h1 className="amenitiesText">Amenities</h1>
-                  <div className="spotAmenities">
-                      <div className="showFirstIcon"><i className={spot.amenities[0].icon}></i></div>{spot.amenities[0].name} <div className="showSecondIcon"><i className={spot.amenities[1].icon}></i></div>{spot.amenities[1].name} 
-                      <div className="showThirdIcon"><i className={spot.amenities[2].icon}></i></div>{spot.amenities[2].name}<div className="showThirdIcon"><i className={spot.amenities[3].icon}></i></div>{spot.amenities[3].name}
-                  </div>
-                  <p className="availability">Availability</p>
-                  <div className="dayPicker">
-                    <DayPickerRangeController
-                      startDate={this.state.startDate}
-                      endDate={this.state.endDate}
-                      onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-                      focusedInput={this.state.focusedInput}
-                      onFocusChange={focusedInput => this.setState({ focusedInput })} 
-                      initialVisibleMonth={() => moment()}
-                      numberOfMonths={2}
-                      noBorder={true}
-                      isOutsideRange={this.isOutsideRange}
-              />
+              </div>
+              <div className="spotDescription"><h1 className="descriptText">Description</h1> <br></br>{spot.description}</div>
+              <h1 className="amenitiesText">Amenities</h1>
+              <div className="spotAmenities">
+                  <div className="showFirstIcon"><i className={spot.amenities[0].icon}></i></div>{spot.amenities[0].name} <div className="showSecondIcon"><i className={spot.amenities[1].icon}></i></div>{spot.amenities[1].name} 
+                  <div className="showThirdIcon"><i className={spot.amenities[2].icon}></i></div>{spot.amenities[2].name}<div className="showThirdIcon"><i className={spot.amenities[3].icon}></i></div>{spot.amenities[3].name}
+              </div>
+              <p className="availability">Availability</p>
+              <div className="dayPicker">
+                <DayPickerRangeController
+                  startDate={this.state.startDate}
+                  endDate={this.state.endDate}
+                  onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                  focusedInput={this.state.focusedInput}
+                  onFocusChange={focusedInput => this.setState({ focusedInput })} 
+                  initialVisibleMonth={() => moment()}
+                  numberOfMonths={2}
+                  noBorder={true}
+                  isOutsideRange={this.isOutsideRange}
+               />
                 <div className="hostDetails">
                   <h1 className="hostedBy">Hosted by {spot.host.first_name}</h1>
-                        <p className="hostLocation">{spot.city},{" "}{spot.state} - Joined in December 2019</p>
-                        <p className="hostDescription">{spot.host.description}</p>
-                      <img className="hostImage hostDetailsImage" src={spot.hostImageUrl} />
+                  <p className="hostLocation">{spot.city},{" "}{spot.state} - Joined in December 2019</p>
+                  <p className="hostDescription">{spot.host.description}</p>
+                  <img className="hostImage hostDetailsImage" src={spot.hostImageUrl} />
                 </div>
                 </div>
                 <SpotShowMap spot={spot}/>

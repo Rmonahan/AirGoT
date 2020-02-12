@@ -182,7 +182,7 @@
 }
 
 .spotShow {
-  width: 100%;
+  // width: 100%;
   display: flex;
   margin-left: 30px;
 }
@@ -212,17 +212,31 @@
 .hostImage {
   height: 50px !important;
   width: 50px !important;
+  min-height: 50px !important;
   border-radius: 50%;
   position: relative;
-  left: 290px;
-  bottom: 62px;
+  left: 280px;
+  bottom: 120px;
 }
 
 .hostName {
   position: relative;
-  bottom: 55px;
-  left: 290px;
+  bottom: 110px;
+  left: 278px;
 
+}
+
+.spotCity {
+  margin-top: 7px;
+  margin-left: 43px;
+  text-align: left;
+  width: 100%;
+}
+
+.spotdetailsInfo {
+  text-align: left;
+  width: 100%;
+  margin-left: 43px;
 }
 
 .bookingForm {
@@ -301,25 +315,12 @@
   width: 100%;
 }
 
-.descriptionItemsShow{
-  // position: relative;
-  // left: -130px;
-  // bottom: 100px;
-  text-align: left;
-  margin-left: -260px;
-  margin-top: -60px;
-}
-
-.descriptionItems > div {
-  margin-bottom: 15px;
-}
-
 .bulletPoints {
   border-bottom: 1px solid rgb(235,235,235);
   border-top: 1px solid rgb(235,235,235);
   padding: 20px;
-  margin-top: 20px;
   width: 100%;
+  margin-top: -48px;
   box-sizing: border-box;
 }
 
@@ -423,8 +424,9 @@
    border-top: 1px solid rgb(235,235,235);
    border-bottom: 1px solid rgb(235,235,235);
    margin-top: 30px;
-   padding-bottom: 80px;
+   padding-bottom: 20px;
    margin-bottom: 20px;
+  //  position: absolute;
 }
 
 .hostedBy {
@@ -446,7 +448,7 @@
 
 .hostDetailsImage {
   position: relative;
-  margin-left: 200px;
-  margin-top: -90px;
+  bottom: 140px;
+  left: 500px;
   border-bottom: none !important;
 }
