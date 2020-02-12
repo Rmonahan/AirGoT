@@ -2,6 +2,7 @@ import * as APIUtil from "../util/bookings_api_util";
 
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
 export const RECEIVE_ALL_BOOKINGS = "RECEIVE_ALL_BOOKINGS";
+export const RECEIVE_BOOKING_ERRORS = "RECEVIE_BOOKING_ERRORS";
 
 
 export const receiveBooking = (booking) => ({
@@ -14,6 +15,11 @@ export const receiveAllBookings = (bookings) => ({
   bookings
 });
 
+export const receiveBookingErrors = (errors) => ({
+  type: RECEIVE_BOOKING_ERRORS,
+  errors
+});
+
 export const fetchBookings = () => dispatch => {
   return APIUtil.fetchBookings().then((bookings) => dispatch(receiveAllBookings(bookings)));
 };
@@ -23,7 +29,10 @@ export const fetchBooking = (bookingId) => dispatch => {
 };
 
 export const createBooking = (booking) => dispatch => {
-  return APIUtil.createBooking(booking).then((booking) => dispatch(receiveBooking(booking)));
+  return APIUtil.createBooking(booking).then(
+    booking => dispatch(receiveBooking(booking)),
+    errors => dispatch(receiveBookingErrors(errors)) 
+    );
 };
 
 export const deleteBooking = (bookingId) => dispatch => {
