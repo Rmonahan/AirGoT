@@ -62,7 +62,7 @@
 
 .indexRating {
   position: relative;
-  top: -100px;
+  bottom: 82px;
   left: 420px;
 }
 
@@ -76,10 +76,10 @@
   margin-top: 15px;
 }
 
-.amenities {
-  margin-top: -14px;
-  font-size: 14px;
-}
+// .amenities {
+//   // margin-top: -14px;
+//   font-size: 14px;
+// }
 
 .indexPrice span {
   font-weight: bold;
@@ -88,7 +88,7 @@
 
 .indexPrice {
   position: relative;
-  top: 35px;
+  top: 50px;
   color: black;
   left: 380px;
 }
@@ -116,12 +116,7 @@
 
 
 .amenitiesIndex {
+  margin-top: 0px !important;
   font-size: 12px;
   width: 350px;
-  margin-top: -35px;
-}
-
-.amenitiesIndex div {
-  margin-right: 10px;
-  margin-left: 10px;
 }
