@@ -31,6 +31,9 @@ class BookingForm extends React.Component {
       if (this.state.guests > this.props.spot.maxOccupants) {
         this.props.receiveBookingErrors({ 2: "Number of guests is above max" })
       } 
+      else if (this.state.guests === 0){
+        this.props.receiveBookingErrors({ 2: "Number of guests is required."})
+      }
       else {
         this.props.createBooking({ booking: { user_id: this.props.userId, spot_id: this.props.spot.id, start_date: this.state.startDate.format('YYYY-MM-DD'), end_date: this.state.endDate.format('YYYY-MM-DD')}}).then((booking) => { this.props.history.push(`/users/${booking.booking.userId}/bookings/${booking.booking.id}`); }).then(this.props.closeModal);
       }
@@ -38,7 +41,11 @@ class BookingForm extends React.Component {
     else {
       if (this.state.guests > this.props.spot.maxOccupants){
         this.props.receiveBookingErrors({ 1: "Start and End dates required", 2: "Number of guests is above max"})
-      } else {
+      } 
+      else if (this.state.guests === 0) {
+        this.props.receiveBookingErrors({ 1: "Start and End dates required", 2: "Number of guests is required"})
+      }
+      else {
         this.props.receiveBookingErrors({1: "Start and End dates required"})
       }
     }
@@ -76,6 +83,7 @@ class BookingForm extends React.Component {
    
 
   render() {
+    if (this.props.spot){
     const guestsErrors = [];
     const datesErrors = [];
     const userErrors = [];
@@ -118,6 +126,10 @@ class BookingForm extends React.Component {
       </div>
     );
   }
+  else {
+   return null
+  }
+ }
 }
 
 export default withRouter(BookingForm);

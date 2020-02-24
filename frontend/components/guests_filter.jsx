@@ -21,7 +21,6 @@ export default class GuestsFilter extends React.Component {
   }
 
   toggleDropdown(e) {
-    debugger;
     if (e.target === null || (e.target.className != "adults" && e.target.className != "guestChange" && e.target.className != "guestsUl")) {
       this.setState({ open: !this.state.open });
     }

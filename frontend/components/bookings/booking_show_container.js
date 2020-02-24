@@ -11,7 +11,7 @@ const msp = (state, OwnProps) => {
 
 const mdp = (dispatch) => ({
   fetchBookings: () => dispatch(fetchBookings()),
-  fetchBooking: (bookingId) => dispatch(fetchSpot(bookingId)),
+  fetchBooking: (bookingId) => dispatch(fetchBooking(bookingId)),
 });
 
 export default connect(msp, mdp)(BookingShow);

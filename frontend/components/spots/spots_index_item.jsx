@@ -19,7 +19,6 @@ class SpotsIndexItem extends React.Component {
     const bedroomPlural = spot.numberOfBedrooms > 1 ? "bedrooms" : "bedroom";
     const bedPlural = spot.numberOfBeds > 1 ? "beds" : "bed";
     const bathPlural = spot.numberOfBathrooms > 1 ? "baths" : "bath";
-    debugger
     return (
       <li className="spotIndexItem" onClick={this.handleClick}>
         <img src={spot.mainImageUrl} />
