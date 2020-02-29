@@ -17,19 +17,21 @@ export default class SpotsIndexFilterNav extends React.Component {
   }
 
   resize() {
-    if (this.state.mapToggle && window.innerWidth <= 1000){
+    if (this.state.mapToggle && window.innerWidth <= 1100){
       this.toggleMap();
     }
 
-    if (!this.state.mapToggle && window.innerWidth > 1000){
+    if (!this.state.mapToggle && window.innerWidth > 1100){
       this.toggleMap();
     }
   }
 
 
   toggleMap(){
-    this.setState({mapToggle: !this.state.mapToggle});
-    this.props.toggleShowMap();
+    if (window.innerWidth >= 1000  || this.state.mapToggle){
+      this.setState({mapToggle: !this.state.mapToggle});
+      this.props.toggleShowMap();
+    }
   }
 
   clear(){
