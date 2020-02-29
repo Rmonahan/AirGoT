@@ -4,7 +4,6 @@ class Api::SpotsController < ApplicationController
     if (params[:bounds] && params[:bounds] != "none")
       @spots = Spot.in_bounds(params)
     else
-      # @spots = Spot.filter(params.permit(:city, :allegiance))
       @spots = Spot.filters(params)
     end
 
