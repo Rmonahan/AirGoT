@@ -3,30 +3,9 @@ class Api::SpotsController < ApplicationController
   def index
     if (params[:bounds] && params[:bounds] != "none")
       @spots = Spot.in_bounds(params)
-    elsif (params[:city] && params[:city] != "")
-      if (params[:guests] != "0")
-        if(params[:allegiance] != "All")
-          @spots = Spot.where(city: params[:city]).where("max_occupants >= ?", params[:guests]).where("allegiance = ?", params[:allegiance])
-        else
-          @spots = Spot.where(city: params[:city]).where("max_occupants >= ?", params[:guests])
-        end
-      else
-         if(params[:allegiance] != "All")
-           @spots = Spot.where(city: params[:city]).where("allegiance = ?", params[:allegiance])
-         else
-             @spots = Spot.where(city: params[:city])
-         end
-      end
-    elsif (params[:guests] != "0")
-      if(params[:allegiance] != "All")
-        @spots = Spot.where("max_occupants >= ?", params[:guests]).where("allegiance = ?", params[:allegiance])
-      else
-        @spots = Spot.where("max_occupants >= ?", params[:guests])
-      end
-    elsif (params[:allegiance] != "All")
-        @spots = Spot.where("allegiance = ?", params[:allegiance])
     else
-        @spots = Spot.all 
+      # @spots = Spot.filter(params.permit(:city, :allegiance))
+      @spots = Spot.filters(params)
     end
 
     if params[:bookingRange]

@@ -111,4 +111,31 @@ class Spot < ApplicationRecord
     end
   end
 
-end
+  def self.filters(params)
+    if (params[:city] && params[:city] != "")
+        if (params[:guests] != "0")
+          if(params[:allegiance] != "All")
+            Spot.where(city: params[:city]).where("max_occupants >= ?", params[:guests]).where("allegiance = ?", params[:allegiance])
+          else
+            Spot.where(city: params[:city]).where("max_occupants >= ?", params[:guests])
+          end
+        else
+          if(params[:allegiance] != "All")
+            Spot.where(city: params[:city]).where("allegiance = ?", params[:allegiance])
+          else
+            Spot.where(city: params[:city])
+          end
+        end
+      elsif (params[:guests] != "0")
+        if(params[:allegiance] != "All")
+          Spot.where("max_occupants >= ?", params[:guests]).where("allegiance = ?", params[:allegiance])
+        else
+          Spot.where("max_occupants >= ?", params[:guests])
+        end
+      elsif (params[:allegiance] != "All")
+          Spot.where("allegiance = ?", params[:allegiance])
+      else
+          Spot.all 
+      end
+    end
+  end
