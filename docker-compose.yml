@@ -1,0 +1,45 @@
+version: '3.3'
+
+services: 
+    backend:
+      build:
+        context: .
+        dockerfile: DockerfileRuby
+      image: backend-airgot
+      environment: 
+        DATABASE_URL: postgresql://rmonahan:password@db:5432/rmonahan?encoding=utf8&pool=5&timeout=5000
+      ports: 
+        - "3001:3001"
+      depends_on:
+        - db
+      networks: 
+        - backend
+    frontend:
+      build:
+        context: .
+        dockerfile: DockerfileNode
+      image: frontend-airgot
+      working_dir: /app/frontend
+      ports: 
+        - "3000:3000"
+      depends_on:
+      - backend
+      networks: 
+        - backend
+    db:
+      image: postgres:9.6
+      environment: 
+        POSTGRES_USER: rmonahan
+        POSTGRES_PASSWORD: password
+      ports:
+      - "5432"
+      volumes: 
+        - psql-data:/var/lib/postgresql/data
+      networks: 
+        - backend
+volumes: 
+  psql-data: 
+
+networks:
+  frontend:
+  backend:

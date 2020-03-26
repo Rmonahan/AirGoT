@@ -1,0 +1,37 @@
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/node_modules
+bundle.js
+bundle.js.map
+/yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore application configuration
+/config/application.yml
+
+.git
+
+# you usually don't want dockerfile and compose files in the image either
+*Dockerfile*
+*docker-compose*
+
+# for Node.js apps, you want to build the node_modules in the image, and not copy from host
+node_modules
+
+Gemfile.lock
+

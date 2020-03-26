@@ -1,5 +1,4 @@
 import * as APIUtil from "../util/spots_api_util";
-
 export const RECEIVE_SPOT = "RECEIVE_SPOT";
 export const RECEIVE_ALL_SPOTS = "RECEIVE_ALL_SPOTS";
 
@@ -14,7 +13,7 @@ export const receiveAllSpots = (spots) => ({
   spots
 });
 
-export const fetchSpots = () => dispatch => {
+export const fetchSpots = () => (dispatch, getState) => {
   APIUtil.fetchSpots(getState().ui.filters).then((spots) => dispatch(receiveAllSpots(spots)));
 };
 
