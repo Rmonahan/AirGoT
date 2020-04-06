@@ -9,9 +9,7 @@ class Api::SpotsController < ApplicationController
 
     if params[:bookingRange]
     booked = {}
-    bookedSpots = Booking.select("spot_id").where("start_date >= ? AND start_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
-    bookedSpots += Booking.select("spot_id").where("end_date >= ? AND end_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
-    bookedSpots += Booking.select("spot_id").where("start_date <= ? AND end_date >= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])
+    bookedSpots = Booking.select("spot_id").where("start_date >= ? AND start_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"]).or(Booking.select("spot_id").where("end_date >= ? AND end_date <= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"])).or(Booking.select("spot_id").where("start_date <= ? AND end_date >= ?", params[:bookingRange]["startDate"], params[:bookingRange]["endDate"]))
     bookedSpots.each do |booking| 
       booked[booking.spot_id] = true
     end
